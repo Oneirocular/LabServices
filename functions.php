@@ -1,6 +1,6 @@
 <?php
 /*
-Author: Eddie Machado
+Author: Eddie Machado 
 URL: htp://themble.com/bones/
 
 This is where you can drop your custom functions or
