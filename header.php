@@ -41,7 +41,7 @@
 
 	<body <?php body_class(); ?>>
 
-		<div id="container">
+		<div id="d">
 
 			<header class="header" role="banner">
 
@@ -61,3 +61,34 @@
 				</div>
 
 			</header>
+
+			<div class="container">
+
+				<div class="row">
+					<div class="section col-sm-12">
+						<div class="row">
+							<div class="col-sm-6 ">.col-md-1</div>
+							<div class="col-sm-6 ">.col-md-1</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="row">
+							<div class="col-sm-4">sub</div>
+							<div class="col-sm-4">sub</div>
+							<div class="col-sm-4">sub</div>
+						</div>
+					</div>
+					<div class="col-sm-4">.col-md-4</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">.col-md-4</div>
+					<div class="col-sm-4">.col-md-4</div>
+					<div class="col-sm-4">.col-md-4</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 sm-hidden">.col-md-6</div>
+					<div class="col-sm-6 sm-hidden">.col-md-6</div>
+				</div>
+			</div>

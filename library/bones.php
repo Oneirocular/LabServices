@@ -129,7 +129,10 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/styles.css', array(), '', 'all' );
+
+		// register main stylesheet
+		wp_register_style( 'twitter-bootstrap', get_stylesheet_directory_uri() . '/library/css/bootstrap.css', array(), '', 'all' );
 
 		// ie-only style sheet
 		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
@@ -140,10 +143,13 @@ function bones_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
+		wp_register_script( 'twitter-bootstrap-js', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.js', array( 'jquery' ), '', true );
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
+		wp_enqueue_style( 'twitter-bootstrap' );
 		wp_enqueue_style( 'bones-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
 
@@ -155,6 +161,7 @@ function bones_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'twitter-bootstrap-js' );
 		wp_enqueue_script( 'bones-js' );
 
 	}
