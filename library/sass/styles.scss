@@ -1,5 +1,483 @@
+$side_padding: 45px;
+
+$carousel_indicator_radius: 8px;
+$carousel_indicator_distance: 5px;
+
+/* fonts */
+$font-family: "NimbusSanNov-Reg";
+$font-weight-base: 100;
+
+$font-color-light: #3F8C9E;
+
+// Btn colors
+$btn-default-color: #19657F;
+$btn-default-bg: #D9E6EC;
+$btn-default-border: #C7D9E3;
+
+$btn-menu-bg-color: #E8EFF2;
+$btn-menu-border:#d3e1e7;
+
+// Colors
+$ls_c_blue: #00667D;
+$ls_c_blue_light: #ACC7D5;
+
+$ls_bg_c_blue_dark: #D4E4EC;
+$ls_bg_c_blue_dark_line: darken($ls_bg_c_blue_dark, 10%);
+
+$ls_bg_c_blue_light: #EBF3F5;
+$ls_bg_c_blue_light_line: darken($ls_bg_c_blue_light, 10%);
+
+// Urls
+$pointer_url: "../images/pointers/";
+$icon_url: "../images/icons/";
+
+$fonts_url:	"../fonts/";
+$polyfill_url: "http://10.0.1.7/labservices/wp-content/themes/bones-bootstrap-sass/library/polyfill/";
+
 // customize bootstrap variables here:
 @import "variables";
 @import "bootstrap/bootstrap";
 
+@mixin test-mode() {
+ background-color:#ff0000;
+ border:1px solid black;
+}
 
+
+@mixin add-font($family-name, $filename) {
+	@font-face {
+		font-family: $family-name;
+		src: url($fonts_url+$filename+".eot");
+		src: url($fonts_url+$filename+".eot?#iefix") format('embedded-opentype'),
+		     url($fonts_url+$filename+".woff") format('woff'),
+		     url($fonts_url+$filename+".ttf") format('truetype'),
+		     url($fonts_url+$filename+".svg#ywftsvg") format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+
+
+ @include add-font("NimbusSanNov-Bol", "nimbus-sans-novus-bold");
+ @include add-font("NimbusSanNov-Reg", "nimbus-sans-novus");
+
+
+body, h1, h2, h3, h4, h5 {
+	letter-spacing: 0.025em;
+}
+
+h5 {
+	margin-top:0px;
+	margin-bottom:4px;
+	color:$font-color-light;
+}
+
+h3 {
+	margin-top:0px;
+	margin-bottom:18px;
+}
+
+h1 {
+	margin-bottom: 7px;
+	line-height:1.2em;
+}
+
+ body {
+ 	-webkit-font-smoothing:antialiased;
+ 		
+
+ }
+
+ p {
+  margin: 0 0 $line-height-computed;
+}
+
+
+
+/* menu */
+
+
+
+
+
+// .pointer, .pointer-small {
+//   	width: 46px;
+// 	height: 64px;
+
+// 	@media (min-width: $screen-sm-min) {
+// 		width: 30px;
+// 		height: 42px;
+//   	}
+
+// 	background-repeat: no-repeat;
+// 	background-size: contain;
+// }
+
+// .pointer-small {
+// 	width: 30px;
+// 	height: 42px;
+// }
+
+
+// .no-svg .pointer-products {
+// 	background-image: url($pointer_url+"pointer_products.png");
+
+
+// 	/* The url is relative to the document, not to the css file! */
+//     /* Prefer absolute urls to avoid confusion. */
+//     -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+// }
+// .pointer-products {
+// 	background-image: url($pointer_url+"pointer_products.svg");
+// }
+
+
+strong, th {
+	font-family: $headings-font-family;
+	font-weight: 100;
+}
+
+.container {
+
+	margin-top:20px;
+	
+	// Basic section
+	.section, .sub-section {
+
+		@media (min-width: $screen-sm-min) {
+			padding-left:$side_padding;
+			padding-right:$side_padding;
+		}
+
+	}
+
+	.section {
+		padding-top:50px;
+		padding-bottom:50px;
+	}
+	.sub-section {
+		padding-top:50px;
+		padding-bottom:20px;
+	}
+
+	.background-dark {
+		background-color:$ls_bg_c_blue_dark;
+	}
+
+	.background-light {
+		background-color:$ls_bg_c_blue_light;
+	}
+
+	.section.background-dark {
+		border-bottom: 1px solid $ls_bg_c_blue_dark_line;
+	}
+
+	.section.background-light {
+		border-bottom: 1px solid $ls_bg_c_blue_light_line;
+	}
+
+	// Acts on sub-sections
+	.sub-section.background-dark {
+		border-bottom: 1px solid $ls_bg_c_blue_dark_line;
+
+	}
+
+	.sub-section.background-light {
+		border-bottom: 1px solid $ls_bg_c_blue_light_line;
+	}
+
+}
+
+
+/* Layout */
+
+
+
+
+/* on bigger layouts the container-icon is positioned left of the text, smaller layouts it's on top. */
+.text-container-small {
+
+	overflow:hidden;
+
+	.container-icon{
+		@media (min-width: $screen-sm-min) {
+			float:left;
+			margin-right:10px;
+		}
+	}
+
+	.container-body {
+		@media (min-width: $screen-sm-min) {
+			margin-top:10px;
+			overflow: hidden;
+		}
+	}
+}
+
+
+/* Products */
+.products {
+	
+	.product-container, .main-product-frame  {
+
+		margin-bottom:60px;
+
+		.product-thumbnail {
+
+			position:relative;
+			overflow: hidden;
+
+			width:100%;
+			padding-bottom: 100%;		
+
+			img {
+				position:absolute;
+				max-width:100%;
+			}
+
+		}
+
+		.inside {
+		}
+
+	}
+
+	.main-product-container {
+		padding:13px;
+	}
+
+}
+
+
+/* Carousels */
+.carousel-indicators {
+
+  li {
+  	border:none;
+  	width:$carousel_indicator_radius;
+  	height:$carousel_indicator_radius;
+  	background-color: $ls_c_blue_light;
+  	margin-left:$carousel_indicator_distance;
+  }
+
+  .active {
+  	  	border:none;
+  	  	margin:1px;
+  	width:$carousel_indicator_radius;
+  	height:$carousel_indicator_radius;
+  }
+
+
+}
+
+
+
+/*
+.container {
+    background-image: url(http://www.treeswijkhoeve.nl/mobile/img/ux/icon-telephone-grey.svg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ddd;
+}
+
+.full { background-size: 100% 100%; }
+.cover { background-size: cover; }
+.contain { background-size: contain; }*/
+
+
+/* Pointers */
+.pointer, .pointer-small {
+  	width: 46px;
+	height: 64px;
+
+	@media (min-width: $screen-sm-min) {
+		width: 30px;
+		height: 42px;
+  	}
+
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.pointer-small {
+	width: 30px;
+	height: 42px;
+}
+
+
+.no-svg .pointer-products {
+	background-image: url($pointer_url+"pointer_products.png");
+
+
+	/* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+    -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+}
+.pointer-products {
+	background-image: url($pointer_url+"pointer_products.svg");
+}
+
+.pointer-services {
+	background-image: url($pointer_url+"pointer_products.svg");
+}
+
+
+
+
+/* Forms */
+.form-control {
+  border: 0px;
+  border-top:1px solid $ls_c_blue;
+  @include box-shadow(inset 0 0px 0px rgba(0,0,0,0));
+  //@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  //@include form-control-focus();
+
+  // Placeholder
+  //@include placeholder();
+
+}
+
+
+
+/* Tables */
+.table, .table-responsive {
+
+ 	> thead,
+  	> tbody,
+  	> tfoot {
+    	> tr {
+      		> th,
+      		> td {
+      			//border-bottom:none;
+      			border-top: 1px solid lighter($table-border-color, 30%);
+      		}
+     	}
+    }
+
+	> thead > tr > th {
+		border-bottom:1px solid $table-border-color;
+		      			//border-top:none;
+		//border-bottom: 1px solid $table-border-color;
+	}
+
+
+}
+
+
+
+
+
+/* Buttons */
+.btn, .btn-arrow {
+	font-family:$headings-font-family;
+	font-size:15px;
+	padding-top:5px;
+	padding-bottom:1px;
+	
+}
+
+.btn-arrow {
+	padding-right:33px; // allow space for the arrow
+}
+
+.background-dark {
+	.btn, .btn-arrow  {
+  		@include button-variant($btn-default-color, darken($btn-default-bg,10%), darken($btn-default-border,10%));
+	}
+}
+
+.background-light {
+	.btn, .btn-arrow  {
+  		@include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+	}
+}
+
+
+
+.btn-arrow:after // arrow
+{	
+	position:absolute;
+	content:'';
+	//display:inline-block;
+	//background-color:$ls_bg_c_blue_dark_line;
+	width:18px;
+	height:18px;
+	margin-left:10px;
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	
+	background-image: url($icon_url+"icon_arrow-right.svg");
+
+	
+	margin-top:0px;
+
+}
+
+
+
+
+/* nog even goed naar kijken */
+.navigation {
+
+	float:right;
+
+	.nav {
+		display: inline-block;
+		list-style-type:none;
+		padding:0;
+		margin:0;
+
+	}
+
+	.language {
+				padding:0;
+		margin:0;
+		display:inline-block;
+	}
+	li {
+		float:left;
+		padding-right:20px;
+	}
+
+	a {
+
+		@extend .btn;
+		 @include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
+
+		font-family:$font-family-sans-serif;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:6px;
+		padding-bottom:2px;
+
+	// 	display: inline-block;
+ //  margin-bottom: 0; // For input.btn
+ //  font-weight: $btn-font-weight;
+ //  text-align: center;
+ //  vertical-align: middle;
+ //  cursor: pointer;
+ //  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+ //  border: 1px solid transparent;
+ //  white-space: nowrap;
+
+
+ //    @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+	// @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+
+ //  	font-family:$headings-font-family;
+	// font-size:15px;
+	// padding-top:5px;
+	// padding-bottom:1px;
+
+	}
+}
+
+
+.col-sm-12 {
+			//@include test-mode;
+}

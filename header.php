@@ -30,9 +30,17 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
@@ -41,54 +49,22 @@
 
 	<body <?php body_class(); ?>>
 
-		<div id="d">
 
-			<header class="header" role="banner">
-
-				<div id="inner-header" class="wrap clearfix">
-
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation">
-						<?php bones_main_nav(); ?>
-					</nav>
+		<div class="container">
+			<header class="row header section">
+					<div class="col-sm-3 ">
+								<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+					logo
 
 				</div>
-
+					<div class="col-sm-9">
+					<nav class="navigation" role="navigation">
+						<?php bones_main_nav(); ?>
+						<!-- <div class="language">eng</div> -->
+					</nav>
+					</div>
 			</header>
 
-			<div class="container">
 
-				<div class="row">
-					<div class="section col-sm-12">
-						<div class="row">
-							<div class="col-sm-6 ">.col-md-1</div>
-							<div class="col-sm-6 ">.col-md-1</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<div class="row">
-							<div class="col-sm-4">sub</div>
-							<div class="col-sm-4">sub</div>
-							<div class="col-sm-4">sub</div>
-						</div>
-					</div>
-					<div class="col-sm-4">.col-md-4</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4">.col-md-4</div>
-					<div class="col-sm-4">.col-md-4</div>
-					<div class="col-sm-4">.col-md-4</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-6 sm-hidden">.col-md-6</div>
-					<div class="col-sm-6 sm-hidden">.col-md-6</div>
-				</div>
-			</div>
+
+

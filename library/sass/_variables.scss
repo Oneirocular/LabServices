@@ -12,7 +12,7 @@
 //## Gray and brand colors for use across Bootstrap.
 
 //$gray-darker:            lighten(#000, 13.5%); // #222
-//$gray-dark:              lighten(#000, 20%);   // #333
+$gray-dark:              	#00667D;   // #333
 //$gray:                   lighten(#000, 33.5%); // #555
 //$gray-light:             lighten(#000, 60%);   // #999
 //$gray-lighter:           lighten(#000, 93.5%); // #eee
@@ -41,31 +41,33 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-//$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  $font-family, Helvetica, Arial, sans-serif;
 //$font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //* Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 //$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-//$font-family-base:        $font-family-sans-serif;
+$font-family-base:        $font-family-sans-serif;
 
-//$font-size-base:          14px;
+$font-size-base:          16px;
 //$font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
 //$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 
 //$font-size-h1:            floor(($font-size-base * 2.6)); // ~36px
+$font-size-h1:            35px; // ~36px
 //$font-size-h2:            floor(($font-size-base * 2.15)); // ~30px
-//$font-size-h3:            ceil(($font-size-base * 1.7)); // ~24px
-//$font-size-h4:            ceil(($font-size-base * 1.25)); // ~18px
-//$font-size-h5:            $font-size-base;
+$font-size-h2:            30px; // ~30px
+$font-size-h3:            25px; // ~24px
+$font-size-h4:            18px; // ~18px
+$font-size-h5:            17px;
 //$font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
 
 //* Unit-less `line-height` for use in components like buttons.
-//$line-height-base:        1.428571429; // 20/14
+$line-height-base:        1.35; // 20/14
 //* Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 //$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
 
 //* By default, this inherits from the `<body>`.
-//$headings-font-family:    inherit;
-//$headings-font-weight:    500;
+$headings-font-family:    "NimbusSanNov-Bol";
+$headings-font-weight:    100;
 //$headings-line-height:    1.1;
 //$headings-color:          inherit;
 
@@ -81,7 +83,7 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-//$padding-base-vertical:     6px;
+$padding-base-vertical:     11px;
 //$padding-base-horizontal:   12px;
 
 //$padding-large-vertical:    10px;
@@ -115,9 +117,9 @@
 //## Customizes the `.table` component with basic values, each used across all table variations.
 
 //* Padding for `<th>`s and `<td>`s.
-//$table-cell-padding:            8px;
+$table-cell-padding:            8px;
 //* Padding for cells in `.table-condensed`.
-//$table-condensed-cell-padding:  5px;
+$table-condensed-cell-padding:  12px;
 
 //* Default background color used for all tables.
 //$table-bg:                      transparent;
@@ -128,7 +130,7 @@
 //$table-bg-active:               $table-bg-hover;
 
 //* Border color for table and cell borders.
-//$table-border-color:            #ddd;
+$table-border-color:            $ls_bg_c_blue_dark_line;
 
 //== Buttons
 //
@@ -136,9 +138,9 @@
 
 //$btn-font-weight:                normal;
 
-//$btn-default-color:              #333;
-//$btn-default-bg:                 #fff;
-//$btn-default-border:             #ccc;
+$btn-default-color:              #19657F;
+$btn-default-bg:                 #D9E6EC;
+$btn-default-border:             #C7D9E3;
 
 //$btn-primary-color:              #fff;
 //$btn-primary-bg:                 $brand-primary;
@@ -176,7 +178,7 @@
 //* `<input>` border color
 //$input-border:                   #ccc;
 //* `<input>` border radius
-//$input-border-radius:            $border-radius-base;
+$input-border-radius:            0;
 //* Border color for inputs on focus
 //$input-border-focus:             #66afe9;
 
@@ -287,7 +289,7 @@
 //* Number of columns in the grid.
 $grid-columns:              12;
 //* Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         10px;
+$grid-gutter-width:         20px;
 // Navbar collapse
 //* Point at which the navbar becomes uncollapsed.
 //$grid-float-breakpoint:     $screen-sm-min;
@@ -721,8 +723,8 @@ $grid-gutter-width:         10px;
 //$carousel-control-opacity:                    .5;
 //$carousel-control-font-size:                  20px;
 
-//$carousel-indicator-active-bg:                #fff;
-//$carousel-indicator-border-color:             #fff;
+$carousel-indicator-active-bg:                $ls_c_blue;
+$carousel-indicator-border-color:             $ls_c_blue_light;
 
 //$carousel-caption-color:                      #fff;
 

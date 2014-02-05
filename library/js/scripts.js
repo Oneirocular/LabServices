@@ -30,6 +30,22 @@ if (!window.getComputedStyle) {
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
 
+	
+
+	var slide_nr = 0;
+
+
+	function addToCarousel() {
+		
+		var html = '<div class="item">a'+slide_nr+'<img src="http://localhost/labservices/wp-content/themes/bones-bootstrap-sass/library/images/content/product_400x400.jpg"/></div>';
+		$(".carousel-inner").append( html );
+
+		slide_nr++;
+		//$(".carousel-inner").hide();
+	}
+
+	
+$('.carousel').carousel();
 	/*
 	Responsive jQuery is a tricky thing.
 	There's a bunch of different ways to handle
@@ -37,34 +53,73 @@ jQuery(document).ready(function($) {
 	that works for you best.
 	*/
 	
-	/* getting viewport width */
-	var responsive_viewport = $(window).width();
+	// /* getting viewport width */
+	// var responsive_viewport = $(window).width();
 	
-	/* if is below 481px */
-	if (responsive_viewport < 481) {
+	// /* if is below 481px */
+	// if (responsive_viewport < 481) {
 	
-	} /* end smallest screen */
+	// } /* end smallest screen */
 	
-	/* if is larger than 481px */
-	if (responsive_viewport > 481) {
+	// /* if is larger than 481px */
+	// if (responsive_viewport > 481) {
 	
-	} /* end larger than 481px */
+	// } /* end larger than 481px */
 	
-	/* if is above or equal to 768px */
-	if (responsive_viewport >= 768) {
+	//  if is above or equal to 768px 
+	// if (responsive_viewport >= 768) {
 	
-		/* load gravatars */
-		$('.comment img[data-gravatar]').each(function(){
-			$(this).attr('src',$(this).attr('data-gravatar'));
-		});
+	// 	/* load gravatars */
+	// 	$('.comment img[data-gravatar]').each(function(){
+	// 		$(this).attr('src',$(this).attr('data-gravatar'));
+	// 	});
 		
-	}
+	// }
 	
-	/* off the bat large screen actions */
-	if (responsive_viewport > 1030) {
+	// /* off the bat large screen actions */
+	// if (responsive_viewport > 1030) {
 	
-	}
+	// }
 	
+
+	var mode;
+                
+
+    var getMediaState = function () {
+   		
+   		var responsive_viewport = $(window).width();
+
+        if ($(window).width() < 768) {
+            return 'xs';
+        }
+        else if ($(window).width() >= 768 && $(window).width() < 992) {
+            return 'sm';
+        }
+        else if ($(window).width() >= 992 && $(window).width() < 1200) {
+            return 'md';
+        }
+        else {
+            return 'lg';
+        }
+
+    };
+        
+    var checkViewport = function () {
+        if (mode !== getMediaState()) {
+            mode = getMediaState();
+
+			console.log(getMediaState());
+        }
+    };
+
+    $(window).on('resize', function () {
+        checkViewport();
+    });
+
+    checkViewport();
+        
+     
+
 	
 	// add all your scripts here
 	
