@@ -235,9 +235,9 @@ th {
   .table th {
     background-color: #fff !important; }
 
-  .btn > .caret, .navigation a > .caret,
+  .btn > .caret, .navigation li a > .caret,
   .dropup > .btn > .caret,
-  .navigation .dropup > a > .caret {
+  .navigation li .dropup > a > .caret {
     border-top-color: #000 !important; }
 
   .label {
@@ -268,7 +268,7 @@ body {
   font-family: "NimbusSanNov-Reg", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.35;
-  color: #00667d;
+  color: #196681;
   background-color: white; }
 
 input,
@@ -280,10 +280,10 @@ textarea {
   line-height: inherit; }
 
 a {
-  color: #428bca;
+  color: #00667d;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #2a6496;
+    color: #002830;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -653,7 +653,7 @@ pre {
   line-height: 1.35;
   word-break: break-all;
   word-wrap: break-word;
-  color: #00667d;
+  color: #196681;
   background-color: whitesmoke;
   border: 1px solid #cccccc;
   border-radius: 4px; }
@@ -1546,7 +1546,7 @@ legend {
   margin-bottom: 21px;
   font-size: 24px;
   line-height: inherit;
-  color: #00667d;
+  color: #196681;
   border: 0;
   border-bottom: 1px solid #e5e5e5; }
 
@@ -1804,7 +1804,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #00cefc; }
+  color: #40b2da; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -1860,7 +1860,7 @@ select[multiple].input-lg {
   top: 0;
   right: 10px; }
 
-.btn, .navigation a {
+.btn, .navigation li a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -1879,19 +1879,19 @@ select[multiple].input-lg {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none; }
-  .btn:focus, .navigation a:focus {
+  .btn:focus, .navigation li a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, .navigation a:hover, .btn:focus, .navigation a:focus {
+  .btn:hover, .navigation li a:hover, .btn:focus, .navigation li a:focus {
     color: #19657f;
     text-decoration: none; }
-  .btn:active, .navigation a:active, .btn.active, .navigation a.active {
+  .btn:active, .navigation li a:active, .btn.active, .navigation li a.active {
     outline: 0;
     background-image: none;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, .navigation a.disabled, .btn[disabled], .navigation a[disabled], fieldset[disabled] .btn, fieldset[disabled] .navigation a, .navigation fieldset[disabled] a {
+  .btn.disabled, .navigation li a.disabled, .btn[disabled], .navigation li a[disabled], fieldset[disabled] .btn, fieldset[disabled] .navigation li a, .navigation li fieldset[disabled] a {
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.65;
@@ -2038,7 +2038,7 @@ select[multiple].input-lg {
     background-color: white; }
 
 .btn-link {
-  color: #428bca;
+  color: #00667d;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0; }
@@ -2049,7 +2049,7 @@ select[multiple].input-lg {
   .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
     border-color: transparent; }
   .btn-link:hover, .btn-link:focus {
-    color: #2a6496;
+    color: #002830;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
@@ -2223,7 +2223,7 @@ input[type="button"].btn-block {
   color: white;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn, .carousel-caption .navigation a, .navigation .carousel-caption a {
+  .carousel-caption .btn, .carousel-caption .navigation li a, .navigation li .carousel-caption a {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -2448,6 +2448,9 @@ body {
 p {
   margin: 0 0 21px; }
 
+.member-quote {
+  font-size: 12px; }
+
 /* menu */
 strong, th {
   font-family: "NimbusSanNov-Bol";
@@ -2462,6 +2465,9 @@ strong, th {
   .container .section {
     padding-top: 50px;
     padding-bottom: 50px; }
+    .container .section.header {
+      padding-bottom: 34px;
+      border-bottom: 1px solid #b1cedc; }
   .container .sub-section {
     padding-top: 50px;
     padding-bottom: 20px; }
@@ -2581,7 +2587,7 @@ strong, th {
   border-bottom: 1px solid #b1cedc; }
 
 /* Buttons */
-.btn, .navigation a, .btn-arrow {
+.btn, .navigation li a, .btn-arrow {
   font-family: "NimbusSanNov-Bol";
   font-size: 15px;
   padding-top: 5px;
@@ -2590,49 +2596,49 @@ strong, th {
 .btn-arrow {
   padding-right: 33px; }
 
-.background-dark .btn, .background-dark .navigation a, .navigation .background-dark a, .background-dark .btn-arrow {
+.background-dark .btn, .background-dark .navigation li a, .navigation li .background-dark a, .background-dark .btn-arrow {
   color: #19657f;
   background-color: #b7d0db;
   border-color: #a5c2d2; }
-  .background-dark .btn:hover, .background-dark .navigation a:hover, .navigation .background-dark a:hover, .background-dark .btn:focus, .background-dark .navigation a:focus, .navigation .background-dark a:focus, .background-dark .btn:active, .background-dark .navigation a:active, .navigation .background-dark a:active, .background-dark .btn.active, .background-dark .navigation a.active, .navigation .background-dark a.active, .background-dark .btn-arrow:hover, .background-dark .btn-arrow:focus, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
+  .background-dark .btn:hover, .background-dark .navigation li a:hover, .navigation li .background-dark a:hover, .background-dark .btn:focus, .background-dark .navigation li a:focus, .navigation li .background-dark a:focus, .background-dark .btn:active, .background-dark .navigation li a:active, .navigation li .background-dark a:active, .background-dark .btn.active, .background-dark .navigation li a.active, .navigation li .background-dark a.active, .background-dark .btn-arrow:hover, .background-dark .btn-arrow:focus, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
     color: #19657f;
     background-color: #9cbecd;
     border-color: #7ca6be; }
-  .open .background-dark .btn.dropdown-toggle, .open .background-dark .navigation a.dropdown-toggle, .navigation .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
+  .open .background-dark .btn.dropdown-toggle, .open .background-dark .navigation li a.dropdown-toggle, .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
     color: #19657f;
     background-color: #9cbecd;
     border-color: #7ca6be; }
-  .background-dark .btn:active, .background-dark .navigation a:active, .navigation .background-dark a:active, .background-dark .btn.active, .background-dark .navigation a.active, .navigation .background-dark a.active, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
+  .background-dark .btn:active, .background-dark .navigation li a:active, .navigation li .background-dark a:active, .background-dark .btn.active, .background-dark .navigation li a.active, .navigation li .background-dark a.active, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
     background-image: none; }
-  .open .background-dark .btn.dropdown-toggle, .open .background-dark .navigation a.dropdown-toggle, .navigation .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
+  .open .background-dark .btn.dropdown-toggle, .open .background-dark .navigation li a.dropdown-toggle, .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
     background-image: none; }
-  .background-dark .btn.disabled, .background-dark .navigation a.disabled, .navigation .background-dark a.disabled, .background-dark .btn.disabled:hover, .background-dark .navigation a.disabled:hover, .navigation .background-dark a.disabled:hover, .background-dark .btn.disabled:focus, .background-dark .navigation a.disabled:focus, .navigation .background-dark a.disabled:focus, .background-dark .btn.disabled:active, .background-dark .navigation a.disabled:active, .navigation .background-dark a.disabled:active, .background-dark .btn.disabled.active, .background-dark .navigation a.disabled.active, .navigation .background-dark a.disabled.active, .background-dark .btn[disabled], .background-dark .navigation a[disabled], .navigation .background-dark a[disabled], .background-dark .btn[disabled]:hover, .background-dark .navigation a[disabled]:hover, .navigation .background-dark a[disabled]:hover, .background-dark .btn[disabled]:focus, .background-dark .navigation a[disabled]:focus, .navigation .background-dark a[disabled]:focus, .background-dark .btn[disabled]:active, .background-dark .navigation a[disabled]:active, .navigation .background-dark a[disabled]:active, .background-dark .btn[disabled].active, .background-dark .navigation a[disabled].active, .navigation .background-dark a[disabled].active, fieldset[disabled] .background-dark .btn, fieldset[disabled] .background-dark .navigation a, .navigation fieldset[disabled] .background-dark a, fieldset[disabled] .background-dark .btn:hover, fieldset[disabled] .background-dark .navigation a:hover, .navigation fieldset[disabled] .background-dark a:hover, fieldset[disabled] .background-dark .btn:focus, fieldset[disabled] .background-dark .navigation a:focus, .navigation fieldset[disabled] .background-dark a:focus, fieldset[disabled] .background-dark .btn:active, fieldset[disabled] .background-dark .navigation a:active, .navigation fieldset[disabled] .background-dark a:active, fieldset[disabled] .background-dark .btn.active, fieldset[disabled] .background-dark .navigation a.active, .navigation fieldset[disabled] .background-dark a.active, .background-dark .btn-arrow.disabled, .background-dark .btn-arrow.disabled:hover, .background-dark .btn-arrow.disabled:focus, .background-dark .btn-arrow.disabled:active, .background-dark .btn-arrow.disabled.active, .background-dark .btn-arrow[disabled], .background-dark .btn-arrow[disabled]:hover, .background-dark .btn-arrow[disabled]:focus, .background-dark .btn-arrow[disabled]:active, .background-dark .btn-arrow[disabled].active, fieldset[disabled] .background-dark .btn-arrow, fieldset[disabled] .background-dark .btn-arrow:hover, fieldset[disabled] .background-dark .btn-arrow:focus, fieldset[disabled] .background-dark .btn-arrow:active, fieldset[disabled] .background-dark .btn-arrow.active {
+  .background-dark .btn.disabled, .background-dark .navigation li a.disabled, .navigation li .background-dark a.disabled, .background-dark .btn.disabled:hover, .background-dark .navigation li a.disabled:hover, .navigation li .background-dark a.disabled:hover, .background-dark .btn.disabled:focus, .background-dark .navigation li a.disabled:focus, .navigation li .background-dark a.disabled:focus, .background-dark .btn.disabled:active, .background-dark .navigation li a.disabled:active, .navigation li .background-dark a.disabled:active, .background-dark .btn.disabled.active, .background-dark .navigation li a.disabled.active, .navigation li .background-dark a.disabled.active, .background-dark .btn[disabled], .background-dark .navigation li a[disabled], .navigation li .background-dark a[disabled], .background-dark .btn[disabled]:hover, .background-dark .navigation li a[disabled]:hover, .navigation li .background-dark a[disabled]:hover, .background-dark .btn[disabled]:focus, .background-dark .navigation li a[disabled]:focus, .navigation li .background-dark a[disabled]:focus, .background-dark .btn[disabled]:active, .background-dark .navigation li a[disabled]:active, .navigation li .background-dark a[disabled]:active, .background-dark .btn[disabled].active, .background-dark .navigation li a[disabled].active, .navigation li .background-dark a[disabled].active, fieldset[disabled] .background-dark .btn, fieldset[disabled] .background-dark .navigation li a, .navigation li fieldset[disabled] .background-dark a, fieldset[disabled] .background-dark .btn:hover, fieldset[disabled] .background-dark .navigation li a:hover, .navigation li fieldset[disabled] .background-dark a:hover, fieldset[disabled] .background-dark .btn:focus, fieldset[disabled] .background-dark .navigation li a:focus, .navigation li fieldset[disabled] .background-dark a:focus, fieldset[disabled] .background-dark .btn:active, fieldset[disabled] .background-dark .navigation li a:active, .navigation li fieldset[disabled] .background-dark a:active, fieldset[disabled] .background-dark .btn.active, fieldset[disabled] .background-dark .navigation li a.active, .navigation li fieldset[disabled] .background-dark a.active, .background-dark .btn-arrow.disabled, .background-dark .btn-arrow.disabled:hover, .background-dark .btn-arrow.disabled:focus, .background-dark .btn-arrow.disabled:active, .background-dark .btn-arrow.disabled.active, .background-dark .btn-arrow[disabled], .background-dark .btn-arrow[disabled]:hover, .background-dark .btn-arrow[disabled]:focus, .background-dark .btn-arrow[disabled]:active, .background-dark .btn-arrow[disabled].active, fieldset[disabled] .background-dark .btn-arrow, fieldset[disabled] .background-dark .btn-arrow:hover, fieldset[disabled] .background-dark .btn-arrow:focus, fieldset[disabled] .background-dark .btn-arrow:active, fieldset[disabled] .background-dark .btn-arrow.active {
     background-color: #b7d0db;
     border-color: #a5c2d2; }
-  .background-dark .btn .badge, .background-dark .navigation a .badge, .navigation .background-dark a .badge, .background-dark .btn-arrow .badge {
+  .background-dark .btn .badge, .background-dark .navigation li a .badge, .navigation li .background-dark a .badge, .background-dark .btn-arrow .badge {
     color: #b7d0db;
     background-color: #19657f; }
 
-.background-light .btn, .background-light .navigation a, .navigation .background-light a, .background-light .btn-arrow {
+.background-light .btn, .background-light .navigation li a, .navigation li .background-light a, .background-light .btn-arrow {
   color: #19657f;
   background-color: #d9e6ec;
   border-color: #c7d9e3; }
-  .background-light .btn:hover, .background-light .navigation a:hover, .navigation .background-light a:hover, .background-light .btn:focus, .background-light .navigation a:focus, .navigation .background-light a:focus, .background-light .btn:active, .background-light .navigation a:active, .navigation .background-light a:active, .background-light .btn.active, .background-light .navigation a.active, .navigation .background-light a.active, .background-light .btn-arrow:hover, .background-light .btn-arrow:focus, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
+  .background-light .btn:hover, .background-light .navigation li a:hover, .navigation li .background-light a:hover, .background-light .btn:focus, .background-light .navigation li a:focus, .navigation li .background-light a:focus, .background-light .btn:active, .background-light .navigation li a:active, .navigation li .background-light a:active, .background-light .btn.active, .background-light .navigation li a.active, .navigation li .background-light a.active, .background-light .btn-arrow:hover, .background-light .btn-arrow:focus, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
     color: #19657f;
     background-color: #bed4de;
     border-color: #9ebdcf; }
-  .open .background-light .btn.dropdown-toggle, .open .background-light .navigation a.dropdown-toggle, .navigation .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
+  .open .background-light .btn.dropdown-toggle, .open .background-light .navigation li a.dropdown-toggle, .navigation li .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
     color: #19657f;
     background-color: #bed4de;
     border-color: #9ebdcf; }
-  .background-light .btn:active, .background-light .navigation a:active, .navigation .background-light a:active, .background-light .btn.active, .background-light .navigation a.active, .navigation .background-light a.active, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
+  .background-light .btn:active, .background-light .navigation li a:active, .navigation li .background-light a:active, .background-light .btn.active, .background-light .navigation li a.active, .navigation li .background-light a.active, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
     background-image: none; }
-  .open .background-light .btn.dropdown-toggle, .open .background-light .navigation a.dropdown-toggle, .navigation .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
+  .open .background-light .btn.dropdown-toggle, .open .background-light .navigation li a.dropdown-toggle, .navigation li .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
     background-image: none; }
-  .background-light .btn.disabled, .background-light .navigation a.disabled, .navigation .background-light a.disabled, .background-light .btn.disabled:hover, .background-light .navigation a.disabled:hover, .navigation .background-light a.disabled:hover, .background-light .btn.disabled:focus, .background-light .navigation a.disabled:focus, .navigation .background-light a.disabled:focus, .background-light .btn.disabled:active, .background-light .navigation a.disabled:active, .navigation .background-light a.disabled:active, .background-light .btn.disabled.active, .background-light .navigation a.disabled.active, .navigation .background-light a.disabled.active, .background-light .btn[disabled], .background-light .navigation a[disabled], .navigation .background-light a[disabled], .background-light .btn[disabled]:hover, .background-light .navigation a[disabled]:hover, .navigation .background-light a[disabled]:hover, .background-light .btn[disabled]:focus, .background-light .navigation a[disabled]:focus, .navigation .background-light a[disabled]:focus, .background-light .btn[disabled]:active, .background-light .navigation a[disabled]:active, .navigation .background-light a[disabled]:active, .background-light .btn[disabled].active, .background-light .navigation a[disabled].active, .navigation .background-light a[disabled].active, fieldset[disabled] .background-light .btn, fieldset[disabled] .background-light .navigation a, .navigation fieldset[disabled] .background-light a, fieldset[disabled] .background-light .btn:hover, fieldset[disabled] .background-light .navigation a:hover, .navigation fieldset[disabled] .background-light a:hover, fieldset[disabled] .background-light .btn:focus, fieldset[disabled] .background-light .navigation a:focus, .navigation fieldset[disabled] .background-light a:focus, fieldset[disabled] .background-light .btn:active, fieldset[disabled] .background-light .navigation a:active, .navigation fieldset[disabled] .background-light a:active, fieldset[disabled] .background-light .btn.active, fieldset[disabled] .background-light .navigation a.active, .navigation fieldset[disabled] .background-light a.active, .background-light .btn-arrow.disabled, .background-light .btn-arrow.disabled:hover, .background-light .btn-arrow.disabled:focus, .background-light .btn-arrow.disabled:active, .background-light .btn-arrow.disabled.active, .background-light .btn-arrow[disabled], .background-light .btn-arrow[disabled]:hover, .background-light .btn-arrow[disabled]:focus, .background-light .btn-arrow[disabled]:active, .background-light .btn-arrow[disabled].active, fieldset[disabled] .background-light .btn-arrow, fieldset[disabled] .background-light .btn-arrow:hover, fieldset[disabled] .background-light .btn-arrow:focus, fieldset[disabled] .background-light .btn-arrow:active, fieldset[disabled] .background-light .btn-arrow.active {
+  .background-light .btn.disabled, .background-light .navigation li a.disabled, .navigation li .background-light a.disabled, .background-light .btn.disabled:hover, .background-light .navigation li a.disabled:hover, .navigation li .background-light a.disabled:hover, .background-light .btn.disabled:focus, .background-light .navigation li a.disabled:focus, .navigation li .background-light a.disabled:focus, .background-light .btn.disabled:active, .background-light .navigation li a.disabled:active, .navigation li .background-light a.disabled:active, .background-light .btn.disabled.active, .background-light .navigation li a.disabled.active, .navigation li .background-light a.disabled.active, .background-light .btn[disabled], .background-light .navigation li a[disabled], .navigation li .background-light a[disabled], .background-light .btn[disabled]:hover, .background-light .navigation li a[disabled]:hover, .navigation li .background-light a[disabled]:hover, .background-light .btn[disabled]:focus, .background-light .navigation li a[disabled]:focus, .navigation li .background-light a[disabled]:focus, .background-light .btn[disabled]:active, .background-light .navigation li a[disabled]:active, .navigation li .background-light a[disabled]:active, .background-light .btn[disabled].active, .background-light .navigation li a[disabled].active, .navigation li .background-light a[disabled].active, fieldset[disabled] .background-light .btn, fieldset[disabled] .background-light .navigation li a, .navigation li fieldset[disabled] .background-light a, fieldset[disabled] .background-light .btn:hover, fieldset[disabled] .background-light .navigation li a:hover, .navigation li fieldset[disabled] .background-light a:hover, fieldset[disabled] .background-light .btn:focus, fieldset[disabled] .background-light .navigation li a:focus, .navigation li fieldset[disabled] .background-light a:focus, fieldset[disabled] .background-light .btn:active, fieldset[disabled] .background-light .navigation li a:active, .navigation li fieldset[disabled] .background-light a:active, fieldset[disabled] .background-light .btn.active, fieldset[disabled] .background-light .navigation li a.active, .navigation li fieldset[disabled] .background-light a.active, .background-light .btn-arrow.disabled, .background-light .btn-arrow.disabled:hover, .background-light .btn-arrow.disabled:focus, .background-light .btn-arrow.disabled:active, .background-light .btn-arrow.disabled.active, .background-light .btn-arrow[disabled], .background-light .btn-arrow[disabled]:hover, .background-light .btn-arrow[disabled]:focus, .background-light .btn-arrow[disabled]:active, .background-light .btn-arrow[disabled].active, fieldset[disabled] .background-light .btn-arrow, fieldset[disabled] .background-light .btn-arrow:hover, fieldset[disabled] .background-light .btn-arrow:focus, fieldset[disabled] .background-light .btn-arrow:active, fieldset[disabled] .background-light .btn-arrow.active {
     background-color: #d9e6ec;
     border-color: #c7d9e3; }
-  .background-light .btn .badge, .background-light .navigation a .badge, .navigation .background-light a .badge, .background-light .btn-arrow .badge {
+  .background-light .btn .badge, .background-light .navigation li a .badge, .navigation li .background-light a .badge, .background-light .btn-arrow .badge {
     color: #d9e6ec;
     background-color: #19657f; }
 
@@ -2649,7 +2655,8 @@ strong, th {
 
 /* nog even goed naar kijken */
 .navigation {
-  float: right; }
+  float: right;
+  padding-top: 49px; }
   .navigation .nav {
     display: inline-block;
     list-style-type: none;
@@ -2662,30 +2669,44 @@ strong, th {
   .navigation li {
     float: left;
     padding-right: 20px; }
-  .navigation a {
-    color: #19657f;
-    background-color: #e8eff2;
-    border-color: #d3e1e7;
-    font-family: "NimbusSanNov-Reg", Helvetica, Arial, sans-serif;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 6px;
-    padding-bottom: 2px; }
-    .navigation a:hover, .navigation a:focus, .navigation a:active, .navigation a.active {
+    .navigation li a {
       color: #19657f;
-      background-color: #cedde3;
-      border-color: #abc6d1; }
-    .open .navigation a.dropdown-toggle {
-      color: #19657f;
-      background-color: #cedde3;
-      border-color: #abc6d1; }
-    .navigation a:active, .navigation a.active {
-      background-image: none; }
-    .open .navigation a.dropdown-toggle {
-      background-image: none; }
-    .navigation a.disabled, .navigation a.disabled:hover, .navigation a.disabled:focus, .navigation a.disabled:active, .navigation a.disabled.active, .navigation a[disabled], .navigation a[disabled]:hover, .navigation a[disabled]:focus, .navigation a[disabled]:active, .navigation a[disabled].active, fieldset[disabled] .navigation a, fieldset[disabled] .navigation a:hover, fieldset[disabled] .navigation a:focus, fieldset[disabled] .navigation a:active, fieldset[disabled] .navigation a.active {
       background-color: #e8eff2;
-      border-color: #d3e1e7; }
-    .navigation a .badge {
-      color: #e8eff2;
-      background-color: #19657f; }
+      border-color: #d3e1e7;
+      font-family: "NimbusSanNov-Reg", Helvetica, Arial, sans-serif;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 6px;
+      padding-bottom: 2px;
+      text-transform: lowercase; }
+      .navigation li a:hover, .navigation li a:focus, .navigation li a:active, .navigation li a.active {
+        color: #19657f;
+        background-color: #cedde3;
+        border-color: #abc6d1; }
+      .open .navigation li a.dropdown-toggle {
+        color: #19657f;
+        background-color: #cedde3;
+        border-color: #abc6d1; }
+      .navigation li a:active, .navigation li a.active {
+        background-image: none; }
+      .open .navigation li a.dropdown-toggle {
+        background-image: none; }
+      .navigation li a.disabled, .navigation li a.disabled:hover, .navigation li a.disabled:focus, .navigation li a.disabled:active, .navigation li a.disabled.active, .navigation li a[disabled], .navigation li a[disabled]:hover, .navigation li a[disabled]:focus, .navigation li a[disabled]:active, .navigation li a[disabled].active, fieldset[disabled] .navigation li a, fieldset[disabled] .navigation li a:hover, fieldset[disabled] .navigation li a:focus, fieldset[disabled] .navigation li a:active, fieldset[disabled] .navigation li a.active {
+        background-color: #e8eff2;
+        border-color: #d3e1e7; }
+      .navigation li a .badge {
+        color: #e8eff2;
+        background-color: #19657f; }
+
+.sub-navigation {
+  padding-top: 4px; }
+  .sub-navigation .sub-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+  .sub-navigation li {
+    float: left;
+    padding-right: 20px; }
+    .sub-navigation li a {
+      text-transform: lowercase;
+      text-decoration: none; }

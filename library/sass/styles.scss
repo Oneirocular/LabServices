@@ -3,19 +3,6 @@ $side_padding: 45px;
 $carousel_indicator_radius: 8px;
 $carousel_indicator_distance: 5px;
 
-/* fonts */
-$font-family: "NimbusSanNov-Reg";
-$font-weight-base: 100;
-
-$font-color-light: #3F8C9E;
-
-// Btn colors
-$btn-default-color: #19657F;
-$btn-default-bg: #D9E6EC;
-$btn-default-border: #C7D9E3;
-
-$btn-menu-bg-color: #E8EFF2;
-$btn-menu-border:#d3e1e7;
 
 // Colors
 $ls_c_blue: #00667D;
@@ -26,6 +13,22 @@ $ls_bg_c_blue_dark_line: darken($ls_bg_c_blue_dark, 10%);
 
 $ls_bg_c_blue_light: #EBF3F5;
 $ls_bg_c_blue_light_line: darken($ls_bg_c_blue_light, 10%);
+
+/* fonts */
+$font-family: "NimbusSanNov-Reg";
+$font-weight-base: 100;
+$font-color:$ls_c_blue;
+$font-color-light: #3F8C9E;
+
+// Btn colors
+$btn-default-color: #19657F;
+$btn-default-bg: #D9E6EC;
+$btn-default-border: #C7D9E3;
+
+$btn-menu-bg-color: #E8EFF2;
+$btn-menu-border:#d3e1e7;
+
+
 
 // Urls
 $pointer_url: "../images/pointers/";
@@ -93,6 +96,10 @@ h1 {
   margin: 0 0 $line-height-computed;
 }
 
+.member-quote {
+	font-size:12px;
+}
+
 
 
 /* menu */
@@ -155,6 +162,12 @@ strong, th {
 	.section {
 		padding-top:50px;
 		padding-bottom:50px;
+
+		&.header {
+			padding-bottom:34px;
+			border-bottom: 1px solid $ls_bg_c_blue_dark_line;
+
+		}
 	}
 	.sub-section {
 		padding-top:50px;
@@ -425,6 +438,7 @@ strong, th {
 .navigation {
 
 	float:right;
+	padding-top:49px;
 
 	.nav {
 		display: inline-block;
@@ -432,51 +446,59 @@ strong, th {
 		padding:0;
 		margin:0;
 
-	}
+	} 
+
 
 	.language {
-				padding:0;
+		padding:0;
 		margin:0;
 		display:inline-block;
 	}
 	li {
 		float:left;
 		padding-right:20px;
+
+		a {
+
+			@extend .btn;
+			@include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
+
+			font-family:$font-family-sans-serif;
+			padding-left:15px;
+			padding-right:15px;
+			padding-top:6px;
+			padding-bottom:2px;
+
+			text-transform: lowercase;
+
+
+		}
 	}
 
-	a {
 
-		@extend .btn;
-		 @include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
-
-		font-family:$font-family-sans-serif;
-		padding-left:15px;
-		padding-right:15px;
-		padding-top:6px;
-		padding-bottom:2px;
-
-	// 	display: inline-block;
- //  margin-bottom: 0; // For input.btn
- //  font-weight: $btn-font-weight;
- //  text-align: center;
- //  vertical-align: middle;
- //  cursor: pointer;
- //  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
- //  border: 1px solid transparent;
- //  white-space: nowrap;
-
-
- //    @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
-	// @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
-
- //  	font-family:$headings-font-family;
-	// font-size:15px;
-	// padding-top:5px;
-	// padding-bottom:1px;
-
-	}
 }
 
+.sub-navigation {
+
+	padding-top:4px;
+
+	.sub-nav {
+		list-style-type:none;
+		padding:0;
+		margin:0;
+	}
+
+	li {
+		float:left;
+		padding-right:20px;
+
+		a {
+			text-transform: lowercase;
+			text-decoration: none;
+
+		}
+	}
+}
 
 .col-sm-12 {
 			//@include test-mode;

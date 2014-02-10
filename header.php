@@ -52,12 +52,10 @@
 
 		<div class="container">
 			<header class="row header section">
-					<div class="col-sm-3 ">
-								<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					logo
-
-				</div>
-					<div class="col-sm-9">
+					<div class="col-sm-4 ">
+					<img src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" />
+					</div>
+					<div class="col-sm-8">
 					<nav class="navigation" role="navigation">
 						<?php bones_main_nav(); ?>
 						<!-- <div class="language">eng</div> -->
