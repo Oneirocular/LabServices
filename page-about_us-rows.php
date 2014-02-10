@@ -7,7 +7,7 @@
 if( get_field('text_rows', $child_page_object->ID) )
 	{
 
-		$i = 0;
+		$j = 0;
 
 		while( has_sub_field('text_rows', $child_page_object->ID) )
 		{ 
@@ -19,7 +19,7 @@ if( get_field('text_rows', $child_page_object->ID) )
 
 			// generate the html
 			// Check if this row needs to be mirrored
-			if ($i % 2 == 0) {
+			if ($j % 2 == 0) {
 				$mirrored = true;
 			} else {
 				$mirrored = false;
@@ -54,7 +54,7 @@ if( get_field('text_rows', $child_page_object->ID) )
 
 			<?
 
-			$i++;
+			$j++;
 		}
 
 	}

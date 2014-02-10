@@ -8,7 +8,7 @@
 if( get_field('team_members', $child_page_object->ID) )
 	{
 
-		$i = 0;
+		$j = 0;
 
 		while( has_sub_field('team_members', $child_page_object->ID) )
 		{ 
@@ -35,7 +35,7 @@ if( get_field('team_members', $child_page_object->ID) )
 
 			<?
 
-			$i++;
+			$j++;
 		}
 
 	}

@@ -14,8 +14,11 @@ $ls_bg_c_blue_dark_line: darken($ls_bg_c_blue_dark, 10%);
 $ls_bg_c_blue_light: #EBF3F5;
 $ls_bg_c_blue_light_line: darken($ls_bg_c_blue_light, 10%);
 
+$ls_bg_c_box:#3C89B0;
+
 /* fonts */
 $font-family: "NimbusSanNov-Reg";
+//$font-family: Helvetica;
 $font-weight-base: 100;
 $font-color:$ls_c_blue;
 $font-color-light: #3F8C9E;
@@ -97,7 +100,8 @@ h1 {
 }
 
 .member-quote {
-	font-size:12px;
+	font-size:15px;
+	color:#ffffff;
 }
 
 
@@ -433,6 +437,40 @@ strong, th {
 
 
 
+/* About us */
+
+/* Team */
+$triangle_width:19;
+$triangle_height:14;
+$member-quote-padding:15;
+
+.member-quote {
+
+	margin-top:$triangle_height+px;
+	background-color:$ls_bg_c_box;
+	padding:$member-quote-padding+px;
+
+
+	:before {
+		position:absolute;
+		content:'';
+		margin-top:-($member-quote-padding+$triangle_height)+px;
+
+
+		border-left: ($triangle_width/2)+px solid transparent;
+		border-right: ($triangle_width/2)+px solid transparent;
+
+		// /($triangle_width + $triangle_width) * 0.866%
+		border-bottom: ($triangle_height)+px solid $ls_bg_c_box;
+
+
+
+	}
+
+	p {
+		margin-bottom:0px;
+	}
+}
 
 /* nog even goed naar kijken */
 .navigation {
@@ -499,6 +537,7 @@ strong, th {
 		}
 	}
 }
+
 
 .col-sm-12 {
 			//@include test-mode;

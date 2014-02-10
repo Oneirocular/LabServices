@@ -2449,7 +2449,8 @@ p {
   margin: 0 0 21px; }
 
 .member-quote {
-  font-size: 12px; }
+  font-size: 15px;
+  color: #ffffff; }
 
 /* menu */
 strong, th {
@@ -2652,6 +2653,22 @@ strong, th {
   background-size: contain;
   background-image: url("../images/icons/icon_arrow-right.svg");
   margin-top: 0px; }
+
+/* About us */
+/* Team */
+.member-quote {
+  margin-top: 14px;
+  background-color: #3c89b0;
+  padding: 15px; }
+  .member-quote :before {
+    position: absolute;
+    content: '';
+    margin-top: -29px;
+    border-left: 9.5px solid transparent;
+    border-right: 9.5px solid transparent;
+    border-bottom: 14px solid #3c89b0; }
+  .member-quote p {
+    margin-bottom: 0px; }
 
 /* nog even goed naar kijken */
 .navigation {
