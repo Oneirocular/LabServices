@@ -182,6 +182,11 @@ function bones_theme_support() {
 	// default thumb size
 	set_post_thumbnail_size(125, 125, true);
 
+
+	// slider
+	add_image_size( 'main-slider', 1160, 560, true );
+
+
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
 		array(

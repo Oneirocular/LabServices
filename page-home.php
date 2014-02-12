@@ -2,18 +2,81 @@
 /*
 Template Name: Home
 */
-?>
 
-<?php get_header(); ?>
+get_header(); 
+
+
+
+
+
+
+
+
+?>
 
 
 
 <!-- Home Slider -->
-<div class="row section background-dark">
+<div class="row section main-slider background-dark">
 	<div class="col-sm-12">
 
+	<?php
+    if( get_field('main_slider') )
+    {
 
-	
+    	$nr_of_slides = count(get_field('main_slider'));
+    ?>
+
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+      <div class="carousel-inner">
+
+      	<?php
+        while( has_sub_field('main_slider') )
+        { 
+        	if (!isset($state)) {
+        		$state = "active";
+        	} else {
+        		$state = '';
+        	}
+
+        	$slide_image_object = get_sub_field('image');
+        	$slide_image = $slide_image_object['sizes']['main-slider'];
+
+
+
+       	?>
+        <div class="item <?php echo $state; ?>">
+         <img src="<?php echo $slide_image; ?>"/>
+        </div>
+        <?php
+    	}
+    	?>
+      </div>
+
+
+     <!-- Indicators -->
+      <ol class="carousel-indicators">
+      	<?php 
+      	
+      	for ($i=0; $i < $nr_of_slides; $i++) {
+      		
+      	?> 
+      		
+        <li data-target="#myCarousel" data-slide-to="<?php echo $i; ?>"></li>
+
+        <?php } ?>
+      </ol>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><div class="icon_arrow"></div></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><div class="icon_arrow"></div></a>
+  
+    </div>
+
+    <?php
+   	}
+   	?>
+
 	</div>
 </div>
 
@@ -32,6 +95,8 @@ Template Name: Home
 			$field_title = get_sub_field('title');
 			$field_text = get_sub_field('text');
 			$field_button_text = get_sub_field('button');
+			$field_button_target = get_sub_field('target');
+
 	 
 			// generate the html
 			?>
@@ -47,7 +112,7 @@ Template Name: Home
 					<h3><? echo $field_title; ?></h3>
 					<? echo $field_text; ?>
 
-					<a class="btn btn-arrow btn-sm" href="#" role="button"><? echo $field_button_text; ?></a>
+					<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>" role="button"><? echo $field_button_text; ?></a>
 
 				</div>
 			</div>

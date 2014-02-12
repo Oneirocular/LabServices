@@ -72,24 +72,62 @@ $product_body = $post->post_content;
 				</div>
 			</div>
 
-
-
 			<?
 
 			}
-
-
 
 		?>
 
 	</div>
 
+
+
+
 	<!-- Accordeon -->
-	<div class="row">
-		<div class="col-sm-12">
-				accordeon
-		</div>
-	</div>
+
+	<ul class="ls-accordeon">
+
+		<!-- Row -->
+		<li class="ls-accordeon-row">
+
+			<div class="row ls-accordeon-header">
+				<div class="col-sm-12">
+					<h4>Product specification</h4>
+				</div>
+			</div>
+
+			<div class="row ls-accordeon-container">
+				<div class="ls-accordeon-container-content col-sm-12">
+					<div class="row">
+						<div class="col-sm-12">sdf</div>
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<!-- Row -->
+		<li class="ls-accordeon-row">
+
+			<div class="row ls-accordeon-header">
+				<div class="col-sm-12">
+					<h4>Related products</h4>
+				</div>
+			</div>
+
+			<div class="row ls-accordeon-container">
+				<div class="ls-accordeon-container-content col-sm-12">
+					<div class="row">
+						<div class="col-sm-12">sdf</div>
+					</div>
+				</div>
+			</div>
+		</li>
+
+	</ul>
+			
+
+
+
 
 	</div>
 </div>

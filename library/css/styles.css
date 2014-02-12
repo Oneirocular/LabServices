@@ -2465,10 +2465,13 @@ strong, th {
       padding-right: 45px; } }
   .container .section {
     padding-top: 50px;
-    padding-bottom: 50px; }
+    padding-bottom: 50px;
+    /* bottom-padding exceptions */ }
     .container .section.header {
       padding-bottom: 34px;
       border-bottom: 1px solid #b1cedc; }
+    .container .section.main-slider {
+      padding-bottom: 18px; }
   .container .sub-section {
     padding-top: 50px;
     padding-bottom: 20px; }
@@ -2715,16 +2718,16 @@ strong, th {
         color: #e8eff2;
         background-color: #19657f; }
 
-.product-groups {
+.ls-accordeon {
   list-style-type: none;
   padding: 0;
   margin: 0; }
-  .product-groups li .header {
+  .ls-accordeon li .ls-accordeon-header {
     border-bottom: 1px solid #b1cedc; }
-  .product-groups .product-group .products {
+  .ls-accordeon .ls-accordeon-row .ls-accordeon-container {
     overflow: hidden;
     margin-bottom: 10px; }
-    .product-groups .product-group .products .product-group-container {
+    .ls-accordeon .ls-accordeon-row .ls-accordeon-container .ls-accordeon-container-content {
       padding-top: 20px;
       padding-bottom: 10px; }
 
@@ -2830,6 +2833,39 @@ strong, th {
 
 	/* The url is relative to the document, not to the css file! */
 /* Prefer absolute urls to avoid confusion. */
+/* Carousel */
+.carousel-indicators {
+  bottom: -60px; }
+
+.carousel-inner {
+  margin-bottom: 60px; }
+
+.carousel-control {
+  position: absolute;
+  top: auto;
+  left: auto;
+  padding: 10px;
+  bottom: -54px;
+  width: auto;
+  opacity: 1;
+  filter: none;
+  background-color: none;
+  text-align: center;
+  text-shadow: none; }
+  .carousel-control .icon_arrow {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain; }
+  .carousel-control.left {
+    background-image: none; }
+    .carousel-control.left .icon_arrow {
+      background-image: url("../images/icons/icon_arrow-left.svg"); }
+  .carousel-control.right {
+    background-image: none; }
+    .carousel-control.right .icon_arrow {
+      background-image: url("../images/icons/icon_arrow-right.svg"); }
+
 .col-centered {
   float: none;
   margin: 0 auto; }

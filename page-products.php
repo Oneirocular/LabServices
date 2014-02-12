@@ -180,7 +180,7 @@ robotic system</p>
 		<div class="row">
 		</div>
 
-		<ul class="product-groups">
+		<ul class="ls-accordeon">
 
 			<?php
 				if (!empty($ls_distribution_products)) {
@@ -189,18 +189,18 @@ robotic system</p>
 
 						?>
 
-						<li class="product-group">
+						<li class="ls-accordeon-row">
 
-							<div class="row header">
+							<div class="row ls-accordeon-header">
 								<div class="col-sm-12">
 									<h4><?php echo $product_group['product_group_label']." (".count($product_group['product_group_products']).")"; ?></h4>
 								</div>
 							</div>
 
 							<!-- start products -->
-							<div class="row products">
+							<div class="row ls-accordeon-container">
 
-								<div class="product-group-container col-sm-12">
+								<div class="ls-accordeon-container-content col-sm-12">
 									<div class="row">
 								<?
 

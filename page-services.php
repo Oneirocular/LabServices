@@ -41,7 +41,8 @@ Template Name: Services
 			$field_title = get_sub_field('title');
 			$field_text = get_sub_field('text');
 			$field_button_text = get_sub_field('button');
-	 
+	 		$field_button_target = get_sub_field('target');
+
 			// generate the html
 			?>
 
@@ -56,7 +57,7 @@ Template Name: Services
 					<h3><? echo $field_title; ?></h3>
 					<? echo $field_text; ?>
 
-					<a class="btn btn-arrow btn-sm" href="#" role="button"><? echo $field_button_text; ?></a>
+					<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>" role="button"><? echo $field_button_text; ?></a>
 
 				</div>
 			</div>

@@ -34,22 +34,22 @@ jQuery(document).ready(function($) {
 
 
 
-	/* PRODUCT GROUP ACCORDEON */
-	init_productgroup_accordeon();
+	/* ACCORDEON */
+	init_accordeon();
 
 	var closed_height = 0;
 	var bottom_margin = 21;
 	var open_duration = 300;
 	var close_duration = 200;
 
-	function init_productgroup_accordeon() {
+	function init_accordeon() {
 
-		$('.product-group .header').click(function(e) {
+		$('.ls-accordeon-row .ls-accordeon-header').click(function(e) {
 			var parent = $(this).parent();
 
 			if ($(parent).hasClass('closed')) {
 				// Open row
-				var original_height = $(parent).find('.product-group-container').height();
+				var original_height = $(parent).find('.ls-accordeon-container-content').height();
 				toggle(parent,original_height,open_duration);
 			} else {
 				// Close row
@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
 	// Handles the actual opening and closing
 	function toggle(el, height, duration){
 
-		$(el).children('.products').stop().animate(
+		$(el).children('.ls-accordeon-container').stop().animate(
 			{
 				height:height+'px'
 			},
