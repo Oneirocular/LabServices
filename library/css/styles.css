@@ -2782,6 +2782,28 @@ strong, th {
   to {
     -webkit-transform: rotate(360deg); } }
 
+.product_features .box {
+  border-top: 1px solid #1b658b;
+  border-bottom: 1px solid #1b658b;
+  background-color: #3c89b0;
+  color: #ffffff; }
+  .product_features .box h3 {
+    padding-top: 26px;
+    padding-left: 23px;
+    padding-right: 23px; }
+  .product_features .box ul {
+    border-top: 1px solid #1b658b;
+    padding: 0px;
+    margin: 0px; }
+    .product_features .box ul li {
+      padding-top: 17px;
+      padding-bottom: 17px;
+      padding-left: 23px;
+      padding-right: 23px;
+      border-bottom: 1px solid #367899; }
+    .product_features .box ul li:last-child {
+      border-bottom: none; }
+
 	/*
 .pointer, .pointer-small {
   	width: 46px;
@@ -2808,3 +2830,6 @@ strong, th {
 
 	/* The url is relative to the document, not to the css file! */
 /* Prefer absolute urls to avoid confusion. */
+.col-centered {
+  float: none;
+  margin: 0 auto; }
