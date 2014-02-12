@@ -163,6 +163,8 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'twitter-bootstrap-js' );
 		wp_enqueue_script( 'bones-js' );
+		wp_localize_script( 'bones-js', 'constant_vars', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+
 
 	}
 }

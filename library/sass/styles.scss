@@ -516,6 +516,58 @@ $member-quote-padding:15;
 
 }
 
+
+
+
+.product-groups {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+
+	li {
+		.header {
+			border-bottom:1px solid $ls_bg_c_blue_dark_line;
+		}
+	}
+
+
+
+
+	.product-group {
+
+		.products {
+
+			overflow: hidden;
+			margin-bottom:10px;
+
+			.product-group-container {
+				padding-top:20px;
+				padding-bottom:10px;
+
+			}
+
+		}
+
+		&.closed .products {
+			
+		}
+
+		&.opened .products {
+			
+		}
+
+
+	}
+
+
+
+
+	// &.opened .products {
+	// 	height: auto;
+	// }
+}
+
+
 .sub-navigation {
 
 	padding-top:4px;
@@ -539,6 +591,22 @@ $member-quote-padding:15;
 }
 
 
+.jobs {
+	.row {
+		padding-top:20px;
+		padding-bottom:30px;
+
+		border-top:1px solid $ls_bg_c_blue_dark_line;
+	}
+}
+
 .col-sm-12 {
 			//@include test-mode;
+}
+
+
+#search_products {
+	width:20px;
+	height:20px;
+	background-color:#ff0000;
 }

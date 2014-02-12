@@ -32,6 +32,101 @@ jQuery(document).ready(function($) {
 
 	
 
+
+
+	/* PRODUCT GROUP ACCORDEON */
+	init_productgroup_accordeon();
+
+	var closed_height = 0;
+	var bottom_margin = 21;
+	var open_duration = 300;
+	var close_duration = 200;
+
+	function init_productgroup_accordeon() {
+
+		$('.product-group .header').click(function(e) {
+			var parent = $(this).parent();
+
+			if ($(parent).hasClass('closed')) {
+				// Open row
+				var original_height = $(parent).find('.product-group-container').height();
+				toggle(parent,original_height,open_duration);
+			} else {
+				// Close row
+				toggle(parent,closed_height,close_duration);
+			}
+
+		});
+
+	}
+
+	// Handles the actual opening and closing
+	function toggle(el, height, duration){
+
+		$(el).children('.products').stop().animate(
+			{
+				height:height+'px'
+			},
+			{
+				queue:false,
+				duration:duration,
+				complete:function(){
+
+					if (height == closed_height) {
+						$(el).addClass('closed'); 
+
+					} else if (height > closed_height) {
+						$(el).removeClass('closed'); 
+					}
+
+				}
+			}
+		);
+	}
+
+
+
+	/* SEARCHING */
+
+	$("#search_products").click(function(e) {
+		var query_value = $("#product_search_field").val();
+		var search_result_container = $("#search_results");
+		var search_response_container = $("#search_response");
+		console.log('search it: '+query_value);
+
+		 $.ajax({
+		  	type:'GET',
+		  	data:{action:'search_product_database',query_value:query_value},
+		  	url: constant_vars.ajax_url,
+		  	success: function(returnvalue) {
+		  		console.log(returnvalue);
+		  		var return_object = JSON.parse(returnvalue);
+
+		  		search_result_container.empty();
+		  		search_response_container.empty();
+
+		  		if (return_object.state == "succes") {
+		  			
+		  			search_response_container.append("<h3>"+return_object.response.title+"</h3><p>"+return_object.response.description+"</p>");
+		  			search_result_container.append(return_object.html);
+
+		  		} else if (return_object.state == "failed") {
+
+		  			search_response_container.append("<h3>"+return_object.response.title+"</h3><p>"+return_object.response.description+"</p>");
+		  			//search_response_container.append(return_object.html);
+
+		  		}
+
+		  		console.log(return_object);
+
+		 	}
+		  });
+
+	});
+
+
+	/* CARROUSEL */
+
 	var slide_nr = 0;
 
 

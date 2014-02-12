@@ -12,6 +12,7 @@ Template Name: About Us
 	$args = array(
 		'numberposts' => -1,
 		'order' => 'ASC',
+		'post_status' => 'publish',
 		'post_parent' => $post->ID
 	);
 
@@ -142,6 +143,8 @@ foreach ($child_pages as $child_page_id => $child_page_object) {
 						include(locate_template('page-about_us-rows.php')); // because get_template_part doesn;t send vars
 					} else if ($child_page_label == "team") {
 						include(locate_template('page-about_us-team.php')); // because get_template_part doesn;t send vars
+					} else if ($child_page_label == "jobs") {
+						include(locate_template('page-about_us-jobs.php')); // because get_template_part doesn;t send vars
 					}
 					?>
 				</div>

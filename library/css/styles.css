@@ -2715,6 +2715,19 @@ strong, th {
         color: #e8eff2;
         background-color: #19657f; }
 
+.product-groups {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .product-groups li .header {
+    border-bottom: 1px solid #b1cedc; }
+  .product-groups .product-group .products {
+    overflow: hidden;
+    margin-bottom: 10px; }
+    .product-groups .product-group .products .product-group-container {
+      padding-top: 20px;
+      padding-bottom: 10px; }
+
 .sub-navigation {
   padding-top: 4px; }
   .sub-navigation .sub-nav {
@@ -2727,3 +2740,13 @@ strong, th {
     .sub-navigation li a {
       text-transform: lowercase;
       text-decoration: none; }
+
+.jobs .row {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-top: 1px solid #b1cedc; }
+
+#search_products {
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000; }
