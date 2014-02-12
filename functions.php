@@ -180,6 +180,55 @@ function bones_wpsearch($form) {
 } // don't remove this bracket!
 
 
+function show_ls_carousel($slides) {
+	echo ls_carousel($slides);
+}
+
+function ls_carousel($slides) {
+
+	$nr_of_slides = count($slides);
+
+	$html = '';
+
+  	$html .= '		<div id="myCarousel" class="carousel slide" data-ride="carousel">';
+  	$html .= '			<div class="carousel-inner">';
+
+  	foreach ($slides as $slide) {
+
+  		if (!isset($state)) {
+            $state = "active";
+        } else {
+            $state = '';
+        }
+
+    	$html .= '				<div class="item '.$state.'">';
+        $html .= '					'.$slide;
+        $html .= '				</div>';
+  	}
+
+  	$html .= '			</div>';
+
+  	// Indicator
+    $html .= '			<ol class="carousel-indicators">';
+
+    for ($i=0; $i < $nr_of_slides; $i++) {
+    	$html .= '				<li data-target="#myCarousel" data-slide-to="'.$i.'"></li>';
+    }
+
+    $html .= '			</ol>';
+
+  	// Controls
+  	$html .= '			<a class="left carousel-control" href="#myCarousel" data-slide="prev"><div class="icon_arrow"></div></a>';
+    $html .= '			<a class="right carousel-control" href="#myCarousel" data-slide="next"><div class="icon_arrow"></div></a>';
+  	$html .= '		</div>';
+
+
+  	return $html;
+
+  
+
+}
+
 
 
 ?>

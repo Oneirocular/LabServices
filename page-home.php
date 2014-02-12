@@ -23,59 +23,24 @@ get_header();
 	<?php
     if( get_field('main_slider') )
     {
-
-    	$nr_of_slides = count(get_field('main_slider'));
-    ?>
-
-   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-
-      <div class="carousel-inner">
-
-      	<?php
+    	$slides = array();
         while( has_sub_field('main_slider') )
         { 
-        	if (!isset($state)) {
-        		$state = "active";
-        	} else {
-        		$state = '';
-        	}
 
         	$slide_image_object = get_sub_field('image');
         	$slide_image = $slide_image_object['sizes']['main-slider'];
+        	$slides[] = '<img src="'.$slide_image.'"/>';
+
+        }
+
+        show_ls_carousel($slides);
+
+    }
 
 
-
-       	?>
-        <div class="item <?php echo $state; ?>">
-         <img src="<?php echo $slide_image; ?>"/>
-        </div>
-        <?php
-    	}
-    	?>
-      </div>
+    ?>
 
 
-     <!-- Indicators -->
-      <ol class="carousel-indicators">
-      	<?php 
-      	
-      	for ($i=0; $i < $nr_of_slides; $i++) {
-      		
-      	?> 
-      		
-        <li data-target="#myCarousel" data-slide-to="<?php echo $i; ?>"></li>
-
-        <?php } ?>
-      </ol>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><div class="icon_arrow"></div></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><div class="icon_arrow"></div></a>
-  
-    </div>
-
-    <?php
-   	}
-   	?>
 
 	</div>
 </div>

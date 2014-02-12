@@ -8,7 +8,7 @@ $product_body = $post->post_content;
 ?>
 
 <!-- Home Slider -->
-<div class="row section background-dark">
+<div class="row section main-slider background-dark">
 	<div class="col-sm-12">
 
 		<div class="row">
@@ -17,9 +17,26 @@ $product_body = $post->post_content;
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row main-slider">
 			<div class="col-sm-12">
-				slider
+			<?php
+		    if( get_field('main_slider') )
+		    {
+		    	$slides = array();
+		        while( has_sub_field('main_slider') )
+		        { 
+
+		        	$slide_image_object = get_sub_field('image');
+		        	$slide_image = $slide_image_object['sizes']['main-slider'];
+		        	$slides[] = '<img src="'.$slide_image.'"/>';
+
+		        }
+
+		        show_ls_carousel($slides);
+
+		    }
+
+			?>
 			</div>
 		</div>
 	
