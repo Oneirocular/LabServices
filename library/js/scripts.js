@@ -87,43 +87,93 @@ jQuery(document).ready(function($) {
 
 
 	/* SEARCHING */
+var searchRequest; // this variable holds the search request
 
-	$("#search_products").click(function(e) {
+	$("#search_products_icon").click(function(e) {
+
 		var query_value = $("#product_search_field").val();
+
+		do_search(query_value);
+
+	});
+
+
+
+
+
+	/* Searching */
+
+
+	$('#product_search_field').on('keyup', function(e) {
+
+
+			// Abort the current search request
+			if (typeof searchRequest != 'undefined') {
+				searchRequest.abort();
+				hide_loader();
+			}
+
+			// Set Timeout
+			clearTimeout(jQuery.data(this, 'timer'));
+
+			// Set Search String
+			var search_string = $("#product_search_field").val();
+
+			// Do Search
+			if (search_string != '' && search_string.length >= 3) {
+				jQuery(this).data('timer', setTimeout(function() { do_search(search_string); }, 200));
+			};
+		});
+
+
+
+	function do_search(the_query) {
+
+		show_loader();
+
+
 		var search_result_container = $("#search_results");
 		var search_response_container = $("#search_response");
-		console.log('search it: '+query_value);
 
-		 $.ajax({
+
+		 searchRequest = $.ajax({
 		  	type:'GET',
-		  	data:{action:'search_product_database',query_value:query_value},
+		  	data:{action:'search_product_database',query_value:the_query},
 		  	url: constant_vars.ajax_url,
 		  	success: function(returnvalue) {
-		  		console.log(returnvalue);
+
+		  		hide_loader();
+
 		  		var return_object = JSON.parse(returnvalue);
 
 		  		search_result_container.empty();
 		  		search_response_container.empty();
 
 		  		if (return_object.state == "succes") {
-		  			
+
 		  			search_response_container.append("<h3>"+return_object.response.title+"</h3><p>"+return_object.response.description+"</p>");
 		  			search_result_container.append(return_object.html);
 
 		  		} else if (return_object.state == "failed") {
 
 		  			search_response_container.append("<h3>"+return_object.response.title+"</h3><p>"+return_object.response.description+"</p>");
-		  			//search_response_container.append(return_object.html);
 
 		  		}
 
-		  		console.log(return_object);
+		 	},
 
-		 	}
 		  });
+	}
 
-	});
+	function show_loader() {
+		$("#search_products_icon").fadeOut(100);
+		$("#icon_loader").fadeIn(100);
+	}
 
+	function hide_loader() {
+		$("#icon_loader").fadeOut(200);
+		$("#search_products_icon").fadeIn(200);
+	}
 
 	/* CARROUSEL */
 
@@ -203,7 +253,7 @@ $('.carousel').carousel();
         if (mode !== getMediaState()) {
             mode = getMediaState();
 
-			console.log(getMediaState());
+			//console.log(getMediaState());
         }
     };
 

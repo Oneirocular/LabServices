@@ -605,8 +605,89 @@ $member-quote-padding:15;
 }
 
 
-#search_products {
-	width:20px;
-	height:20px;
-	background-color:#ff0000;
+#search_products_icon {
+		position:absolute;
+
+	margin-left:-5px;
+	margin-top:6px;
+	width:35px;
+	height:35px;
+
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	background-image: url($icon_url+"icon_search_glass.svg");
+
+
+	/* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+    -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+// }
 }
+
+
+#icon_loader {
+	display:none;
+	position:absolute;
+	margin-left:-4px;
+	margin-top:5.5px;
+	width:30px;
+	height:30px;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	background-image: url($icon_url+"icon_loading.svg");
+
+		-webkit-animation: spinnerrotation 1.5s linear infinite; /* Safari and Chrome */
+
+	/* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+    -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+// }
+}
+
+	@-webkit-keyframes spinnerrotation /* Safari and Chrome */
+	{
+		from { -webkit-transform:rotate(0deg); }
+		to { -webkit-transform:rotate(360deg); }
+	}
+
+
+/*
+.pointer, .pointer-small {
+  	width: 46px;
+	height: 64px;
+
+	@media (min-width: $screen-sm-min) {
+		width: 30px;
+		height: 42px;
+  	}
+
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.pointer-small {
+	width: 30px;
+	height: 42px;
+}
+
+
+.no-svg .pointer-products {
+	background-image: url($pointer_url+"pointer_products.png");
+
+
+	/* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+//     -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+// }
+// .pointer-products {
+// 	background-image: url($pointer_url+"pointer_products.svg");
+// }
+
+// .pointer-services {
+// 	background-image: url($pointer_url+"pointer_products.svg");
+// }
+
+// */
+

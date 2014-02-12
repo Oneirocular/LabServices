@@ -256,7 +256,7 @@ robotic system</p>
 				<input type="text" id="product_search_field" class="form-control" placeholder="i.e. 'banff 430 pressure system'">
 			</div>
 			<div class="col-md-2">
-				<div id="search_products" ></div>
+				<div id="search_products_icon" ></div><div id="icon_loader" ></div>
 			</div>
 		</div>
 
