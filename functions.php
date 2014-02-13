@@ -184,6 +184,31 @@ function bones_wpsearch($form) {
 
 
 
+/* Ls custom gravity forms submit button */
+add_filter("gform_submit_button", "form_submit_button", 10, 2);
+
+function form_submit_button($button, $form){
+	return '<a class="btn button btn-arrow btn-sm" id="gform_submit_button_'.$form["id"].'" href="#" onclick="document.getElementById(\'gform_'.$form['id'].'\').submit();" role="button">'.$form['button']['text'].'</a>';
+}
+
+
+
+
+	add_action( 'wp_ajax_nopriv_get_maps_marker', 'get_maps_marker');
+	add_action( 'wp_ajax_get_maps_marker', 		  'get_maps_marker' );
+	/*GET markers from all non filled vacatures*/
+	function get_maps_marker(){
+
+
+		$post_id = $_GET['post_id'];
+
+		echo json_encode(get_field('office_location', $post_id));
+
+		exit();
+
+	}
+
+
 
 
 function show_ls_product_carousel($products_array, $nr_of_visible = 4) {

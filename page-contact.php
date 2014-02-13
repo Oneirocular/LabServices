@@ -1,13 +1,14 @@
 <?php
 /*
-Template Name: Home
+Template Name: Contact
 */
 
 get_header(); 
 
 
-
-
+// Get the form
+$page_form_object = get_field('page_form');
+$page_form_id = $page_form_object->id;
 
 
 
@@ -16,141 +17,139 @@ get_header();
 
 
 
-<!-- Home Slider -->
-<div class="row section main-slider background-dark">
+<div class="row sub-section background-dark">
 	<div class="col-sm-12">
 
-	<?php
-    if( get_field('main_slider') )
-    {
-    	$slides = array();
-        while( has_sub_field('main_slider') )
-        { 
-
-        	$slide_image_object = get_sub_field('image');
-        	$slide_image = $slide_image_object['sizes']['main-slider'];
-        	$slides[] = '<img src="'.$slide_image.'"/>';
-
-        }
-
-        show_ls_carousel($slides);
-
-    }
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
-    ?>
+		<div class="row">
+			<div class="col-sm-6">
+				<h3><?php the_title(); ?></h3>
+				<?php the_content(); ?>
+			</div>
+		</div>
 
-
+		<?php endwhile; endif; ?>
 
 	</div>
 </div>
 
+<!-- Contact Columns -->
+<div class="row section background-dark">
 
-<!-- Home Columns -->
-<div class="row section background-light">
+	<!-- Contact gegevens -->
+	<div class="col-sm-6">
+		<?php
 
-	<!-- Home content fields -->
-	<?
-	if( get_field('text_blocks') )
-	{
-		while( has_sub_field('text_blocks') )
-		{ 
+		function get_contact_row($value, $link = false, $strong = false) {
 
-			$field_label = get_sub_field('label');
-			$field_title = get_sub_field('title');
-			$field_text = get_sub_field('text');
-			$field_button_text = get_sub_field('button');
-			$field_button_target = get_sub_field('target');
+			if ($strong) {
+				$the_value = "<strong>".$value."</strong>";
+			} else {
+				$the_value = $value;
+			}
 
-	 
-			// generate the html
-			?>
 
-			<div class="text-container-small col-sm-4 col-md-4 clearfix">
-
-				<div class="container-icon">
-					<div class="pointer pointer-products"></div>
-				</div>
-				<div class="container-body">
-
-					<span class="container-category"><h5><? echo $field_label ?></h5></span>
-					<h3><? echo $field_title; ?></h3>
-					<? echo $field_text; ?>
-
-					<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>" role="button"><? echo $field_button_text; ?></a>
-
-				</div>
-			</div>
-
-			<?
+			if (!$link) {
+				return "<li>".$the_value."</li>";
+			} else {
+				return "<li><a href=".$link.">".$the_value."</a></li>";
+			}
+		
 		}
-	}
-	?>
+
+		// Contact general
+		$company_name = get_field('company_name');
+		$email_address = get_field('email_address');
+		$telephone_number = get_field('telephone_number');
+		$fax_number = get_field('fax_number');
+		$kvk_number = get_field('kvk_number');
+		$registered_office = get_field('registered_office');
+		$btw_number = get_field('btw_number');
+
+		// Contact post
+		$postal_address = get_field('postal_address');
+		$postal_zipcode = get_field('postal_zipcode');
+		$postal_city = get_field('postal_city');
+		$postal_country = get_field('postal_country');
+
+		// Contact visitor
+		$visitors_address = get_field('visitors_address');
+		$visitors_zipcode = get_field('visitors_zipcode');
+		$visitors_city = get_field('visitors_city');
+		$visitors_country = get_field('visitors_country');
+
+		?>
+		<ul class="contact_general contact_block">
+		<?php
+		
+			if ($company_name) { echo get_contact_row($company_name, false, true); };
+			if ($email_address) { echo get_contact_row($email_address, 'mailto:'.$email_address); };
+			if ($telephone_number) { echo get_contact_row($telephone_number); };
+			if ($fax_number) { echo get_contact_row($fax_number); };
+
+		?>
+		</ul>
+
+		<ul class="contact_block">
+		<?php
+
+			echo get_contact_row("Postal address", false, true);
+			if ($postal_address) { echo get_contact_row($postal_address); };
+			if ($postal_zipcode) { echo get_contact_row($postal_zipcode); };
+			if ($postal_city) { echo get_contact_row($postal_city); };
+			if ($postal_country) { echo get_contact_row($postal_country); };
+
+		?>
+		</ul>
+
+		<ul class="contact_block">
+		<?php
+			
+			echo get_contact_row("Visitors address", false, true);
+			if ($visitors_address) { echo get_contact_row($visitors_address); };
+			if ($visitors_zipcode) { echo get_contact_row($visitors_zipcode); };
+			if ($visitors_city) { echo get_contact_row($visitors_city); };
+			if ($visitors_country) { echo get_contact_row($visitors_country); };
+
+		?>
+		</ul>
+
+		<ul class="contact_block">
+		<?php
+			
+			if ($kvk_number) { echo get_contact_row("KvK. nr. ".$kvk_number); };
+			if ($registered_office) { echo get_contact_row("Statuaire zetel: ".$registered_office); };
+			if ($btw_number) { echo get_contact_row("BTW nr. ".$btw_number); };
+
+		?>
+		</ul>
+	</div>
+
+	<!-- Contact form -->
+	<div class="col-sm-6">
+		<?php gravity_form($page_form_id); ?>
+	</div>
+
+</div>
 
 
-	<div class="col-sm-4">
+<!-- Map -->
+<div class="row section map background-light">
 
-	social_media
+	<div class="col-sm-12">
+
+
+                <div  id='map-canvas'>
+                    
+                </div>
+ 
 	
 	</div>
+
+
+
 </div>
-
-
-			<!-- <div id="content">
-
-				<div id="inner-content" class="wrap clearfix">
-
-						<div id="main" class="eightcol first clearfix" role="main">
-
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-								<header class="article-header">
-
-									<h1 class="page-title"><?php the_title(); ?></h1>
-									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link() );
-									?></p>
-
-
-								</header>
-
-								<section class="entry-content clearfix" itemprop="articleBody">
-									<?php the_content(); ?>
-								</section>
-
-								<footer class="article-footer">
-									<p class="clearfix"><?php the_tags( '<span class="tags">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
-
-								</footer>
-
-								<?php comments_template(); ?>
-
-							</article>
-
-							<?php endwhile; else : ?>
-
-									<article id="post-not-found" class="hentry clearfix">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</div>
-
-						<?php get_sidebar(); ?>
-
-				</div>
-
-			</div>
- -->
+		
 <?php get_footer(); ?>

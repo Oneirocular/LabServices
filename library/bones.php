@@ -122,6 +122,7 @@ SCRIPTS & ENQUEUEING
 
 // loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
+	global $post;
 	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 	if (!is_admin()) {
 
@@ -163,7 +164,19 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'twitter-bootstrap-js' );
 		wp_enqueue_script( 'bones-js' );
-		wp_localize_script( 'bones-js', 'constant_vars', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+		wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?&sensor=true');
+
+		wp_localize_script( 'bones-js', 'constant_vars', array( 
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'theme_url' => get_template_directory_uri(),
+			'post_id' => $post->ID
+			) );  
+
+
+
+    //  wp_enqueue_script( 'my-ajax-request', get_template_directory_uri() . '/js_src/get_markers_ajax.js', array( 'jquery','google-maps' ) );
+     // wp_localize_script( 'my-ajax-request', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ),'googleMarker'=> get_template_directory_uri() . '/images/google-marker.png' ));  
+
 
 
 	}

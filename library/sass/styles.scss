@@ -18,6 +18,8 @@ $ls_bg_c_box:#3C89B0;
 $ls_bg_c_box_dark_line:#367899;
 $ls_bg_c_box_darker_line:#1b658b;
 
+$ls_border_color_input:#83A8C0;
+
 /* fonts */
 $font-family: "NimbusSanNov-Reg";
 //$font-family: Helvetica;
@@ -178,6 +180,12 @@ strong, th {
 		/* bottom-padding exceptions */
 		&.main-slider {
 			padding-bottom:18px;
+		}
+
+		&.map {
+			padding:30px;
+			padding-left:20px;
+			padding-right:20px;
 		}
 
 	}
@@ -792,6 +800,161 @@ $member-quote-padding:15;
 	}
 }
 
+
+/*
+Gravity forms styling
+*/
+
+// .xs {
+// 	.gform_fields {
+// 		background-color:#ff0000;
+// 	}
+// }
+
+input:focus, textarea:focus, select:focus, a:focus { outline: none; }
+
+.gform_fields {
+	padding:0px;
+	margin:0px;
+	list-style-type:none;
+}
+
+.gfield {
+
+	width:100%;
+	margin-bottom:12px;
+
+	&.gfield_textarea {
+		float:left;
+
+		.gfield_label {
+			margin-bottom:7px;
+		}
+	}
+
+
+	.gfield_label {
+		display: block;
+		padding-top:11px;
+		font-weight:normal;
+		float: left;
+		width: 20%;
+	}
+
+	.ginput_container {
+		position:relative;
+		display: inline-block;
+		width: 80%;
+	}
+
+	// Address textarea container
+	&.gfield_textarea {
+		.ginput_container {
+			width: 100%;
+		}
+	}
+
+	// Make all fields 100% wide
+	input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+		border:0px;		
+		border-top: 1px solid $ls_border_color_input;
+		width:100%;
+		padding:14px;
+		padding-top:11px;
+		padding-bottom:6px;
+	}
+
+
+
+	&.gform_validation_container {
+		display: none;
+	}
+
+	// Dropdown styling
+	&.gfield_dropdown {
+
+		.ginput_container {
+
+			.gfield_select {
+				border:0px;		
+				border-top: 1px solid $ls_border_color_input;
+				padding:14px;
+				padding-top:11px;
+				padding-bottom:6px;
+				background: #fff;
+				width:100%;
+				height: 40px;
+				-webkit-appearance: none !important;
+				border-radius: 0;
+
+			}
+		}
+
+		.ginput_container:before {
+			display: block;
+			content: '';
+			right: 1px;
+			top: 1px;
+			width: 45px;
+			height: 39px;
+			background: #ffffff;
+			position: absolute;
+			pointer-events: none;
+			border-left: 1px solid lighten(#7FA9BE,20%);
+		}
+
+		.ginput_container:after {
+			content: "";
+			background-image: url($icon_url+"icon_arrow-down.svg");
+			position: absolute;
+			pointer-events: none;
+			right: 13px;
+			top: 12px;
+			width:18px;
+			height:18px;
+		}
+	}
+
+
+}
+
+.gform_button {
+				@extend .btn;
+			@include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
+
+			font-family:$font-family-sans-serif;
+			padding-left:15px;
+			padding-right:15px;
+			padding-top:6px;
+			padding-bottom:2px;
+
+			text-transform: lowercase;
+}
+.medium:after {
+
+			content: "";
+			background-image: url($icon_url+"icon_arrow-down.svg");
+			position: absolute;
+			pointer-events: none;
+			right: 13px;
+			top: 12px;
+			width:18px;
+			height:18px;
+}
+
+/* Map */
+
+#map-canvas {
+	height:551px;
+}
+
+/* Contact */
+.contact_block {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+	margin-bottom:20px;
+}
 
 .col-centered {
     float: none;
