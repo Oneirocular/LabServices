@@ -63,7 +63,7 @@ $product_body = $post->post_content;
 			if( get_field('product_features') ) {
 			?>
 			<div class="col-sm-6">
-				<div class="row aaa">
+				<div class="row">
 					<div class="col-sm-9 product_features col-centered">
 						<div class="box">
 							<h3>Key features</h3>

@@ -42,22 +42,7 @@ $page_form_id = $page_form_object->id;
 	<div class="col-sm-6">
 		<?php
 
-		function get_contact_row($value, $link = false, $strong = false) {
-
-			if ($strong) {
-				$the_value = "<strong>".$value."</strong>";
-			} else {
-				$the_value = $value;
-			}
-
-
-			if (!$link) {
-				return "<li>".$the_value."</li>";
-			} else {
-				return "<li><a href=".$link.">".$the_value."</a></li>";
-			}
-		
-		}
+	
 
 		// Contact general
 		$company_name = get_field('company_name');

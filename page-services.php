@@ -2,6 +2,12 @@
 /*
 Template Name: Services
 */
+
+// Get the form
+$page_form_object = get_field('page_form');
+$page_form_id = $page_form_object->id;
+
+
 ?>
 
 <?php get_header(); ?>
@@ -73,15 +79,26 @@ Template Name: Services
 <!-- Support form -->
 <div class="row section background-light">
 
+	<!-- Contact form -->
 	<div class="col-sm-6">
-
-	form
-	
+		<h1><?php echo get_field('page_form_title'); ?></h1>
+		<p><?php echo get_field('page_form_description'); ?></p>
+		<?php gravity_form($page_form_id, false, false); ?>
 	</div>
 
-	<div class="col-sm-6">
+	<div class="col-sm-4 col-sm-offset-2" >
 
-	call
+				<div class="row">
+					<div class="col-sm-11 support col-centered">
+						<div class="box">
+							<h3><?php echo get_field('notice_title'); ?></h3>
+							<p><?php echo get_field('notice_text'); ?></p>
+		
+
+							</ul>
+						</div>
+					</div>
+				</div>
 	
 	</div>
 

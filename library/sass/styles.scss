@@ -93,7 +93,7 @@ h1 {
 	line-height:1.2em;
 }
 
- body {
+ * {
  	-webkit-font-smoothing:antialiased;
  		
 
@@ -673,7 +673,7 @@ $member-quote-padding:15;
 
 
 
-.product_features {
+
 
 	.box {
 		border-top:1px solid $ls_bg_c_box_darker_line;
@@ -687,6 +687,11 @@ $member-quote-padding:15;
 			padding-left:23px;
 			padding-right:23px;
 
+		}
+
+		p {
+			padding-left:23px;
+			padding-right:23px;
 		}
 		ul {
 			border-top:1px solid $ls_bg_c_box_darker_line;
@@ -710,7 +715,7 @@ $member-quote-padding:15;
 		}
 
 	}
-}
+
 
 
 /*
@@ -828,6 +833,7 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 		float:left;
 
 		.gfield_label {
+			width: 100%;
 			margin-bottom:7px;
 		}
 	}
@@ -916,30 +922,6 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 	}
 
 
-}
-
-.gform_button {
-				@extend .btn;
-			@include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
-
-			font-family:$font-family-sans-serif;
-			padding-left:15px;
-			padding-right:15px;
-			padding-top:6px;
-			padding-bottom:2px;
-
-			text-transform: lowercase;
-}
-.medium:after {
-
-			content: "";
-			background-image: url($icon_url+"icon_arrow-down.svg");
-			position: absolute;
-			pointer-events: none;
-			right: 13px;
-			top: 12px;
-			width:18px;
-			height:18px;
 }
 
 /* Map */

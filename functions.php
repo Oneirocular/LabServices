@@ -180,7 +180,22 @@ function bones_wpsearch($form) {
 } // don't remove this bracket!
 
 
+	function get_contact_row($value, $link = false, $strong = false) {
 
+			if ($strong) {
+				$the_value = "<strong>".$value."</strong>";
+			} else {
+				$the_value = $value;
+			}
+
+
+			if (!$link) {
+				return "<li>".$the_value."</li>";
+			} else {
+				return "<li><a href=".$link.">".$the_value."</a></li>";
+			}
+		
+		}
 
 
 
