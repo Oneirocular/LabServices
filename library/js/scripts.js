@@ -190,7 +190,101 @@ var searchRequest; // this variable holds the search request
 	}
 
 	
+
+
+
 $('.carousel').carousel();
+
+
+/*
+
+UPDATE CAROUSEL
+
+This function is called when a new media query is activated.
+The product slider gets rearranged.
+
+*/
+function update_carousel() {
+
+	// Init
+	var nr_of_colums = 12;
+	var items_per_slide;
+
+	// Calculate the number of items per slide
+	if (mode == 'xs') {
+		items_per_slide = 1;
+	} else if (mode == 'sm') {
+		items_per_slide = 2;
+	} else if (mode == 'md') {
+		items_per_slide = 3;
+	} else if (mode == 'lg') {
+		items_per_slide = 4;
+	};
+
+
+
+
+	// Html containers
+	var slides_html = '';
+	var indicators_html = '';
+	
+	// 
+	var carousel_container = $(".products .carousel");
+	var carousel_inner = $(".products .carousel-inner");
+	var slides = $(".products .main-product-frame");
+	var carousel_indicator = $(".carousel-indicators");
+
+	//
+	var row_counter = 1;
+	var state = false;
+
+	// Slides generator
+	for (var i = slides.length - 1; i >= 0; i--) {
+
+		// First iteration
+		if (i == slides.length-1) {
+			state = 'active';
+		} else {
+			state = '';
+		}
+
+		// Start of row
+		if (row_counter == 1) {
+			// Create slide
+			slides_html += '<div class="item '+state+'"><div class="row">';
+			// Create indicator
+			indicators_html += '<li data-target="#myCarousel" data-slide-to="'+(row_counter-1)+'" class="'+state+'">';
+		}
+
+		// Slide html
+		slides_html += '<div class="main-product-frame col-sm-'+(nr_of_colums/items_per_slide)+'">';
+		slides_html += $(slides[i]).html();
+		slides_html += '</div>';
+
+
+		// End of row or last iteration
+		if (row_counter == items_per_slide || i == 0) {
+			slides_html += '</div></div>';			
+			row_counter = 1;
+		} else {
+			row_counter++;
+		}
+
+	};
+
+
+	// Regenerate carousel indicators
+	carousel_indicator.empty();
+	carousel_indicator.append(indicators_html);
+
+	// Regenerate carousel
+	carousel_inner.empty();
+	carousel_inner.append(slides_html);
+
+}
+
+
+
 	/*
 	Responsive jQuery is a tricky thing.
 	There's a bunch of different ways to handle
@@ -251,8 +345,11 @@ $('.carousel').carousel();
         
     var checkViewport = function () {
         if (mode !== getMediaState()) {
+
             mode = getMediaState();
 
+            // Fire carousel update
+            update_carousel();
 			//console.log(getMediaState());
         }
     };

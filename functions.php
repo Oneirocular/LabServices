@@ -180,6 +180,48 @@ function bones_wpsearch($form) {
 } // don't remove this bracket!
 
 
+
+
+
+
+
+
+function show_ls_product_carousel($products_array, $nr_of_visible = 4) {
+
+	$counter = 0;
+	$last_run = false;
+	$slides = array();
+	$nr_of_products = count($products_array);
+
+	for ($i=1; $i <= $nr_of_products; $i++) { 
+
+		if ($i == $nr_of_products) {
+			$last_run = true;
+		}
+
+		$counter++;
+		if ($counter == 1) {
+			$html = '<div class="row">';
+		}
+
+		$html .= '<div class="main-product-frame col-sm-'.(12/$nr_of_visible).' ">';
+		$html .= $products_array[$i-1];
+		$html .= '</div>';
+
+		if ($counter == $nr_of_visible || $last_run) {
+			$html .= '</div>';
+
+			$slides[] = $html;
+			$counter = 0;
+		}
+	}
+
+
+	echo ls_carousel($slides);
+
+
+}
+
 function show_ls_carousel($slides) {
 	echo ls_carousel($slides);
 }

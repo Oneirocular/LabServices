@@ -79,6 +79,43 @@ Template Name: Products
 
 
 
+	$products_array = array();
+
+	foreach ($ls_products as $ls_product) {
+	
+		$product_title = $ls_product->post_title;
+		$product_description_excerpt = wp_trim_words( $ls_product->post_content , $num_words = 5, $more = null ); 
+		$product_permalink = get_permalink( $ls_product->ID );	
+
+		
+		 $html = '	<div class="main-product-container background-light">';
+		 $html .= '		<div class="product-thumbnail"><img src="http://10.0.1.7/labservices/wp-content/themes/bones-bootstrap-sass/library/images/content/product_400x400.jpg"/></div>';
+		 $html .= '		<div class="inside">';
+		 $html .= '			<div class="product-title"><strong>'.$product_title.'</strong></div>';
+		 $html .= '			<p>'.$product_description_excerpt.'</p>';
+		 $html .= '			<a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">view product</a>';
+		 $html .= '		</div>';
+		 $html .= '	</div>';
+		
+
+
+
+		$products_array[] = $html;
+
+	}
+
+
+		
+
+			
+				
+
+		
+
+
+
+
+
 
 ?>
 
@@ -100,60 +137,7 @@ robotic system</p>
 		<div class="row products">
 			<div class="col-md-12">
 
-		<div class="row">
-
-			<?php
-
-				foreach ($ls_products as $ls_product) {
-				
-					$product_title = $ls_product->post_title;
-					$product_description_excerpt = wp_trim_words( $ls_product->post_content , $num_words = 5, $more = null ); 
-					$product_permalink = get_permalink( $ls_product->ID );	
-
-
-				?>
-
-
-			<div class="main-product-frame col-sm-3 col-md-3">
-				<div class="main-product-container background-light">
-
-					<div class="product-thumbnail"><img src="http://10.0.1.7/labservices/wp-content/themes/bones-bootstrap-sass/library/images/content/product_400x400.jpg"/></div>
-					<div class="inside">
-						<div class="product-title"><strong><?php echo $product_title; ?></strong></div>
-						<p><?php echo $product_description_excerpt; ?></p>
-						<a class="btn btn-arrow btn-sm" href="<?php echo $product_permalink; ?>" role="button">view product</a></div>
-					
-				</div>
-			</div>
-
-			<?php } ?>
-
-		</div>
-
-				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				  </ol>
-
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner">
-				    <div class="item active">
-			
-				    </div>
-				  </div>
-
-				  <!-- Controls -->
-	<!-- 			  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left"></span>
-				  </a>
-				  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right"></span>
-				  </a> -->
-				</div>
+				<?php  show_ls_product_carousel($products_array); ?>
 
 			</div>
 		</div>
