@@ -311,6 +311,17 @@ function ls_carousel($slides) {
 
 }
 
+// Shows a string when a specific variable is set
+function show_if_exists($variable, $value = false) {
+
+	if (!$value) {
+		$value = $variable;
+	}
+
+	if (isset($variable)) {
+		echo $value;
+	}
+}
 
 
 ?>

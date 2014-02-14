@@ -53,6 +53,7 @@ get_header();
 	<?
 	if( get_field('text_blocks') )
 	{
+		$counter = 0;
 		while( has_sub_field('text_blocks') )
 		{ 
 
@@ -62,14 +63,18 @@ get_header();
 			$field_button_text = get_sub_field('button');
 			$field_button_target = get_sub_field('target');
 
-	 
+	 		$pointer_icon = "pointer-products";
+
+	 		if ($counter == 1) {
+	 			$pointer_icon = "pointer-services";
+	 		}
 			// generate the html
 			?>
 
 			<div class="text-container-small col-sm-4 col-md-4 clearfix">
 
 				<div class="container-icon">
-					<div class="pointer pointer-products"></div>
+					<div class="pointer <?php echo $pointer_icon; ?>"></div>
 				</div>
 				<div class="container-body">
 
@@ -83,6 +88,7 @@ get_header();
 			</div>
 
 			<?
+			$counter++;
 		}
 	}
 	?>

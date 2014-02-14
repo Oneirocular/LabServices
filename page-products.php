@@ -87,9 +87,11 @@ Template Name: Products
 		$product_description_excerpt = wp_trim_words( $ls_product->post_content , $num_words = 5, $more = null ); 
 		$product_permalink = get_permalink( $ls_product->ID );	
 
+		$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $ls_product->ID ), 'medium' );
+
 		
 		 $html = '	<div class="main-product-container background-light">';
-		 $html .= '		<div class="product-thumbnail"><img src="http://10.0.1.7/labservices/wp-content/themes/bones-bootstrap-sass/library/images/content/product_400x400.jpg"/></div>';
+		 $html .= '		<div class="product-thumbnail"><img src="'.$product_image[0].'"/></div>';
 		 $html .= '		<div class="inside">';
 		 $html .= '			<div class="product-title"><strong>'.$product_title.'</strong></div>';
 		 $html .= '			<p>'.$product_description_excerpt.'</p>';
@@ -177,6 +179,7 @@ robotic system</p>
 
 							<div class="row ls-accordeon-header">
 								<div class="col-sm-12">
+									<div class="status-arrow"></div>
 									<h4><?php echo $product_group['product_group_label']." (".count($product_group['product_group_products']).")"; ?></h4>
 								</div>
 							</div>
@@ -188,13 +191,20 @@ robotic system</p>
 									<div class="row">
 								<?
 
-								foreach ($product_group['product_group_products'] as $group_products) {
+								foreach ($product_group['product_group_products'] as $group_product) {
+
+									
+									$product_title = $group_product->post_title;
+									$product_description_excerpt = wp_trim_words( $group_product->post_content , $num_words = 5, $more = null ); 
+									$product_permalink = get_permalink( $group_product->ID );	
+
+									$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $group_product->ID ), 'medium' );
 									?>
 
 										<div class="product-container col-sm-2 col-md-2">
 
-										<div class="product-thumbnail"><img src="http://10.0.1.7/labservices/wp-content/themes/bones-bootstrap-sass/library/images/content/product_400x400.jpg"/></div>
-										<div class="inside"><div class="product-title">lorem ipsum dolor sit</div><a class="btn btn-default btn-sm" href="#" role="button">view product</a></div>
+										<div class="product-thumbnail"><img src="<?php echo $product_image[0]; ?>"/></div>
+										<div class="inside"><div class="product-title"><?php echo $product_title; ?></div><a class="btn btn-default btn-sm" href="<?php echo $product_permalink; ?>" role="button">view product</a></div>
 
 										</div>
 

@@ -40,6 +40,8 @@ $page_form_id = $page_form_object->id;
 	<?
 	if( get_field('text_blocks') )
 	{
+
+		$counter = 1;
 		while( has_sub_field('text_blocks') )
 		{ 
 
@@ -55,7 +57,7 @@ $page_form_id = $page_form_object->id;
 			<div class="text-container-small col-sm-4 col-md-4 clearfix">
 
 				<div class="container-icon">
-					<div class="pointer pointer-products"></div>
+					<div class="pointer pointer-services-<?php echo $counter; ?>"></div>
 				</div>
 				<div class="container-body">
 
@@ -69,6 +71,7 @@ $page_form_id = $page_form_object->id;
 			</div>
 
 			<?
+			$counter++;
 		}
 	}
 	?>

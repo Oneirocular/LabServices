@@ -5,15 +5,23 @@ get_header();
 $page_title = $post->post_title;
 $page_content = $post->post_content;
 
-?>
 
+// get the parent
+if (isset($post->post_parent)) {
+	$parent_post = get_post($post->post_parent);
+}
+
+
+?>
 
 <div class="row section background-dark">
 	<div class="col-sm-12">
 
 	<div class="row">
 		<div class="col-sm-6">
-	
+			<?php 
+					show_if_exists($parent_post->post_content, '<h5>'.$parent_post->post_content.'</h5>');
+			?>
 		</div>
 
 	</div>
