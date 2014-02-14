@@ -254,7 +254,7 @@ strong, th {
 	
 	.product-container, .main-product-frame  {
 
-		margin-bottom:60px;
+		margin-bottom:20px;
 
 		.product-thumbnail {
 
@@ -272,6 +272,14 @@ strong, th {
 		}
 
 		.inside {
+			
+			padding:10px;
+			padding-top:15px;
+
+			.btn {
+				margin-top:10px;
+			}
+
 		}
 
 	}
@@ -282,27 +290,127 @@ strong, th {
 
 
 
+.carousel {
+
+	.product-container, .main-product-frame  {
+		margin-bottom:0px;
+	}
+
+	.inside {
+
+			height:150px;
+
+			.btn {
+				position:absolute;
+				bottom:23px;
+			}
+		}
+
+}
+
+/*
+	.product-container, .main-product-frame  {
+
+		margin-bottom:0px;
+
+		.product-thumbnail {
+
+			position:relative;
+			overflow: hidden;
+
+			width:100%;
+			padding-bottom: 100%;		
+
+			img {
+				position:absolute;
+				max-width:100%;
+			}
+
+		}
+
+		.inside {
+			
+			padding:10px;
+			padding-top:15px;
+			height:150px;
+
+			.btn {
+				position:absolute;
+				bottom:23px;
+			}
+		}
+
+	}
+
+	.main-product-container {
+		padding:13px;
+	}*/
+
 
 /* Carousels */
 .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
 
   li {
-  	border:none;
-  	width:$carousel_indicator_radius;
-  	height:$carousel_indicator_radius;
-  	background-color: $ls_c_blue_light;
-  	margin-left:$carousel_indicator_distance;
-  }
+    display: inline-block;
+    width:  $carousel_indicator_radius;
+    height: $carousel_indicator_radius;
+    margin: $carousel_indicator_distance/2;
+    text-indent: -999px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 
+
+    // IE8-9 hack for event handling
+    //
+    // Internet Explorer 8-9 does not support clicks on elements without a set
+    // `background-color`. We cannot use `filter` since that's not viewed as a
+    // background color by the browser. Thus, a hack is needed.
+    //
+    // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
+    // set alpha transparency for the best results possible.
+    background-color:  $ls_c_blue_light;
+  }
   .active {
-  	  	border:none;
-  	  	margin:1px;
-  	width:$carousel_indicator_radius;
-  	height:$carousel_indicator_radius;
+    margin: $carousel_indicator_distance/2;
+    width:  $carousel_indicator_radius;
+    height: $carousel_indicator_radius;
+    background-color: $carousel-indicator-active-bg;
   }
-
-
 }
+
+
+
+
+
+// .carousel-indicators {
+
+//   li {
+//   	border:none;
+//   	width:$carousel_indicator_radius;
+//   	height:$carousel_indicator_radius;
+//   	background-color: $ls_c_blue_light;
+//   	margin-left:$carousel_indicator_distance;
+//   }
+
+//   .active {
+//   	  	border:none;
+//   	  	margin:1px;
+//   	width:$carousel_indicator_radius;
+//   	height:$carousel_indicator_radius;
+//   }
+
+
+// }
 
 
 
@@ -340,14 +448,6 @@ strong, th {
 }
 
 
-.no-svg .pointer-products {
-	background-image: url($pointer_url+"pointer_products.png");
-
-
-	/* The url is relative to the document, not to the css file! */
-    /* Prefer absolute urls to avoid confusion. */
-    -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
-}
 .pointer-products {
 	background-image: url($pointer_url+"pointer_products.svg");
 }
@@ -432,7 +532,19 @@ strong, th {
 
 /* About us */
 
+
+
+
 /* Team */
+
+.team-members {
+	margin-top:10px;
+	.inside {
+		padding:10px;
+		padding-top:15px;
+	}
+}
+
 $triangle_width:19;
 $triangle_height:14;
 $member-quote-padding:15;
@@ -517,18 +629,19 @@ $member-quote-padding:15;
 	padding:0;
 	margin:0;
 
+	margin-top:40px;
 
 
 
 
 	.ls-accordeon-row {
 
-		cursor:pointer;
 
 		.ls-accordeon-header {
 			padding-top:5px;
 			position:relative;
 			border-bottom:1px solid $ls_bg_c_blue_dark_line;
+		cursor:pointer;
 
 			.status-arrow {
 				position:absolute;
@@ -536,8 +649,22 @@ $member-quote-padding:15;
 				right:20px;
 				width:18px;
 				height:18px;
-				background-image: url($icon_url+"icon_arrow-up.svg");
+
 				pointer-events: none;
+
+
+
+
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	background-image: url($icon_url+"icon_arrow-up.svg");
+
+
+	/* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+    -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+
 			}
 
 
@@ -609,13 +736,37 @@ $member-quote-padding:15;
 	}
 }
 
+/* JOBS */
 
-.jobs {
+.jobs-listing  {
+
+	margin-top:30px;
+
 	.row {
-		padding-top:20px;
+		padding-top:15px;
 		padding-bottom:30px;
 
 		border-top:1px solid $ls_bg_c_blue_dark_line;
+	}
+
+	.btn {
+		margin-top:10px;
+	}
+}
+
+
+
+/* REFERENCES */
+
+.references {
+	margin-top:60px;
+
+	.category-row {
+		margin-bottom:10px;
+	}
+
+	.row {
+		margin-bottom:60px;
 	}
 }
 
@@ -1044,6 +1195,12 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 }
 
 
+#search_response {
+	padding-left:7px;
+	margin-top:60px;
+}
+
+
 /* PAGE SPECIFIC CSS */
 .page-template-page-services-php {
 
@@ -1058,4 +1215,81 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 	.pointer-services-3 {
 		background-image: url($pointer_url+"pointer_services_3.svg");
 	}
+
+
+}
+
+
+
+
+
+
+
+.no-svg 
+{
+	.pointer, .btn-arrow:after {
+		-ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+	}
+	.pointer-products {
+		background-image: url($pointer_url+"pointer_products.png");
+	}
+
+	.pointer-services {
+		background-image: url($pointer_url+"pointer_services.png");
+	}
+
+	.pointer-services-1 {
+		background-image: url($pointer_url+"pointer_services_1.png");
+	}
+
+	.pointer-services-2 {
+		background-image: url($pointer_url+"pointer_services_2.png");
+	}
+
+	.pointer-services-3 {
+		background-image: url($pointer_url+"pointer_services_3.png");
+	}
+
+
+	.btn-arrow:after // arrow
+	{	
+		background-image: url($icon_url+"icon_arrow-right.png");
+	}
+
+
+	.left {
+
+		.icon_arrow {
+			background-image: url($icon_url+"icon_arrow-left.png");
+		}
+	}
+
+	.right {
+
+		.icon_arrow {
+			background-image: url($icon_url+"icon_arrow-right.png");
+		}
+		
+	}
+
+	.ginput_container:after {
+		background-image: url($icon_url+"icon_arrow-down.png");
+	}
+
+
+
+
+	.status-arrow {
+			background-image: url($icon_url+"icon_arrow-right.png");
+	}
+
+
+
+	.closed {
+		.status-arrow {
+			background-image: url($icon_url+"icon_arrow-right.png");
+		}
+	}
+
+
 }

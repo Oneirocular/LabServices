@@ -1,6 +1,6 @@
 
 
-<div class="col-sm-12">
+<div class="col-sm-12 references">
 
 <?php
 
@@ -28,7 +28,7 @@ if( get_field('text_rows', $child_page_object->ID) )
 
 			<!-- Reference row -->
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 category-row">
 					<span class="category"><h5><? echo $field_label; ?></h5></span>
 				</div>
 

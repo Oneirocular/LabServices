@@ -13,7 +13,7 @@
 ?>
 
 
-<div class="col-sm-7 jobs">
+<div class="col-sm-7 jobs-listing">
 			
 
 <?php

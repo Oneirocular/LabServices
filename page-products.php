@@ -125,7 +125,7 @@ Template Name: Products
 
 
 
-<div class="row section background-dark products">
+<div class="row section main-slider background-dark products">
 	<div class="col-sm-12">
 
 		<div class="row">
@@ -204,7 +204,7 @@ robotic system</p>
 										<div class="product-container col-sm-2 col-md-2">
 
 										<div class="product-thumbnail"><img src="<?php echo $product_image[0]; ?>"/></div>
-										<div class="inside"><div class="product-title"><?php echo $product_title; ?></div><a class="btn btn-default btn-sm" href="<?php echo $product_permalink; ?>" role="button">view product</a></div>
+										<div class="inside"><div class="product-title"><?php echo $product_title; ?></div><a class="btn btn-arrow btn-sm" href="<?php echo $product_permalink; ?>" role="button">view product</a></div>
 
 										</div>
 
@@ -255,11 +255,13 @@ robotic system</p>
 		</div>
 
 		<div class="row">
-			<div class="col-md-12" >
-
+			<div class="col-md-6" >
 				<div id="search_response"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" >
 				<div id="search_results"></div>
-
 			</div>
 		</div>
 

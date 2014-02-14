@@ -52,7 +52,7 @@
 		<div class="container">
 			<header class="row header section">
 					<div class="col-sm-4 ">
-					<img src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" />
+					<img src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/>
 					</div>
 					<div class="col-sm-8">
 					<nav class="navigation" role="navigation">

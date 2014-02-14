@@ -9,6 +9,18 @@ slow the page load.
 
 */
 
+	// No svg change all images to png
+	if (!Modernizr.svg) {
+		var imgs = document.getElementsByTagName('img');
+	    var dotSVG = /.*\.svg$/;
+	    for (var i = 0; i != imgs.length; ++i) {
+	        if(imgs[i].src.match(dotSVG)) {
+	            imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+	        }
+	    }
+	}
+
+
 // IE8 ployfill for GetComputed Style (for Responsive Script below)
 if (!window.getComputedStyle) {
 	window.getComputedStyle = function(el, pseudo) {
@@ -30,7 +42,7 @@ if (!window.getComputedStyle) {
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
 
-	
+
 
 
 
@@ -151,12 +163,12 @@ var searchRequest; // this variable holds the search request
 
 		  		if (return_object.state == "succes") {
 
-		  			search_response_container.append("<h3>"+return_object.response.title+"</h3><p>"+return_object.response.description+"</p>");
+		  			search_response_container.append("<p>"+return_object.response.title+"</p>");
 		  			search_result_container.append(return_object.html);
 
 		  		} else if (return_object.state == "failed") {
 
-		  			search_response_container.append("<h3>"+return_object.response.title+"</h3><p>"+return_object.response.description+"</p>");
+		  			search_response_container.append("<p>"+return_object.response.title+"</p>");
 
 		  		}
 
@@ -232,7 +244,7 @@ function update_carousel() {
 	var carousel_container = $(".products .carousel");
 	var carousel_inner = $(".products .carousel-inner");
 	var slides = $(".products .main-product-frame");
-	var carousel_indicator = $(".carousel-indicators");
+	var carousel_indicator = $(".products .carousel-indicators");
 
 	//
 	var row_counter = 1;
