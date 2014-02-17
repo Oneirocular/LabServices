@@ -57,6 +57,7 @@
 					<div class="col-sm-8">
 					<nav class="navigation" role="navigation">
 						<?php bones_main_nav(); ?>
+						<?php ms_ml_language_switch(); ?>
 						<!-- <div class="language">eng</div> -->
 					</nav>
 					</div>

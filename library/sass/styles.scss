@@ -22,6 +22,7 @@ $ls_border_color_input:#83A8C0;
 
 /* fonts */
 $font-family: "NimbusSanNov-Reg";
+$font-family-bold:"NimbusSanNov-Bol";
 //$font-family: Helvetica;
 $font-weight-base: 100;
 $font-color:$ls_c_blue;
@@ -42,7 +43,8 @@ $pointer_url: "../images/pointers/";
 $icon_url: "../images/icons/";
 
 $fonts_url:	"../fonts/";
-$polyfill_url: "http://10.0.1.7/labservices/wp-content/themes/bones-bootstrap-sass/library/polyfill/";
+$polyfill_url: "http://www.jeroenbraspenning.nl/clients/edhv/labservices/wp-content/themes/bones-bootstrap-sass/library/polyfill/";
+//$polyfill_url: "http://10.0.1.7/labservices/wp-content/themes/bones-bootstrap-sass/library/polyfill/";
 
 // customize bootstrap variables here:
 @import "variables";
@@ -596,6 +598,11 @@ $member-quote-padding:15;
 		padding:0;
 		margin:0;
 		display:inline-block;
+
+		.active {
+			font-family:$font-family-bold;
+		}
+
 	}
 	li {
 		float:left;

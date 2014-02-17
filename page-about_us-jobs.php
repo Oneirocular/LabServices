@@ -32,7 +32,7 @@
 				<h4><?php echo $job_title; ?></h4>
 				<?php echo $job_description; ?>
 			</div>
-			<div class="col-sm-2"><a class="btn btn-arrow btn-sm" href="<?php echo $job_permalink; ?>" role="button">view job</a></div>
+			<div class="col-sm-2"><a class="btn btn-arrow btn-sm" href="<?php echo $job_permalink; ?>" role="button"><?php echo __( 'view job', 'bonestheme' ); ?></a></div>
 		</div>
 
 	<?php

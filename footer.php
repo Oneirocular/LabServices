@@ -39,7 +39,7 @@ $visitors_country = get_field('visitors_country',1264);
 					<ul class="contact_general contact_block">
 						<?php
 
-						echo get_contact_row("Postal address", false, true);
+						echo get_contact_row(__( 'Postal address', 'bonestheme' ), false, true);
 						if ($postal_address) { echo get_contact_row($postal_address); };
 						if ($postal_zipcode) { echo get_contact_row($postal_zipcode." ".$postal_city); };
 						if ($postal_country) { echo get_contact_row($postal_country); };
@@ -51,7 +51,7 @@ $visitors_country = get_field('visitors_country',1264);
 					<ul class="contact_general contact_block">
 						<?php
 
-						echo get_contact_row("Visitors address", false, true);
+						echo get_contact_row(__( 'Visitors address', 'bonestheme' ), false, true);
 						if ($visitors_address) { echo get_contact_row($visitors_address); };
 						if ($visitors_zipcode) { echo get_contact_row($visitors_zipcode." ".$visitors_city); };
 						if ($visitors_country) { echo get_contact_row($visitors_country); };
