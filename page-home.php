@@ -15,7 +15,6 @@ get_header();
 <!-- Home Slider -->
 <div class="row section main-slider background-dark">
 	<div class="col-sm-12">
-
 	<?php
     if( get_field('main_slider') )
     {
@@ -23,9 +22,38 @@ get_header();
         while( has_sub_field('main_slider') )
         { 
 
+        	// Prepare variables
         	$slide_image_object = get_sub_field('image');
-        	$slide_image = $slide_image_object['sizes']['main-slider'];
-        	$slides[] = '<img src="'.$slide_image.'"/>';
+        	$slide_image = $slide_image_object['sizes']['main-slider'];        	
+        	$slide_text = get_sub_field('content');
+        	$slide_link_object = get_sub_field('link');
+        	$slide_link_url = false;
+
+        	if (is_object($slide_link_object)) {
+        		$slide_link_url = get_permalink($slide_link_object->ID);
+        	}
+
+        	$slide_html = '';
+        	if ($slide_text != '') {
+
+
+	        	// Prepare html
+	        	$slide_html .= '<div class="text_frame">';
+	        	$slide_html .= $slide_text;
+	        	
+	        	if ($slide_link_url) {
+	        		$slide_html .= '<a href="'.$slide_link_url.'" class="slide_link"></a>';
+	        	}	
+	        	$slide_html .= '</div>';
+        	}
+        	$slide_html .= '<img src="'.$slide_image.'"/>';
+
+
+
+        	$slides[] = $slide_html;
+
+        		
+        
 
         }
 
