@@ -72,7 +72,7 @@
 		<div class="container">
 			<header class="row header section">
 					<div class="col-sm-4 ">
-					<a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/></a>
+					<a href="<?php echo get_site_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/></a>
 					</div>
 					<div class="col-sm-8">
 						<div class="row">

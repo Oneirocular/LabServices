@@ -31,17 +31,21 @@ Template Name: About Us
 			<div class="row">
 
 				<!-- Page Title -->
-				<div class="col-sm-2">
+				<div class="col-xs-12 col-sm-3 col-md-2">
 					<h3><?php the_title(); ?></h3>
 				</div>
 
 				<?php if (count($child_pages) > 1) { ?>
 				<!-- Sub Navigation -->
-				<div class="col-sm-10">
+				<div class="col-xs-12 col-sm-9 col-md-10">
 					<nav class="sub-navigation" role="navigation">
 						<ul id="menu-sub-menu" class="sub-nav clearfix">
-							<?php foreach ($child_pages as $child_page_id => $child_page_object) { ?>
-								<li class="menu-item"><a href="#<?php echo $child_page_object->post_title; ?>"><?php echo $child_page_object->post_title; ?></a></li>
+							<?php foreach ($child_pages as $child_page_id => $child_page_object) { 
+
+									$child_page_slug = get_field('page_slug', $child_page_id);
+
+								?>
+							<li class="menu-item"><a href="javascript:scrollAnimatedTo('<?php echo $child_page_slug; ?>');"><?php echo $child_page_object->post_title; ?></a></li>
 							<?php } ?>
 						</ul>					
 					</nav>

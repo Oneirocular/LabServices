@@ -174,11 +174,20 @@ strong, th {
 			padding-right:$side_padding;
 		}
 
+		@media (max-width: $screen-sm-min) {
+			// padding-left:10px;
+			// padding-right:10px;
+		}
+
 	}
 
 	.section {
 		padding-top:50px;
 		padding-bottom:50px;
+
+		h2 {
+			margin-top:10px;
+		}
 
 		&.header {
 			padding-bottom:34px;
@@ -249,9 +258,16 @@ strong, th {
 		}
 
 		&.map {
-			padding:30px;
-			padding-left:20px;
-			padding-right:20px;
+			// padding:30px;
+			// padding-left:20px;
+			// padding-right:20px;
+
+			@media (max-width: $screen-xs-min) {
+				padding-top:10px;
+				padding-bottom:10px;
+
+			}
+
 		}
 
 	}
@@ -296,14 +312,25 @@ strong, th {
 
 /* on bigger layouts the container-icon is positioned left of the text, smaller layouts it's on top. */
 .text-container-small {
-
 	overflow:hidden;
 
 	.container-icon{
+
+
 		@media (min-width: $screen-sm-min) {
 			float:left;
 			margin-right:10px;
 		}
+
+		.pointer {
+			margin: 0 auto;
+		}
+
+		// Address small screens
+		@media (max-width: $screen-md-min) {
+			margin-bottom: 30px;
+		}
+
 	}
 
 	.container-body {
@@ -312,6 +339,32 @@ strong, th {
 			overflow: hidden;
 		}
 	}
+
+	// Address small screens
+	@media (max-width: $screen-md-min) {
+		margin-bottom:42px;
+		padding-bottom:35px;
+		border-bottom:1px solid $ls_bg_c_blue_light_line;
+
+	}
+
+}
+
+
+/* makes lab feeds full width on mobile */
+@media (max-width: $screen-md-min) {
+
+	.home .text-container-small:nth-child(2) {
+		padding-bottom:80px;
+		margin-bottom:0px;
+	}
+
+	.home .text-container-small:nth-child(3) {
+		margin-top:0px;
+		border-bottom:0px;
+		padding-bottom:0px;
+	}
+
 }
 
 
@@ -325,6 +378,7 @@ strong, th {
 	.product-container, .main-product-frame  {
 
 		margin-bottom:20px;
+
 
 		// .product-thumbnail {
 
@@ -344,21 +398,23 @@ strong, th {
 		// }
 
 
-		.thumbnail-container {
-		   width: 100%;
-		   padding-bottom: 100%;
-		   background: #FFF;
-		   position: relative;
+		// .thumbnail-container {
+		//    width: 100%;
+		//    padding-bottom: 100%;
+		//    background: #FFF;
+		//    position: relative;
 
-		   .product-thumbnail {
-				position: absolute;
-				padding:10px;
-		   }
-		}
+		//    .product-thumbnail {
+		// 		position: absolute;
+		// 		padding:10px;
+		//    }
+		// }
 
 
 		.inside {
 			
+
+
 			padding:10px;
 			padding-top:15px;
 
@@ -366,6 +422,12 @@ strong, th {
 				margin-top:10px;
 			}
 
+			// Address small screens
+			@media (max-width: $screen-xs-min) {
+				padding:2px;
+
+			}
+	
 		}
 
 	}
@@ -542,6 +604,10 @@ strong, th {
 	background-image: url($pointer_url+"pointer_services.svg");
 }
 
+.pointer-labservices {
+	background-image: url($pointer_url+"pointer_labservices.svg");
+
+}
 
 
 
@@ -631,6 +697,10 @@ strong, th {
 		padding:10px;
 
 
+	}
+
+	.team-member {
+		margin-bottom:60px;
 	}
 
 	.inside {
@@ -780,6 +850,7 @@ $member-quote-padding:15;
 
 
 		.ls-accordeon-header {
+
 			padding-top:5px;
 			position:relative;
 			border-bottom:1px solid $ls_bg_c_blue_dark_line;
@@ -796,16 +867,15 @@ $member-quote-padding:15;
 
 
 
+				background-repeat: no-repeat;
+				background-size: contain;
 
-	background-repeat: no-repeat;
-	background-size: contain;
-
-	background-image: url($icon_url+"icon_arrow-up.svg");
+				background-image: url($icon_url+"icon_arrow-up.svg");
 
 
-	/* The url is relative to the document, not to the css file! */
-    /* Prefer absolute urls to avoid confusion. */
-    -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+				/* The url is relative to the document, not to the css file! */
+			    /* Prefer absolute urls to avoid confusion. */
+			    -ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
 
 			}
 
@@ -918,10 +988,22 @@ $member-quote-padding:15;
 	.col-text {
 		padding-top:10px;
 	}
+
+	.col-image {
+		margin-bottom:20px;
+	}
 }
 
 .col-sm-12 {
 			//@include test-mode;
+}
+
+
+.accessoires {
+
+	.child-description {
+		margin-bottom:30px;
+	}
 }
 
 
@@ -1051,7 +1133,6 @@ $member-quote-padding:15;
 
 	.social_feeds {
 
-		float:right;
 
 		.box {
 			padding-top:25px;
@@ -1123,6 +1204,18 @@ $member-quote-padding:15;
 		.carousel-control {
 			bottom:-40px;
 		}
+
+
+
+		// Address small screens
+		@media (max-width: $screen-md-min) {
+			padding-left:0px;
+			padding-right:0px;
+
+		}
+
+		float:right;
+
 
 		// .carousel-control {
 		// 	position: absolute;
@@ -1274,12 +1367,22 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 		font-weight:normal;
 		float: left;
 		width: 20%;
+
+		// Small screens
+		@media (max-width: $screen-sm-min) {
+			width: 100%;		
+		}
 	}
 
 	.ginput_container {
 		position:relative;
 		display: inline-block;
 		width: 80%;
+
+		// Small screens
+		@media (max-width: $screen-sm-min) {
+			width: 100%;		
+		}
 	}
 
 	.gfield_description {
@@ -1290,6 +1393,11 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 		&.validation_message {
 			color:$ls_text_error;
 		}
+
+		// Small screens
+		@media (max-width: $screen-sm-min) {
+			margin-left:0px;
+		}
 	}
 
 	// Address textarea container
@@ -1297,6 +1405,12 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 		.ginput_container {
 			width: 100%;
 		}
+	}
+
+	/* remove default iphone/safari rounding */
+	input, textarea {
+		-webkit-appearance: none;
+    	border-radius: 0;
 	}
 
 	// Make all fields 100% wide
@@ -1319,6 +1433,8 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 			border-top: 1px solid $ls_error;
 			background-color:$ls_bg_error;
 			color:$ls_text_error;
+
+
 		}
 	}
 
@@ -1374,6 +1490,12 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 	}
 
 
+
+
+
+
+
+
 }
 
 
@@ -1382,6 +1504,11 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 
 #map-canvas {
 	height:551px;
+
+			@media (max-width: $screen-xs-min) {
+			height:250px;
+				
+			}
 }
 
 /* Contact */
@@ -1499,6 +1626,7 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 
 
 #search_response {
+	display:none;
 	padding-left:7px;
 	margin-top:60px;
 }
@@ -1539,6 +1667,10 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 
 	.pointer-services {
 		background-image: url($pointer_url+"pointer_services.png");
+	}
+
+	.pointer-labservices {
+		background-image: url($pointer_url+"pointer_labservices.png");
 	}
 
 	.pointer-services-1 {
@@ -1608,15 +1740,61 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 	&.image-align-right {
 		text-align:right;
 	}
+	img {
+		max-width:93%;
+	}
+
+	// Address small screens
+	@media (max-width: $screen-md-min) {
 		img {
-			max-width:93%;
+			max-width: 100%;
 		}
+
+	}
 }
+
+
+
+
 
 div img {
 	width:100%;
 }
 
+
+.footer-logo-container {
+	.pointer {
+			margin: 0 auto;
+			width:75px;
+			height:113px;
+		}
+}
+
+// Address small devices
+.media-xs {
+
+	// Center social icons
+	.social_channels_container {
+	
+    float: none;
+    margin: 0 auto;
+	}
+
+	.contact-details {
+		border-bottom:1px solid $ls_bg_c_blue_dark_line;
+		padding-bottom:40px;
+		margin-bottom:20px;
+	}
+
+	.footer .contact_block li {
+		text-align: center;
+	}
+}
+
+
+.logo {
+	width:280px;
+}
 
 p > a:link, p > a:active, p > a:visited {
 	text-decoration:underline;

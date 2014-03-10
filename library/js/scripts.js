@@ -39,6 +39,21 @@ if (!window.getComputedStyle) {
 	}
 }
 
+
+// about us animation 
+function scrollAnimatedTo(anchor) {
+	console.log(anchor);
+
+	var pos = jQuery('a[name='+anchor+']').offset();
+			  		//var pos = search_response_container.offset();
+	jQuery('html,body').animate({scrollTop: (pos.top) });
+
+}
+
+
+
+
+
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
 
@@ -91,6 +106,11 @@ $('.active_language').click(function() {
 
 	// Handles the actual opening and closing
 	function toggle(el, height, duration){
+
+		// If not closing add margin
+		if (height > 0) {
+			height = height+bottom_margin;
+		}
 
 		$(el).children('.ls-accordeon-container').stop().animate(
 			{
@@ -160,38 +180,60 @@ var searchRequest; // this variable holds the search request
 
 		show_loader();
 
-
 		var search_result_container = $("#search_results");
 		var search_response_container = $("#search_response");
 
 
-		 searchRequest = $.ajax({
-		  	type:'GET',
-		  	data:{action:'search_product_database',query_value:the_query},
-		  	url: constant_vars.ajax_url,
-		  	success: function(returnvalue) {
+		// use a light delay to give a better search experience
 
-		  		hide_loader();
+		setTimeout(function(){
 
-		  		var return_object = JSON.parse(returnvalue);
+			 searchRequest = $.ajax({
+			  	type:'GET',
+			  	data:{action:'search_product_database',query_value:the_query},
+			  	url: constant_vars.ajax_url,
+			  	success: function(returnvalue) {
 
-		  		search_result_container.empty();
-		  		search_response_container.empty();
+			  		hide_loader();
 
-		  		if (return_object.state == "succes") {
+			  		var return_object = JSON.parse(returnvalue);
 
-		  			search_response_container.append("<p>"+return_object.response.title+"</p>");
-		  			search_result_container.append(return_object.html);
+			  		search_result_container.empty();
+			  		search_response_container.empty();
 
-		  		} else if (return_object.state == "failed") {
+			  		if (return_object.state == "succes") {
 
-		  			search_response_container.append("<p>"+return_object.response.title+"</p>");
+			  			search_response_container.append("<p>"+return_object.response.title+"</p>");
+			  			search_result_container.append(return_object.html);
 
-		  		}
+			  		} else if (return_object.state == "failed") {
 
-		 	},
+			  			search_response_container.append("<p>"+return_object.response.title+"</p>");
 
-		  });
+			  		}
+
+			  		search_response_container.show();
+
+			  		var pos = search_response_container.offset();
+			  		$('html,body').animate({scrollTop: (pos.top-130) });
+			  		// $('body').animate({ scrollTop: '+=10' });
+			  		
+	//scroll(0,pos.top);
+			  		//console.log(search_response_container.offset());
+	    			//$("#search_response").animate({ scrollTop: '0px' });
+
+			 	},
+
+			  });
+
+
+		}, 1000);
+
+
+
+
+
+
 	}
 
 	function show_loader() {
@@ -325,6 +367,11 @@ function update_carousel() {
 
 
 
+
+/*
+$('a[name=foo]')*/
+
+
 	/*
 	Responsive jQuery is a tricky thing.
 	There's a bunch of different ways to handle
@@ -388,6 +435,9 @@ function update_carousel() {
 
             mode = getMediaState();
 
+            $('body').removeClass('media-xs media-sm media-md media-lg');
+
+            $('body').addClass('media-'+mode);
             // Fire carousel update
             update_carousel();
 			//console.log(getMediaState());

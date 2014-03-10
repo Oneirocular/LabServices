@@ -39,17 +39,17 @@ if( get_field('text_rows', $child_page_object->ID) )
 				</div>
 
 				<?php if ($mirrored) { ?>
-				<div class="col-md-6 col-image  ">
+				<div class="col-xs-12 col-md-6 col-image  ">
 				<?php } else { ?>
-				<div class="col-md-6 col-md-push-6 col-image image-align-right" >
+				<div class="col-xs-12 col-md-6 col-md-push-6 col-image image-align-right" >
 				<?php } ?>
 					<img src="<? echo $field_image['sizes']['side-image']; ?>" />
 				</div>
 
 				<?php if ($mirrored) { ?>
-				<div class="col-md-6 col-text">
+				<div class="col-xs-12 col-md-6 col-text">
 				<?php } else { ?>
-				<div class="col-md-6 col-md-pull-6 col-text">
+				<div class="col-xs-12 col-md-6 col-md-pull-6 col-text">
 				<?php } ?>
 					<h3><? echo $field_title; ?></h3>
 					<? echo $field_text; ?>

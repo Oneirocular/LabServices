@@ -39,7 +39,7 @@ $page_form_id = $page_form_object->id;
 <div class="row section background-dark">
 
 	<!-- Contact gegevens -->
-	<div class="col-sm-6">
+	<div class="col-xs-12 col-md-6 contact-details">
 		<?php
 
 	
@@ -82,8 +82,7 @@ $page_form_id = $page_form_object->id;
 
 			echo get_contact_row(__("Postal address", "bonestheme"), false, true);
 			if ($postal_address) { echo get_contact_row($postal_address); };
-			if ($postal_zipcode) { echo get_contact_row($postal_zipcode); };
-			if ($postal_city) { echo get_contact_row($postal_city); };
+			if ($postal_zipcode) { echo get_contact_row($postal_zipcode." ".$postal_city); };
 			if ($postal_country) { echo get_contact_row($postal_country); };
 
 		?>
@@ -94,8 +93,7 @@ $page_form_id = $page_form_object->id;
 			
 			echo get_contact_row(__("Visitors address", "bonestheme"), false, true);
 			if ($visitors_address) { echo get_contact_row($visitors_address); };
-			if ($visitors_zipcode) { echo get_contact_row($visitors_zipcode); };
-			if ($visitors_city) { echo get_contact_row($visitors_city); };
+			if ($visitors_zipcode) { echo get_contact_row($visitors_zipcode." ".$visitors_city); };
 			if ($visitors_country) { echo get_contact_row($visitors_country); };
 
 		?>
@@ -113,7 +111,7 @@ $page_form_id = $page_form_object->id;
 	</div>
 
 	<!-- Contact form -->
-	<div class="col-sm-6">
+	<div class="col-xs-12 col-md-6">
 		<?php gravity_form($page_form_id, false); ?>
 	</div>
 

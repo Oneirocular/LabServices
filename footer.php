@@ -30,7 +30,12 @@ $twitter_user = get_field('social_twitter_user',$contact_page_id);
 	<div class="row section footer">
 		<div class="col-sm-12 ">
 			<div class="row">
-				<div class="col-sm-3 ">
+				<div class="col-xs-12 visible-xs">
+					<div class="contact_general contact_block footer-logo-container">
+						<div class="pointer pointer-labservices"></div>
+					</div>
+				</div>
+				<div class="col-sm-4  col-md-3">
 					<ul class="contact_general contact_block">
 						<?php
 
@@ -42,7 +47,7 @@ $twitter_user = get_field('social_twitter_user',$contact_page_id);
 						?>
 					</ul>
 				</div>
-				<div class="col-sm-2 ">
+				<div class="col-sm-4 col-md-2">
 					<ul class="contact_general contact_block">
 						<?php
 
@@ -54,7 +59,7 @@ $twitter_user = get_field('social_twitter_user',$contact_page_id);
 						?>
 					</ul>
 				</div>
-				<div class="col-sm-3 ">
+				<div class="col-sm-4 col-md-2 ">
 					<ul class="contact_general contact_block">
 						<?php
 
@@ -68,7 +73,7 @@ $twitter_user = get_field('social_twitter_user',$contact_page_id);
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-3 ">
+				<div class="col-xs-3 social_channels_container">
 					<ul class="social_channels">
 						<li><a href="https://www.facebook.com/<?php echo $facebook_user; ?>" target="_BLANK"><div class="icon facebook"></div></a></li>
 						<li><a href="https://twitter.com/<?php echo $twitter_user; ?>" target="_BLANK"><div class="icon twitter"></div></a></li>

@@ -94,7 +94,7 @@ get_header();
 			// generate the html
 			?>
 
-			<div class="text-container-small col-sm-4 col-md-4 clearfix">
+			<div class="text-container-small col-xs-12 col-md-4 clearfix">
 
 				<div class="container-icon">
 					<div class="pointer <?php echo $pointer_icon; ?>"></div>
@@ -121,19 +121,19 @@ get_header();
 	?>
 
 
-	<div class="col-sm-4" >
+	<div class="text-container-small col-xs-12 col-md-4" >
 
 		<div class="row">
-			<div class="col-sm-11 social_feeds " style="float:right;">
+			<div class="col-xs-12 col-md-11  social_feeds" >
 					<div class="box clearfix">
 						<h5>lab feeds</h5>
 
 						<div id="social_carousel" class="social-feeds-carousel carousel slide" data-ride="social-feeds-carousel">
 							<div class="carousel-inner lab-feeds">				
-								<?php echo get_labfacts(); ?>
+								<?php //echo get_labfacts(); ?>
 							</div>			
 							<ol class="carousel-indicators">		
-								<?php echo get_labfacts_indicators(); ?>		
+								<?php //echo get_labfacts_indicators(); ?>		
 							
 							</ol>			
 							<a class="left carousel-control" href="#social_carousel" data-slide="prev"><div class="icon_arrow"></div></a>			

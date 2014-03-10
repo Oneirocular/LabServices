@@ -266,11 +266,18 @@ function get_distribute_product_container($distribute_product) {
 	$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $distribute_product->ID ), 'product-image-cropped' );
 
 	$html = '<a href="'.$product_permalink.'">';
-	$html .= '<div class="product-container col-sm-2 col-md-2">';
-	$html .= '	<div class="thumbnail-container"><div class="product-thumbnail"><img src="'.$product_image[0].'"/></div></div>';
+	$html .= '<div class="product-container col-xs-12 col-sm-3 col-lg-2">';
+	$html .= '	<div class="row">';
+	$html .= '		<div class="col-xs-4 col-sm-12">';
+	$html .= '			<div class="thumbnail-container"><div class="product-thumbnail"><img src="'.$product_image[0].'"/></div></div>';
+	$html .= '		</div>';
+	//$html .= '	<div class="thumbnail-container col-sm-12"><div class="product-thumbnail"><img src="'.$product_image[0].'"/></div></div>';
 
 	//$html .= '	<div class="product-thumbnail"><img src="'.$product_image[0].'"/></div>';
-	$html .= '	<div class="inside"><div class="product-title">'.$product_title.'</div><a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'view product', 'bonestheme' ).'</a></div>';
+	$html .= '		<div class="col-xs-8 col-sm-12" >';
+	$html .= '			<div class="inside "><div class="product-title">'.$product_title.'</div><a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'view product', 'bonestheme' ).'</a></div>';
+	$html .= '		</div>';
+	$html .= '	</div>';
 	$html .= '</div>';
 	$html .= '</a>';
 

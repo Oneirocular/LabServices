@@ -54,7 +54,7 @@ $page_form_id = $page_form_object->id;
 			// generate the html
 			?>
 
-			<div class="text-container-small col-sm-4 col-md-4 clearfix">
+			<div class="text-container-small col-sm-12 col-md-4 clearfix">
 
 				<div class="container-icon">
 					<div class="pointer pointer-services-<?php echo $counter; ?>"></div>
@@ -83,16 +83,16 @@ $page_form_id = $page_form_object->id;
 <div class="row section background-light">
 
 	<!-- Contact form -->
-	<div class="col-sm-6">
+	<div class="col-sm-12 col-md-6">
 		<h1><?php echo get_field('page_form_title'); ?></h1>
 		<p><?php echo get_field('page_form_description'); ?></p>
 		<?php gravity_form($page_form_id, false, false); ?>
 	</div>
 
-	<div class="col-sm-4 col-sm-offset-2" >
+	<div class="col-sm-12 col-md-4 col-md-offset-2" >
 
 				<div class="row">
-					<div class="col-sm-11 support col-centered">
+					<div class="col-sm-12 col-md-11 support col-centered">
 						<div class="box">
 							<h3><?php echo get_field('notice_title'); ?></h3>
 							<p><?php echo get_field('notice_text'); ?></p>

@@ -103,7 +103,7 @@ $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID )
 			<li class="ls-accordeon-row product-specification closed">
 
 				<div class="row ls-accordeon-header">
-					<div class="col-sm-12">
+					<div class="col-xs-12">
 						<div class="status-arrow"></div>
 						<h4><?php _e("Product specification","bonestheme"); ?></h4>
 					</div>
@@ -113,7 +113,7 @@ $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID )
 				<div class="row ls-accordeon-container">
 					<div class="ls-accordeon-container-content col-sm-12">
 						<div class="row">
-
+ 
 							<div class="table-responsive">
 								<table class="table table-hover">
 									<tbody>
@@ -156,7 +156,7 @@ $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID )
 			<li class="ls-accordeon-row closed">
 
 				<div class="row ls-accordeon-header">
-					<div class="col-sm-12">
+					<div class="col-xs-12">
 						<div class="status-arrow"></div>
 						<h4>Related products</h4>
 					</div>

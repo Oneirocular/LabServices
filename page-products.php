@@ -119,15 +119,15 @@ foreach ($child_pages as $child_page_id => $child_page_object) {
 		<a name="<?php echo $child_page_label; ?>"></a>
 		<div class="row section <? echo $background_class; ?> ">
 
-			<div class="col-sm-12">
+			<div class="col-sm-12 <?php echo $child_page_label; ?>">
 
 				<div class="row">
-					<div class="col-sm-7">
+					<div class="col-sm-12 col-md-7 child-title">
 						<h1><? echo $child_page_title; ?></h1>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-sm-12 col-md-6 child-description">
 						<? echo $child_page_text; ?>
 					</div>
 				</div>

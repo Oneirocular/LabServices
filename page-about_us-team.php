@@ -29,7 +29,7 @@ if( get_field('team_members', $child_page_object->ID) )
 			?>
 
 			<!-- Reference row -->
-				<div class="col-md-2">
+				<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 team-member">
 					<div class="image-container">
 						<img src="<? echo $member_image['sizes']['team-image-cropped']; ?>" />
 					</div>
