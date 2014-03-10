@@ -18,14 +18,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
-		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-		<![endif]-->
-		<?php // or, set /favicon.ico for IE10 win ?>
-		<meta name="msapplication-TileColor" content="#f01d4f">
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
+
+		<!-- Basic favicons -->
+		<link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon.ico?v2">
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon.ico?v2">
+		<!--[if IE]><link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon.ico?v2"><![endif]-->
+		<!-- For Opera Speed Dial -->
+		<link rel="icon" type="image/png" sizes="195x195" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-195.png?v2?v2">
+		<!-- For iPad with high-resolution Retina Display running iOS ≥ 7 -->
+		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-152.png?v2?v2">
+		<!-- For iPad with high-resolution Retina Display running iOS ≤ 6 -->
+		<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-144.png?v2?v2">
+		<!-- For iPhone with high-resolution Retina Display running iOS ≥ 7 -->
+		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-120.png?v2?v2">
+		<!-- For iPhone with high-resolution Retina Display running iOS ≤ 6 -->
+		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-114.png?v2?v2">
+		<!-- For Google TV devices -->
+		<link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-96.png?v2?v2">
+		<!-- For iPad Mini -->
+		<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-76.png?v2">
+		<!-- For first- and second-generation iPad -->
+		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-72.png?v2">
+		<!-- For non-Retina iPhone, iPod Touch and Android 2.1+ devices -->
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon/favicon-57.png?v2">
+		<!-- Windows 8 Tiles -->
+		<meta name="msapplication-TileColor" content="#FFFFFF">
+		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/favicon//favicon-144.png?v2">
+
+
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -52,14 +72,24 @@
 		<div class="container">
 			<header class="row header section">
 					<div class="col-sm-4 ">
-					<img src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/>
+					<a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/></a>
 					</div>
 					<div class="col-sm-8">
-					<nav class="navigation" role="navigation">
-						<?php bones_main_nav(); ?>
-						<?php ms_ml_language_switch(); ?>
-						<!-- <div class="language">eng</div> -->
-					</nav>
+						<div class="row">
+							<div class="col-sm-11">
+							<nav class="navigation" role="navigation">
+								<?php bones_main_nav(); ?>
+								
+
+								
+
+								<!-- <div class="language">eng</div> -->
+							</nav>
+							</div>
+							<div class="col-sm-1">
+								<?php if (function_exists('ms_ml_language_switch')) { ms_ml_language_switch(); } ?>
+							</div>
+						</div>
 					</div>
 			</header>
 

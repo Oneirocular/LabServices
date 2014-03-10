@@ -30,7 +30,7 @@ require_once( 'library/bones.php' ); // if you remove this, bones will break
 	- example custom taxonomy (like categories)
 	- example custom taxonomy (like tags)
 */
-require_once( 'library/custom-post-type.php' ); // you can disable this if you like
+//require_once( 'library/custom-post-type.php' ); // you can disable this if you like
 /*
 3. library/admin.php
 	- removing some default WordPress dashboard widgets
@@ -50,6 +50,8 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
+
+
 
 /*
 to add more sizes, simply copy a line from above
@@ -75,6 +77,7 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
+
         'bones-thumb-600' => __('600px by 150px'),
         'bones-thumb-300' => __('300px by 100px'),
     ) );
@@ -225,6 +228,55 @@ function form_submit_button($button, $form){
 
 
 
+/* VIEWS */
+
+function get_ls_product_container($ls_product) {
+
+	$product_title = $ls_product->post_title;
+	$product_description_excerpt = wp_trim_words( $ls_product->post_content , $num_words = 5, $more = null ); 
+	$product_permalink = get_permalink( $ls_product->ID );	
+
+	$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $ls_product->ID ), 'product-image-cropped' );
+
+
+
+	 $html = '<a href="'.$product_permalink.'">';
+	 $html .= '	<div class="main-product-container background-light">';
+	 $html .= '		<div class="product-thumbnail"><img src="'.$product_image[0].'"/></div>';
+	 $html .= '		<div class="inside">';
+	 $html .= '			<div class="product-title"><strong>'.$product_title.'</strong></div>';
+	 $html .= '			<p>'.$product_description_excerpt.'</p>';
+	 $html .= '			<a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'view product', 'bonestheme' ).'</a>';
+	 $html .= '		</div>';
+	 $html .= '	</div>';
+	 $html .= '</a>';
+
+	 return $html;
+		
+}
+
+
+
+function get_distribute_product_container($distribute_product) {
+
+	$product_title = $distribute_product->post_title;
+	$product_description_excerpt = wp_trim_words( $distribute_product->post_content , $num_words = 5, $more = null ); 
+	$product_permalink = get_permalink( $distribute_product->ID );	
+
+	$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $distribute_product->ID ), 'product-image-cropped' );
+
+	$html = '<a href="'.$product_permalink.'">';
+	$html .= '<div class="product-container col-sm-2 col-md-2">';
+	$html .= '	<div class="thumbnail-container"><div class="product-thumbnail"><img src="'.$product_image[0].'"/></div></div>';
+
+	//$html .= '	<div class="product-thumbnail"><img src="'.$product_image[0].'"/></div>';
+	$html .= '	<div class="inside"><div class="product-title">'.$product_title.'</div><a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'view product', 'bonestheme' ).'</a></div>';
+	$html .= '</div>';
+	$html .= '</a>';
+
+	return $html;		
+}
+
 
 function show_ls_product_carousel($products_array, $nr_of_visible = 4) {
 
@@ -270,40 +322,52 @@ function ls_carousel($slides) {
 
 	$nr_of_slides = count($slides);
 
-	$html = '';
+	if ($nr_of_slides > 1) {
 
-  	$html .= '		<div id="myCarousel" class="carousel slide" data-ride="carousel">';
-  	$html .= '			<div class="carousel-inner">';
+			$html = '';
 
-  	foreach ($slides as $slide) {
+		  	$html .= '		<div id="myCarousel" class="carousel slide" data-ride="carousel">';
+		  	$html .= '			<div class="carousel-inner">';
 
-  		if (!isset($state)) {
-            $state = "active";
-        } else {
-            $state = '';
-        }
+		  	foreach ($slides as $slide) {
 
-    	$html .= '				<div class="item '.$state.'">';
-        $html .= '					'.$slide;
-        $html .= '				</div>';
-  	}
+		  		if (!isset($state)) {
+		            $state = "active";
+		        } else {
+		            $state = '';
+		        }
 
-  	$html .= '			</div>';
+		    	$html .= '				<div class="item '.$state.'">';
+		        $html .= '					'.$slide;
+		        $html .= '				</div>';
+		  	}
 
-  	// Indicator
-    $html .= '			<ol class="carousel-indicators">';
+		  	$html .= '			</div>';
 
-    for ($i=0; $i < $nr_of_slides; $i++) {
-    	$html .= '				<li data-target="#myCarousel" data-slide-to="'.$i.'"></li>';
-    }
 
-    $html .= '			</ol>';
+		  	// Only show indicator when there's more than 1 slide
 
-  	// Controls
-  	$html .= '			<a class="left carousel-control" href="#myCarousel" data-slide="prev"><div class="icon_arrow"></div></a>';
-    $html .= '			<a class="right carousel-control" href="#myCarousel" data-slide="next"><div class="icon_arrow"></div></a>';
-  	$html .= '		</div>';
 
+		  	// Indicator
+		    $html .= '			<ol class="carousel-indicators">';
+
+		    for ($i=0; $i < $nr_of_slides; $i++) {
+		    	$html .= '				<li data-target="#myCarousel" data-slide-to="'.$i.'"></li>';
+		    }
+
+		    $html .= '			</ol>';
+
+		  	// Controls
+		  	$html .= '			<a class="left carousel-control" href="#myCarousel" data-slide="prev"><div class="icon_arrow"></div></a>';
+		    $html .= '			<a class="right carousel-control" href="#myCarousel" data-slide="next"><div class="icon_arrow"></div></a>';
+
+
+
+		  	$html .= '		</div>';
+	
+	} else {
+			$html = $slides[0];
+	}
 
   	return $html;
 
@@ -322,6 +386,252 @@ function show_if_exists($variable, $value = false) {
 		echo $value;
 	}
 }
+
+
+add_action( 'admin_menu', 'my_remove_menu_pages' );
+
+function my_remove_menu_pages() {
+
+	remove_menu_page('edit.php');
+	remove_menu_page('edit-comments.php');
+
+	if ( current_user_can( 'manage_options' ) ) {
+    	/* A user with admin privileges */
+	} else {
+		/* A user without admin privileges */
+		remove_menu_page('tools.php');
+     	remove_menu_page('widgets.php');
+
+     	/* Customize themes menu */
+     	remove_submenu_page( 'themes.php', 'themes.php' );
+     	remove_submenu_page( 'themes.php', 'customize.php' );
+     	remove_submenu_page( 'themes.php', 'widgets.php' );
+     	remove_submenu_page( 'themes.php', 'themes.php?page=custom-background' );
+
+
+
+	}
+
+    // remove_menu_page('link-manager.php');
+    // remove_menu_page('tools.php');
+
+}
+
+function edit_editor_capabilities(){
+    $role = get_role('editor');
+
+
+    $role->add_cap('gform_full_access');
+    // add $cap capability to this role object
+	$role->add_cap( 'edit_theme_options' );
+}
+add_action('admin_init','edit_editor_capabilities');
+
+
+
+
+// Add custom post types under a page menu thing
+add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2 );
+function current_type_nav_class($classes, $item) {
+
+    // # get Query Vars
+    $post_type = get_post_type();  
+
+    // # get and parse Title attribute of Menu item
+    $xfn = $item->xfn; // menu item Title attribute, as post_type;taxonomy
+    $xfn_array = explode(";", $xfn);
+
+    // # add class if needed
+    if (in_array($post_type, $xfn_array)) {
+    	 array_push($classes, 'current-menu-item');
+    }
+
+     return $classes;
+}
+
+
+
+
+		// Options page
+		add_action('admin_menu', 'ls_register_options_page');
+		add_action( 'admin_init', 'ls_register_settings');
+
+
+
+
+
+	function ls_register_options_page() {
+		add_options_page('Lab Services options', 'Lab Services options', 'manage_options', 'ls-options', 'ls_options_page');
+	}
+
+
+	function ls_register_settings() {
+		add_option( 'lab_services_product_categorie');
+		register_setting( 'ls-options', 'lab_services_product_categorie' ); 
+
+		add_option( 'ls_distribution_product_category');
+		register_setting( 'ls-options', 'ls_distribution_product_category' ); 
+
+		add_option( 'lab_services_contact_page');
+		register_setting( 'ls-options', 'lab_services_contact_page' ); 
+
+		add_option( 'lab_services_services_page');
+		register_setting( 'ls-options', 'lab_services_services_page' ); 
+	} 
+
+
+	function ls_options_page() {
+		?>
+		<div class="wrap">
+			<?php screen_icon(); ?>
+			<h2>Lab Services options</h2>
+			<form method="post" action="options.php"> 
+				<?php settings_fields( 'ls-options' ); ?>
+				<!-- <h3>Optional section title</h3> -->
+				<p>Here some Lab Services specific options are set.</p>
+				<!-- Form tables go here -->
+				<table class="form-table">
+											<tr valign="top">
+						<th scope="row"><label for="lab_services_services_page">Lab Services services page:</label></th>
+						<td>
+						<?php 
+							$args = array(
+									'id'=>'lab_services_services_page',
+									'name'=>'lab_services_services_page',
+									'selected'=>get_option('lab_services_services_page'),
+									'show_count'=>1,
+									'hierarchical'=>1
+								);
+								
+							wp_dropdown_pages($args); 
+
+						?>
+					</td>
+					</tr>
+						<tr valign="top">
+						<th scope="row"><label for="lab_services_contact_page">Lab Services contact page:</label></th>
+						<td>
+						<?php 
+							$args = array(
+									'id'=>'lab_services_contact_page',
+									'name'=>'lab_services_contact_page',
+									'selected'=>get_option('lab_services_contact_page'),
+									'show_count'=>1,
+									'hierarchical'=>1
+								);
+								
+							wp_dropdown_pages($args); 
+
+						?>
+					</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="lab_services_product_categorie">Lab Services products category:</label></th>
+						<td>
+						<?php 
+							$args = array(
+									'id'=>'lab_services_product_categorie',
+									'name'=>'lab_services_product_categorie',
+									'selected'=>get_option('lab_services_product_categorie'),
+									'show_count'=>1,
+									'hierarchical'=>1,
+									'taxonomy'=>'product_categories'
+								);
+								
+							wp_dropdown_categories($args); 
+
+						?>
+					</td>
+					</tr>
+
+					<tr valign="top">
+						<th scope="row"><label for="ls_distribution_product_category">Distribution product category:</label></th>
+						<td>
+						<?php 
+							$args = array(
+									'id'=>'ls_distribution_product_category',
+									'name'=>'ls_distribution_product_category',
+									'selected'=>get_option('ls_distribution_product_category'),
+									'show_count'=>1,
+									'hierarchical'=>1,
+									'taxonomy'=>'product_categories'
+								);
+								
+							wp_dropdown_categories($args); 
+
+						?>
+					</td>
+					</tr>
+				</table>
+				<?php submit_button(); ?>
+			</form>
+		</div>
+		<?php
+	}
+
+
+
+	function get_facebook_feed() {
+				$ch = curl_init(); //Set curl to return the data instead of printing it to the browser. 
+		curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Set the URL 
+		curl_setopt($ch, CURLOPT_URL, 'http://www.facebook.com/feeds/page.php?id=295948050437680&format=rss20'); //Execute the fetch 
+		$feed_string = curl_exec($ch); //Close the connection 
+		curl_close($ch);
+		$feed = simplexml_load_string($feed_string);
+
+			foreach($feed->xpath('//item') as $item)
+				{
+					if(empty($item->title) || $item->title == ' ') continue;
+					echo '<li><a href="'.(string)$item->link.'" title="'.(string)$item->title.'" target="_blank"><span>'.(string)$item->title.'</span></a><span class="arrow"></span></li>';
+				}
+	}
+
+
+
+
+
+
+
+
+	/* Gravity form functions */
+	add_filter("gform_validation_message", "gf_validation_message", 10, 2); 
+	function gf_validation_message($message, $form){
+
+		$message_title = __("The form could not be sent.", "projectmine");
+		$message_body = __("Errors have been highlighted below", "projectmine");
+
+
+		$html = "<div class=\"validation_error\">";
+
+		$html .= "<strong>".$message_title."</strong>";
+		$html .= "<p>".$message_body."</p>";
+
+		$html .= "</div>";
+
+		return $html;
+
+	}
+
+	/* Gravity forms service connection */
+	add_filter("gform_field_value_gf_message", "gf_populate_message");
+	function gf_populate_message($value){
+
+		// If information is set
+		if (isset($_GET['subject'])=="information") {
+
+			/* Get service details */
+			$services_page_id = get_option('lab_services_services_page');
+			$service_options = get_field('text_blocks', $services_page_id);
+
+			/* Message preset */
+			$message = __("Information about", "bonestheme").": (services) ".$service_options[$_GET['service_id']]['label']."\n\n";
+			return $message;
+			
+		}
+
+	}
+
 
 
 ?>

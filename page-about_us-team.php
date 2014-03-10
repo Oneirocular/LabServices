@@ -1,4 +1,11 @@
 
+<div class="row">
+	<div class="col-sm-6">
+		<span class="category"><h5><? echo $child_page_label; ?></h5></span>
+		<? echo $child_page_text; ?>
+	</div>
+</div>
+<div class="row">
 
 <div class="col-sm-12 team-members">
 			<div class="row">
@@ -23,7 +30,9 @@ if( get_field('team_members', $child_page_object->ID) )
 
 			<!-- Reference row -->
 				<div class="col-md-2">
-					<img style="width:100%" src="<? echo $member_image['sizes']['large']; ?>" />
+					<div class="image-container">
+						<img src="<? echo $member_image['sizes']['team-image-cropped']; ?>" />
+					</div>
 					<div class="inside">
 						<strong><?php echo $member_name; ?></strong>
 						<span><?php echo $member_function; ?></span>
@@ -44,4 +53,5 @@ if( get_field('team_members', $child_page_object->ID) )
 ?>
 			</div>
 
+</div>
 </div>

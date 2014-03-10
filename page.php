@@ -11,6 +11,8 @@ if (isset($post->post_parent)) {
 	$parent_post = get_post($post->post_parent);
 }
 
+$hide_next_section = false;
+
 
 ?>
 
@@ -20,7 +22,19 @@ if (isset($post->post_parent)) {
 	<div class="row">
 		<div class="col-sm-6">
 			<?php 
+
+				if ($parent_post->post_content != '') {
+					
 					show_if_exists($parent_post->post_content, '<h5>'.$parent_post->post_content.'</h5>');
+					
+				} else {
+
+					echo "<h1>".$page_title."</h1>";
+					echo "<p>".$page_content."</p>";
+
+					$hide_next_section = true;
+				}
+
 			?>
 		</div>
 
@@ -29,6 +43,9 @@ if (isset($post->post_parent)) {
 	</div>
 </div>
 
+<?php
+if (!$hide_next_section) {
+?>
 <!-- Home Columns -->
 <div class="row section background-light">
 	<div class="col-sm-12">
@@ -47,6 +64,9 @@ if (isset($post->post_parent)) {
 </div>
 
 
+<?php
+}
+?>
 
 
 

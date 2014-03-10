@@ -1,4 +1,6 @@
 
+
+
 <?php 
 
 	$args = array(
@@ -9,10 +11,16 @@
 	);
 
 	$jobs = get_children( $args );
-
 ?>
 
 
+<div class="row">
+	<div class="col-sm-6">
+		<span class="category"><h5><? echo $child_page_label; ?></h5></span>
+		<? echo $child_page_text; ?>
+	</div>
+</div>
+<div class="row">
 <div class="col-sm-7 jobs-listing">
 			
 
@@ -41,5 +49,5 @@
 
 ?>
 			
-
+</div>
 </div>

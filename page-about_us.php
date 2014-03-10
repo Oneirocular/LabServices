@@ -13,6 +13,7 @@ Template Name: About Us
 		'numberposts' => -1,
 		'order' => 'ASC',
 		'post_status' => 'publish',
+		'orderby' => 'menu_order',
 		'post_parent' => $post->ID
 	);
 
@@ -114,6 +115,7 @@ $i = 0;
 foreach ($child_pages as $child_page_id => $child_page_object) {
 
 	$child_page_label = $child_page_object->post_title;
+	$child_page_slug = get_field('page_slug', $child_page_id);
 	$child_page_text = $child_page_object->post_content;
 	// $field_button_text = get_sub_field('button');
 
@@ -127,27 +129,19 @@ foreach ($child_pages as $child_page_id => $child_page_object) {
 		<div class="row section <? echo $background_class; ?>">
 
 			<div class="col-sm-12">
-
-				<div class="row">
-					<div class="col-sm-6">
-						<span class="category"><h5><? echo $child_page_label; ?></h5></span>
-						<? echo $child_page_text; ?>
-					</div>
-				</div>
-
-				<div class="row">
-
+				
 					<?php
 					// Get the right page content
-					if ($child_page_label == "references") {
+					if ($child_page_slug == "references") {
 						include(locate_template('page-about_us-rows.php')); // because get_template_part doesn;t send vars
-					} else if ($child_page_label == "team") {
+					} else if ($child_page_slug == "vision") {
+						include(locate_template('page-about_us-vision.php')); // because get_template_part doesn;t send vars
+					} else if ($child_page_slug == "team") {
 						include(locate_template('page-about_us-team.php')); // because get_template_part doesn;t send vars
-					} else if ($child_page_label == "jobs") {
+					} else if ($child_page_slug == "jobs") {
 						include(locate_template('page-about_us-jobs.php')); // because get_template_part doesn;t send vars
 					}
 					?>
-				</div>
 
 			</div>
 

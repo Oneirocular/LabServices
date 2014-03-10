@@ -3,9 +3,8 @@
 
 
 
-
 	/* Get distribution products */
-	$ls_distribution_groups = get_field('product_groups');
+	$ls_distribution_groups = get_field('product_groups', $child_page_object->ID);
 	$ls_distribution_products_array = array();
 
 	foreach ($ls_distribution_groups as $distribution_group) {
@@ -74,22 +73,8 @@
 
 								foreach ($product_group['product_group_products'] as $group_product) {
 
-									
-									$product_title = $group_product->post_title;
-									$product_description_excerpt = wp_trim_words( $group_product->post_content , $num_words = 5, $more = null ); 
-									$product_permalink = get_permalink( $group_product->ID );	
+									echo get_distribute_product_container($group_product);
 
-									$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $group_product->ID ), 'medium' );
-									?>
-
-										<div class="product-container col-sm-2 col-md-2">
-
-										<div class="product-thumbnail"><img src="<?php echo $product_image[0]; ?>"/></div>
-										<div class="inside"><div class="product-title"><?php echo $product_title; ?></div><a class="btn btn-arrow btn-sm" href="<?php echo $product_permalink; ?>" role="button"><?php echo __( 'view product', 'bonestheme' ); ?></a></div>
-
-										</div>
-
-									<?
 								}
 
 								?>

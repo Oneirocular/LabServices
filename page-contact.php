@@ -80,7 +80,7 @@ $page_form_id = $page_form_object->id;
 		<ul class="contact_block">
 		<?php
 
-			echo get_contact_row("Postal address", false, true);
+			echo get_contact_row(__("Postal address", "bonestheme"), false, true);
 			if ($postal_address) { echo get_contact_row($postal_address); };
 			if ($postal_zipcode) { echo get_contact_row($postal_zipcode); };
 			if ($postal_city) { echo get_contact_row($postal_city); };
@@ -92,7 +92,7 @@ $page_form_id = $page_form_object->id;
 		<ul class="contact_block">
 		<?php
 			
-			echo get_contact_row("Visitors address", false, true);
+			echo get_contact_row(__("Visitors address", "bonestheme"), false, true);
 			if ($visitors_address) { echo get_contact_row($visitors_address); };
 			if ($visitors_zipcode) { echo get_contact_row($visitors_zipcode); };
 			if ($visitors_city) { echo get_contact_row($visitors_city); };
@@ -104,9 +104,9 @@ $page_form_id = $page_form_object->id;
 		<ul class="contact_block">
 		<?php
 			
-			if ($kvk_number) { echo get_contact_row("KvK. nr. ".$kvk_number); };
-			if ($registered_office) { echo get_contact_row("Statuaire zetel: ".$registered_office); };
-			if ($btw_number) { echo get_contact_row("BTW nr. ".$btw_number); };
+			if ($kvk_number) { echo get_contact_row($kvk_number); };
+			if ($registered_office) { echo get_contact_row($registered_office); };
+			if ($btw_number) { echo get_contact_row($btw_number); };
 
 		?>
 		</ul>
@@ -114,7 +114,7 @@ $page_form_id = $page_form_object->id;
 
 	<!-- Contact form -->
 	<div class="col-sm-6">
-		<?php gravity_form($page_form_id); ?>
+		<?php gravity_form($page_form_id, false); ?>
 	</div>
 
 </div>

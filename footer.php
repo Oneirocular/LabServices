@@ -1,23 +1,30 @@
 <?php
 
-$company_name = get_field('company_name',1264);
-$email_address = get_field('email_address',1264);
-$telephone_number = get_field('telephone_number',1264);
-$fax_number = get_field('fax_number',1264);
+// Get the contact page_id, the contact page contains al fields for address etc.
+$contact_page_id = get_option('lab_services_contact_page');
 
 
-	// Contact post
-$postal_address = get_field('postal_address',1264);
-$postal_zipcode = get_field('postal_zipcode',1264);
-$postal_city = get_field('postal_city',1264);
-$postal_country = get_field('postal_country',1264);
+// Load the values
+$company_name = get_field('company_name',$contact_page_id);
+$email_address = get_field('email_address',$contact_page_id);
+$telephone_number = get_field('telephone_number',$contact_page_id);
+$fax_number = get_field('fax_number',$contact_page_id);
 
-	// Contact visitor
-$visitors_address = get_field('visitors_address',1264);
-$visitors_zipcode = get_field('visitors_zipcode',1264);
-$visitors_city = get_field('visitors_city',1264);
-$visitors_country = get_field('visitors_country',1264);
+// Contact post
+$postal_address = get_field('postal_address',$contact_page_id);
+$postal_zipcode = get_field('postal_zipcode',$contact_page_id);
+$postal_city = get_field('postal_city',$contact_page_id);
+$postal_country = get_field('postal_country',$contact_page_id);
 
+// Contact visitor
+$visitors_address = get_field('visitors_address',$contact_page_id);
+$visitors_zipcode = get_field('visitors_zipcode',$contact_page_id);
+$visitors_city = get_field('visitors_city',$contact_page_id);
+$visitors_country = get_field('visitors_country',$contact_page_id);
+
+// Social media
+$facebook_user = get_field('social_facebook_user',$contact_page_id);
+$twitter_user = get_field('social_twitter_user',$contact_page_id);
 
 ?>
 	<div class="row section footer">
@@ -63,8 +70,8 @@ $visitors_country = get_field('visitors_country',1264);
 			<div class="row">
 				<div class="col-sm-3 ">
 					<ul class="social_channels">
-						<li><a href="https://www.facebook.com/LabServices" target="_BLANK"><div class="icon facebook"></div></a></li>
-						<li><a href="https://twitter.com/LabFacts" target="_BLANK"><div class="icon twitter"></div></a></li>
+						<li><a href="https://www.facebook.com/<?php echo $facebook_user; ?>" target="_BLANK"><div class="icon facebook"></div></a></li>
+						<li><a href="https://twitter.com/<?php echo $twitter_user; ?>" target="_BLANK"><div class="icon twitter"></div></a></li>
 
 
 					</ul>
@@ -80,7 +87,6 @@ $visitors_country = get_field('visitors_country',1264);
 
 
 
-<?php // all js scripts are loaded in library/bones.php ?>
 <?php wp_footer(); ?>
 
 </body>

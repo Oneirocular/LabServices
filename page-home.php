@@ -7,7 +7,6 @@ get_header();
 
 /*echo _e( 'home', 'bonestheme' );*/
 
-
 ?>
 
 
@@ -24,7 +23,7 @@ get_header();
 
         	// Prepare variables
         	$slide_image_object = get_sub_field('image');
-        	$slide_image = $slide_image_object['sizes']['main-slider'];        	
+        	$slide_image = $slide_image_object['sizes']['main-slider'];   
         	$slide_text = get_sub_field('content');
         	$slide_link_object = get_sub_field('link');
         	$slide_link_url = false;
@@ -115,13 +114,36 @@ get_header();
 			$counter++;
 		}
 	}
+
+
+	
+
 	?>
 
 
-	<div class="col-sm-4">
+	<div class="col-sm-4" >
 
-	social_media
-	
+		<div class="row">
+			<div class="col-sm-11 social_feeds " style="float:right;">
+					<div class="box clearfix">
+						<h5>lab feeds</h5>
+
+						<div id="social_carousel" class="social-feeds-carousel carousel slide" data-ride="social-feeds-carousel">
+							<div class="carousel-inner lab-feeds">				
+								<?php echo get_labfacts(); ?>
+							</div>			
+							<ol class="carousel-indicators">		
+								<?php echo get_labfacts_indicators(); ?>		
+							
+							</ol>			
+							<a class="left carousel-control" href="#social_carousel" data-slide="prev"><div class="icon_arrow"></div></a>			
+							<a class="right carousel-control" href="#social_carousel" data-slide="next"><div class="icon_arrow"></div></a>		
+						</div>
+
+					</div>
+			</div>
+		</div>
+
 	</div>
 </div>
 

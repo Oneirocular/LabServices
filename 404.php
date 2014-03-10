@@ -1,43 +1,32 @@
-<?php get_header(); ?>
+<?php 
 
-			<div id="content">
+get_header(); 
 
-				<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="eightcol first clearfix" role="main">
 
-						<article id="post-not-found" class="hentry clearfix">
+?>
 
-							<header class="article-header">
+<div class="row section background-dark">
+	<div class="col-sm-12">
 
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
+	<div class="row">
+		<div class="col-sm-6">
+			<?php 
 
-							</header>
 
-							<section class="entry-content">
+					echo "<h1>".__( 'Epic 404 - Article Not Found', 'bonestheme' )."</h1>";
+					echo "<p>".__( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' )."</p>";
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
 
-							</section>
 
-							<section class="search">
+			?>
+		</div>
 
-									<p><?php get_search_form(); ?></p>
+	</div>
 
-							</section>
+	</div>
+</div>
 
-							<footer class="article-footer">
 
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
-
-							</footer>
-
-						</article>
-
-					</div>
-
-				</div>
-
-			</div>
 
 <?php get_footer(); ?>

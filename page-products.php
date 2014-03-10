@@ -8,7 +8,8 @@ Template Name: Products
 		'numberposts' => -1,
 		'order' => 'ASC',
 		'post_status' => 'publish',
-		'post_parent' => $post->ID
+		'post_parent' => $post->ID,
+		'orderby'=>'menu_order'
 	);
 
 	$child_pages = get_children( $args );
@@ -40,24 +41,8 @@ Template Name: Products
 
 	foreach ($ls_products as $ls_product) {
 	
-		$product_title = $ls_product->post_title;
-		$product_description_excerpt = wp_trim_words( $ls_product->post_content , $num_words = 5, $more = null ); 
-		$product_permalink = get_permalink( $ls_product->ID );	
-
-		$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $ls_product->ID ), 'medium' );
-
-		
-		 $html = '	<div class="main-product-container background-light">';
-		 $html .= '		<div class="product-thumbnail"><img src="'.$product_image[0].'"/></div>';
-		 $html .= '		<div class="inside">';
-		 $html .= '			<div class="product-title"><strong>'.$product_title.'</strong></div>';
-		 $html .= '			<p>'.$product_description_excerpt.'</p>';
-		 $html .= '			<a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'view product', 'bonestheme' ).'</a>';
-		 $html .= '		</div>';
-		 $html .= '	</div>';
-		
-
-
+		// Get the product container layout
+		$html = get_ls_product_container($ls_product);
 
 		$products_array[] = $html;
 

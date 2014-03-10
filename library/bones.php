@@ -166,10 +166,18 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'bones-js' );
 		wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?&sensor=true');
 
+
+		/* Prepare post_id for constant var inclusion in javascript */
+		if (isset($post->ID)) {
+			$post_id = $post->ID;
+		} else {
+			$post_id = false;
+		}
+
 		wp_localize_script( 'bones-js', 'constant_vars', array( 
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 			'theme_url' => get_template_directory_uri(),
-			'post_id' => $post->ID
+			'post_id' => $post_id
 			) );  
 
 
@@ -198,6 +206,13 @@ function bones_theme_support() {
 
 	// slider
 	add_image_size( 'main-slider', 1160, 560, true );
+
+	add_image_size( 'product-image', 250, 250, false);
+	add_image_size( 'product-image-cropped', 250, 250, true);
+	add_image_size( 'side-image', 600, 400, false);
+
+	add_image_size( 'side-image-cropped', 600, 400, true);
+	add_image_size( 'team-image-cropped', 250, 300, true);
 
 
 	// wp custom background (thx to @bransonwerner for update)

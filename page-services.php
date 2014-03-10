@@ -65,7 +65,7 @@ $page_form_id = $page_form_object->id;
 					<h3><? echo $field_title; ?></h3>
 					<? echo $field_text; ?>
 
-					<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>" role="button"><? echo $field_button_text; ?></a>
+					<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>?subject=information&service_id=<?php echo $counter-1;?>" role="button"><? echo $field_button_text; ?></a>
 
 				</div>
 			</div>

@@ -45,6 +45,23 @@ jQuery(document).ready(function($) {
 
 
 
+/* Language selector */
+$('.active_language').click(function() {
+
+	if ($('.language_select').hasClass("open")) {
+		$('.language_select').removeClass("open");
+		$('.language_select').hide();
+	} else {
+		$('.language_select').addClass("open");
+		$('.language_select').show();
+	}
+
+
+});
+
+
+
+
 
 	/* ACCORDEON */
 	init_accordeon();
@@ -202,6 +219,17 @@ var searchRequest; // this variable holds the search request
 	}
 
 	
+
+
+
+$('.social-feeds-carousel').carousel({
+	interval: 10000
+});
+
+
+$('.social-feeds-carousel').on('slide.bs.carousel', function (e) {
+    $('.social-feeds-carousel .lab-feeds').animate({height: $(e.relatedTarget).outerHeight()});
+});
 
 
 

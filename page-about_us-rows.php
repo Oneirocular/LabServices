@@ -1,5 +1,11 @@
+<div class="row">
+	<div class="col-sm-6">
+		<span class="category"><h5><? echo $child_page_label; ?></h5></span>
+		<? echo $child_page_text; ?>
+	</div>
+</div>
 
-
+<div class="row">
 <div class="col-sm-12 references">
 
 <?php
@@ -33,18 +39,17 @@ if( get_field('text_rows', $child_page_object->ID) )
 				</div>
 
 				<?php if ($mirrored) { ?>
-				<div class="col-md-6 col-image">
+				<div class="col-md-6 col-image  ">
 				<?php } else { ?>
-				<div class="col-md-6 col-md-push-6 col-image">
+				<div class="col-md-6 col-md-push-6 col-image image-align-right" >
 				<?php } ?>
-
-					<img style="width:100%" src="<? echo $field_image['sizes']['large']; ?>" />
+					<img src="<? echo $field_image['sizes']['side-image']; ?>" />
 				</div>
 
 				<?php if ($mirrored) { ?>
-				<div class="col-md-6">
+				<div class="col-md-6 col-text">
 				<?php } else { ?>
-				<div class="col-md-6 col-md-pull-6">
+				<div class="col-md-6 col-md-pull-6 col-text">
 				<?php } ?>
 					<h3><? echo $field_title; ?></h3>
 					<? echo $field_text; ?>
@@ -59,5 +64,5 @@ if( get_field('text_rows', $child_page_object->ID) )
 
 	}
 ?>
-
+</div>
 </div>
