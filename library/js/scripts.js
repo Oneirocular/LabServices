@@ -76,6 +76,29 @@ $('.active_language').click(function() {
 
 
 
+$('.js-show-menu').click(function() {
+
+	console.log('hha');
+
+	if (!$('.mobile-menu').hasClass('opened')) {
+		$('.mobile-menu').slideDown( "fast", function() {
+			$('.mobile-menu').addClass('opened');
+		});	
+	} else {
+		$('.mobile-menu').slideUp( "fast", function() {
+			$('.mobile-menu').removeClass('opened');
+		});	
+	}
+
+
+
+	// $('.mobile-menu .opened').slideUp( "fast", function() {
+ //   		$('.mobile-menu').removeClass("opened");
+ // 	 });
+
+});
+
+
 
 
 	/* ACCORDEON */

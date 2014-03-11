@@ -26,6 +26,9 @@ $ls_bg_c_box_green:#DCE041;
 
 $ls_border_color_input:#83A8C0;
 
+
+$ls_bg_menu_color:#A4C0D1;
+
 /* fonts */
 $font-family: "NimbusSanNov-Reg";
 $font-family-bold:"NimbusSanNov-Bol";
@@ -174,10 +177,6 @@ strong, th {
 			padding-right:$side_padding;
 		}
 
-		@media (max-width: $screen-sm-min) {
-			// padding-left:10px;
-			// padding-right:10px;
-		}
 
 	}
 
@@ -190,6 +189,7 @@ strong, th {
 		}
 
 		&.header {
+
 			padding-bottom:34px;
 			border-bottom: 1px solid $ls_bg_c_blue_dark_line;
 
@@ -743,53 +743,311 @@ $member-quote-padding:15;
 	}
 }
 
-/* nog even goed naar kijken */
-.navigation {
 
-	float:right;
-	padding-top:49px;
+.media-lg, .media-md {
+	.navigation {
+		li {
+			a {
 
-	.nav {
-		display: inline-block;
-		list-style-type:none;
-		padding:0;
-		margin:0;
+				@extend .btn;
+				@include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
 
-	} 
+				font-family:$font-family-sans-serif;
+				padding-left:15px;
+				padding-right:15px;
+				padding-top:6px;
+				padding-bottom:2px;
 
+				text-transform: lowercase;
+			}
 
+			&.current-menu-item a, &.current-page-ancestor a {
+				@include button-variant(darken($btn-default-color,10%), darken($btn-menu-bg-color,10%), darken($btn-menu-border, 10%));
+			}
+		}
+	}
+}
 
-
-	li {
+.media-md {
+	.navigation {
 		float:left;
-		padding-right:20px;
+	}
+}
+/* nog even goed naar kijken */
+// .navigation {
 
-		a {
+// 	padding-top:49px;
 
-			@extend .btn;
-			@include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
+// 	.nav {
+// 		display: inline-block;
+// 		list-style-type:none;
+// 		padding:0;
+// 		margin:0;
 
-			font-family:$font-family-sans-serif;
-			padding-left:15px;
-			padding-right:15px;
-			padding-top:6px;
-			padding-bottom:2px;
-
-			text-transform: lowercase;
+// 	} 
 
 
+// 	@media (max-width: $screen-xs-min) {
+// 	li {
+		
+// 	}
+// 	}
+
+// 	@media (min-width: $screen-sm-min) {
+// 		float:right;
+	
+
+// 		li {
+// 				float:left;
+// 				padding-right:20px;
+			
+// 			a {
+
+// 				//@extend .btn;
+// 				@include button-variant($btn-default-color, $btn-menu-bg-color, $btn-menu-border);
+
+// 				font-family:$font-family-sans-serif;
+// 				padding-left:15px;
+// 				padding-right:15px;
+// 				padding-top:6px;
+// 				padding-bottom:2px;
+
+// 				text-transform: lowercase;
+// 			}
+
+
+
+			
+
+// 			&.current-menu-item a, &.current-page-ancestor a {
+
+// 				@include button-variant(darken($btn-default-color,10%), darken($btn-menu-bg-color,10%), darken($btn-menu-border, 10%));
+
+// 			}
+// 		}
+
+// 	}
+
+
+// }
+
+
+@media (min-width: $screen-md-min) {
+
+	.navigation {
+
+		padding-top:49px;
+
+		.nav {
+			display: inline-block;
+			list-style-type:none;
+			padding:0;
+			margin:0;
+
+		} 
+
+		float:right;
+
+		li {
+			float:left;
+			padding-right:20px;
+
+			a {
+				padding-left:15px;
+				padding-right:15px;
+				padding-top:6px;
+				padding-bottom:2px;
+				text-transform: lowercase;
+
+
+			}
 
 		}
 
-		&.current-menu-item a, &.current-page-ancestor a {
 
-			@include button-variant(darken($btn-default-color,10%), darken($btn-menu-bg-color,10%), darken($btn-menu-border, 10%));
 
+	}
+
+}
+
+
+// Addres everything until medium size
+@media (max-width: $screen-md-min) {
+
+
+	.section {
+		&.header {
+			padding:0px !important;
+			border-bottom:none !important;
 		}
 	}
 
 
+	.logo {
+		display:block;
+		margin:0 auto;
+		width:240px !important;
+		margin-bottom:10px;
+
+		img {
+			width:100%;
+		}
+	}
+
+	.mobile-header {
+		height:50px;
+		border-top:1px solid darken($ls_bg_menu_color, 12%);
+
+		border-bottom:1px solid darken($ls_bg_menu_color, 12%);
+
+		.menu-button {
+
+			margin-top:10px;
+
+			width:30px;
+			height:30px;
+
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			background-image: url($icon_url+"icon_menu.svg");
+
+
+			/* The url is relative to the document, not to the css file! */
+			/* Prefer absolute urls to avoid confusion. */
+			-ms-behavior: url($polyfill_url+"backgroundsize.min.htc");
+		}
+
+		.mobile-language {
+
+			border-left:1px solid darken($ls_bg_menu_color, 12%);
+			height:49px;
+			.language_container {
+				text-align:center;
+
+				margin-top:12px;
+
+				.language_select {
+					position: relative;
+				}
+			}
+		}
+	}
+
+
+	.col-xs-no-padding {
+		padding:0px !important;
+	}
+	
+	.menu {
+		background-color:$ls_bg_menu_color;
+
+
+		.mobile-menu {
+			display:none;
+			padding:0px;
+		}
+
+
+		.language_container {
+			margin:0px;
+		}
+	}
+
+	.nav {
+		padding:0px;
+		margin:0px;
+		text-decoration: none;
+		list-style: none;
+		li {
+
+
+			border-bottom:1px solid darken($ls_bg_menu_color, 8%);
+			padding-left:10px;
+			padding-top:10px;
+			padding-bottom:6px;
+
+			&:hover {
+				background-color:darken($ls_bg_menu_color, 5%);
+			}
+
+			a {
+				display: block;
+				font-family: $font-family-base;
+				font-size: 18px;
+				padding:0px;
+				width: 100%;
+				text-align: left;
+
+			}
+
+			&.current-menu-item {
+				background-color:darken($ls_bg_menu_color, 5%);
+
+				a {
+				
+
+				}
+			}
+
+		}
+
+
+
+	}
 }
+
+// Only address size-sm
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-min)   {
+	.logo {
+		margin-left:40px;
+	}
+
+
+	.menu-button {
+		margin-left:45px;
+	}
+	.nav {
+		li {
+			padding-left:54px;
+		}
+	}
+}
+	// @media (max-width: $screen-xs-min) {
+
+	// 	.col-xs-no-padding {
+	// 		padding:0px !important;
+
+	// 	}
+	// 	.haah {
+
+	// 	}
+	// 	.navigation {
+	// 			float:none !important;
+	// 			width:100%;
+
+	// 		.nav {
+	// 		}
+
+				
+			
+			
+	// 		li {
+	// 			float:none;
+	// 			background-color:#ff0000;
+
+	// 			a {
+	// 				padding:0px !important;
+	// 				background-color:#ffffff;
+	// 				border:none !important;
+	// 			}
+
+	// 		}
+			
+	// 	}
+
+ //  	}
+
 
 
 	.language_container {
@@ -1060,6 +1318,10 @@ $member-quote-padding:15;
 
 	.box {
 
+		@media (max-width: $screen-md-min) {
+			margin-top:40px;
+
+		}
 
 		h3 {
 			padding-top:26px;
@@ -1801,7 +2063,7 @@ p > a:link, p > a:active, p > a:visited {
 }
 
 // Only works on links withouth an enclosing p
-div:hover  > a{
+div:hover  > a, li:hover  > a{
 	text-decoration:none;
 	color:darken($link-color, 5%);
 }

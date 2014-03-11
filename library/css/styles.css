@@ -235,9 +235,10 @@ th {
   .table th {
     background-color: #fff !important; }
 
-  .btn > .caret, .navigation li a > .caret,
+  .btn > .caret, .media-lg .navigation li a > .caret, .media-md .navigation li a > .caret,
   .dropup > .btn > .caret,
-  .navigation li .dropup > a > .caret {
+  .media-lg .navigation li .dropup > a > .caret,
+  .media-md .navigation li .dropup > a > .caret {
     border-top-color: #000 !important; }
 
   .label {
@@ -1860,7 +1861,7 @@ select[multiple].input-lg {
   top: 0;
   right: 10px; }
 
-.btn, .navigation li a {
+.btn, .media-lg .navigation li a, .media-md .navigation li a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -1879,19 +1880,19 @@ select[multiple].input-lg {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none; }
-  .btn:focus, .navigation li a:focus {
+  .btn:focus, .media-lg .navigation li a:focus, .media-md .navigation li a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, .navigation li a:hover, .btn:focus, .navigation li a:focus {
+  .btn:hover, .media-lg .navigation li a:hover, .media-md .navigation li a:hover, .btn:focus, .media-lg .navigation li a:focus, .media-md .navigation li a:focus {
     color: #19657f;
     text-decoration: none; }
-  .btn:active, .navigation li a:active, .btn.active, .navigation li a.active {
+  .btn:active, .media-lg .navigation li a:active, .media-md .navigation li a:active, .btn.active, .media-lg .navigation li a.active, .media-md .navigation li a.active {
     outline: 0;
     background-image: none;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, .navigation li a.disabled, .btn[disabled], .navigation li a[disabled], fieldset[disabled] .btn, fieldset[disabled] .navigation li a, .navigation li fieldset[disabled] a {
+  .btn.disabled, .media-lg .navigation li a.disabled, .media-md .navigation li a.disabled, .btn[disabled], .media-lg .navigation li a[disabled], .media-md .navigation li a[disabled], fieldset[disabled] .btn, fieldset[disabled] .media-lg .navigation li a, .media-lg .navigation li fieldset[disabled] a, fieldset[disabled] .media-md .navigation li a, .media-md .navigation li fieldset[disabled] a {
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.65;
@@ -2210,7 +2211,7 @@ input[type="button"].btn-block {
   color: white;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn, .carousel-caption .navigation li a, .navigation li .carousel-caption a {
+  .carousel-caption .btn, .carousel-caption .media-lg .navigation li a, .media-lg .navigation li .carousel-caption a, .carousel-caption .media-md .navigation li a, .media-md .navigation li .carousel-caption a {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -2558,7 +2559,7 @@ strong, th {
   .product-container .inside, .main-product-frame .inside {
     padding: 10px;
     padding-top: 15px; }
-    .product-container .inside .btn, .product-container .inside .navigation li a, .navigation li .product-container .inside a, .main-product-frame .inside .btn, .main-product-frame .inside .navigation li a, .navigation li .main-product-frame .inside a {
+    .product-container .inside .btn, .product-container .inside .media-lg .navigation li a, .media-lg .navigation li .product-container .inside a, .product-container .inside .media-md .navigation li a, .media-md .navigation li .product-container .inside a, .main-product-frame .inside .btn, .main-product-frame .inside .media-lg .navigation li a, .media-lg .navigation li .main-product-frame .inside a, .main-product-frame .inside .media-md .navigation li a, .media-md .navigation li .main-product-frame .inside a {
       margin-top: 10px; }
     @media (max-width: 480px) {
       .product-container .inside, .main-product-frame .inside {
@@ -2571,7 +2572,7 @@ strong, th {
   margin-bottom: 0px; }
 .carousel .inside {
   height: 150px; }
-  .carousel .inside .btn, .carousel .inside .navigation li a, .navigation li .carousel .inside a {
+  .carousel .inside .btn, .carousel .inside .media-lg .navigation li a, .media-lg .navigation li .carousel .inside a, .carousel .inside .media-md .navigation li a, .media-md .navigation li .carousel .inside a {
     position: absolute;
     bottom: 23px; }
 
@@ -2683,7 +2684,7 @@ strong, th {
   box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0); }
 
 /* Buttons */
-.btn, .navigation li a, .btn-arrow {
+.btn, .media-lg .navigation li a, .media-md .navigation li a, .btn-arrow {
   font-family: "NimbusSanNov-Bol";
   font-size: 15px;
   padding-top: 5px;
@@ -2692,49 +2693,49 @@ strong, th {
 .btn-arrow {
   padding-right: 33px; }
 
-.background-dark .btn, .background-dark .navigation li a, .navigation li .background-dark a, .background-dark .btn-arrow {
+.background-dark .btn, .background-dark .media-lg .navigation li a, .media-lg .navigation li .background-dark a, .background-dark .media-md .navigation li a, .media-md .navigation li .background-dark a, .background-dark .btn-arrow {
   color: #19657f;
   background-color: #b7d0db;
   border-color: #a5c2d2; }
-  .background-dark .btn:hover, .background-dark .navigation li a:hover, .navigation li .background-dark a:hover, .background-dark .btn:focus, .background-dark .navigation li a:focus, .navigation li .background-dark a:focus, .background-dark .btn:active, .background-dark .navigation li a:active, .navigation li .background-dark a:active, .background-dark .btn.active, .background-dark .navigation li a.active, .navigation li .background-dark a.active, .background-dark .btn-arrow:hover, .background-dark .btn-arrow:focus, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
+  .background-dark .btn:hover, .background-dark .media-lg .navigation li a:hover, .media-lg .navigation li .background-dark a:hover, .background-dark .media-md .navigation li a:hover, .media-md .navigation li .background-dark a:hover, .background-dark .btn:focus, .background-dark .media-lg .navigation li a:focus, .media-lg .navigation li .background-dark a:focus, .background-dark .media-md .navigation li a:focus, .media-md .navigation li .background-dark a:focus, .background-dark .btn:active, .background-dark .media-lg .navigation li a:active, .media-lg .navigation li .background-dark a:active, .background-dark .media-md .navigation li a:active, .media-md .navigation li .background-dark a:active, .background-dark .btn.active, .background-dark .media-lg .navigation li a.active, .media-lg .navigation li .background-dark a.active, .background-dark .media-md .navigation li a.active, .media-md .navigation li .background-dark a.active, .background-dark .btn-arrow:hover, .background-dark .btn-arrow:focus, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
     color: #19657f;
     background-color: #9cbecd;
     border-color: #7ca6be; }
-  .open .background-dark .btn.dropdown-toggle, .open .background-dark .navigation li a.dropdown-toggle, .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
+  .open .background-dark .btn.dropdown-toggle, .open .background-dark .media-lg .navigation li a.dropdown-toggle, .media-lg .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .media-md .navigation li a.dropdown-toggle, .media-md .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
     color: #19657f;
     background-color: #9cbecd;
     border-color: #7ca6be; }
-  .background-dark .btn:active, .background-dark .navigation li a:active, .navigation li .background-dark a:active, .background-dark .btn.active, .background-dark .navigation li a.active, .navigation li .background-dark a.active, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
+  .background-dark .btn:active, .background-dark .media-lg .navigation li a:active, .media-lg .navigation li .background-dark a:active, .background-dark .media-md .navigation li a:active, .media-md .navigation li .background-dark a:active, .background-dark .btn.active, .background-dark .media-lg .navigation li a.active, .media-lg .navigation li .background-dark a.active, .background-dark .media-md .navigation li a.active, .media-md .navigation li .background-dark a.active, .background-dark .btn-arrow:active, .background-dark .btn-arrow.active {
     background-image: none; }
-  .open .background-dark .btn.dropdown-toggle, .open .background-dark .navigation li a.dropdown-toggle, .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
+  .open .background-dark .btn.dropdown-toggle, .open .background-dark .media-lg .navigation li a.dropdown-toggle, .media-lg .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .media-md .navigation li a.dropdown-toggle, .media-md .navigation li .open .background-dark a.dropdown-toggle, .open .background-dark .btn-arrow.dropdown-toggle {
     background-image: none; }
-  .background-dark .btn.disabled, .background-dark .navigation li a.disabled, .navigation li .background-dark a.disabled, .background-dark .btn.disabled:hover, .background-dark .navigation li a.disabled:hover, .navigation li .background-dark a.disabled:hover, .background-dark .btn.disabled:focus, .background-dark .navigation li a.disabled:focus, .navigation li .background-dark a.disabled:focus, .background-dark .btn.disabled:active, .background-dark .navigation li a.disabled:active, .navigation li .background-dark a.disabled:active, .background-dark .btn.disabled.active, .background-dark .navigation li a.disabled.active, .navigation li .background-dark a.disabled.active, .background-dark .btn[disabled], .background-dark .navigation li a[disabled], .navigation li .background-dark a[disabled], .background-dark .btn[disabled]:hover, .background-dark .navigation li a[disabled]:hover, .navigation li .background-dark a[disabled]:hover, .background-dark .btn[disabled]:focus, .background-dark .navigation li a[disabled]:focus, .navigation li .background-dark a[disabled]:focus, .background-dark .btn[disabled]:active, .background-dark .navigation li a[disabled]:active, .navigation li .background-dark a[disabled]:active, .background-dark .btn[disabled].active, .background-dark .navigation li a[disabled].active, .navigation li .background-dark a[disabled].active, fieldset[disabled] .background-dark .btn, fieldset[disabled] .background-dark .navigation li a, .navigation li fieldset[disabled] .background-dark a, fieldset[disabled] .background-dark .btn:hover, fieldset[disabled] .background-dark .navigation li a:hover, .navigation li fieldset[disabled] .background-dark a:hover, fieldset[disabled] .background-dark .btn:focus, fieldset[disabled] .background-dark .navigation li a:focus, .navigation li fieldset[disabled] .background-dark a:focus, fieldset[disabled] .background-dark .btn:active, fieldset[disabled] .background-dark .navigation li a:active, .navigation li fieldset[disabled] .background-dark a:active, fieldset[disabled] .background-dark .btn.active, fieldset[disabled] .background-dark .navigation li a.active, .navigation li fieldset[disabled] .background-dark a.active, .background-dark .btn-arrow.disabled, .background-dark .btn-arrow.disabled:hover, .background-dark .btn-arrow.disabled:focus, .background-dark .btn-arrow.disabled:active, .background-dark .btn-arrow.disabled.active, .background-dark .btn-arrow[disabled], .background-dark .btn-arrow[disabled]:hover, .background-dark .btn-arrow[disabled]:focus, .background-dark .btn-arrow[disabled]:active, .background-dark .btn-arrow[disabled].active, fieldset[disabled] .background-dark .btn-arrow, fieldset[disabled] .background-dark .btn-arrow:hover, fieldset[disabled] .background-dark .btn-arrow:focus, fieldset[disabled] .background-dark .btn-arrow:active, fieldset[disabled] .background-dark .btn-arrow.active {
+  .background-dark .btn.disabled, .background-dark .media-lg .navigation li a.disabled, .media-lg .navigation li .background-dark a.disabled, .background-dark .media-md .navigation li a.disabled, .media-md .navigation li .background-dark a.disabled, .background-dark .btn.disabled:hover, .background-dark .media-lg .navigation li a.disabled:hover, .media-lg .navigation li .background-dark a.disabled:hover, .background-dark .media-md .navigation li a.disabled:hover, .media-md .navigation li .background-dark a.disabled:hover, .background-dark .btn.disabled:focus, .background-dark .media-lg .navigation li a.disabled:focus, .media-lg .navigation li .background-dark a.disabled:focus, .background-dark .media-md .navigation li a.disabled:focus, .media-md .navigation li .background-dark a.disabled:focus, .background-dark .btn.disabled:active, .background-dark .media-lg .navigation li a.disabled:active, .media-lg .navigation li .background-dark a.disabled:active, .background-dark .media-md .navigation li a.disabled:active, .media-md .navigation li .background-dark a.disabled:active, .background-dark .btn.disabled.active, .background-dark .media-lg .navigation li a.disabled.active, .media-lg .navigation li .background-dark a.disabled.active, .background-dark .media-md .navigation li a.disabled.active, .media-md .navigation li .background-dark a.disabled.active, .background-dark .btn[disabled], .background-dark .media-lg .navigation li a[disabled], .media-lg .navigation li .background-dark a[disabled], .background-dark .media-md .navigation li a[disabled], .media-md .navigation li .background-dark a[disabled], .background-dark .btn[disabled]:hover, .background-dark .media-lg .navigation li a[disabled]:hover, .media-lg .navigation li .background-dark a[disabled]:hover, .background-dark .media-md .navigation li a[disabled]:hover, .media-md .navigation li .background-dark a[disabled]:hover, .background-dark .btn[disabled]:focus, .background-dark .media-lg .navigation li a[disabled]:focus, .media-lg .navigation li .background-dark a[disabled]:focus, .background-dark .media-md .navigation li a[disabled]:focus, .media-md .navigation li .background-dark a[disabled]:focus, .background-dark .btn[disabled]:active, .background-dark .media-lg .navigation li a[disabled]:active, .media-lg .navigation li .background-dark a[disabled]:active, .background-dark .media-md .navigation li a[disabled]:active, .media-md .navigation li .background-dark a[disabled]:active, .background-dark .btn[disabled].active, .background-dark .media-lg .navigation li a[disabled].active, .media-lg .navigation li .background-dark a[disabled].active, .background-dark .media-md .navigation li a[disabled].active, .media-md .navigation li .background-dark a[disabled].active, fieldset[disabled] .background-dark .btn, fieldset[disabled] .background-dark .media-lg .navigation li a, .media-lg .navigation li fieldset[disabled] .background-dark a, fieldset[disabled] .background-dark .media-md .navigation li a, .media-md .navigation li fieldset[disabled] .background-dark a, fieldset[disabled] .background-dark .btn:hover, fieldset[disabled] .background-dark .media-lg .navigation li a:hover, .media-lg .navigation li fieldset[disabled] .background-dark a:hover, fieldset[disabled] .background-dark .media-md .navigation li a:hover, .media-md .navigation li fieldset[disabled] .background-dark a:hover, fieldset[disabled] .background-dark .btn:focus, fieldset[disabled] .background-dark .media-lg .navigation li a:focus, .media-lg .navigation li fieldset[disabled] .background-dark a:focus, fieldset[disabled] .background-dark .media-md .navigation li a:focus, .media-md .navigation li fieldset[disabled] .background-dark a:focus, fieldset[disabled] .background-dark .btn:active, fieldset[disabled] .background-dark .media-lg .navigation li a:active, .media-lg .navigation li fieldset[disabled] .background-dark a:active, fieldset[disabled] .background-dark .media-md .navigation li a:active, .media-md .navigation li fieldset[disabled] .background-dark a:active, fieldset[disabled] .background-dark .btn.active, fieldset[disabled] .background-dark .media-lg .navigation li a.active, .media-lg .navigation li fieldset[disabled] .background-dark a.active, fieldset[disabled] .background-dark .media-md .navigation li a.active, .media-md .navigation li fieldset[disabled] .background-dark a.active, .background-dark .btn-arrow.disabled, .background-dark .btn-arrow.disabled:hover, .background-dark .btn-arrow.disabled:focus, .background-dark .btn-arrow.disabled:active, .background-dark .btn-arrow.disabled.active, .background-dark .btn-arrow[disabled], .background-dark .btn-arrow[disabled]:hover, .background-dark .btn-arrow[disabled]:focus, .background-dark .btn-arrow[disabled]:active, .background-dark .btn-arrow[disabled].active, fieldset[disabled] .background-dark .btn-arrow, fieldset[disabled] .background-dark .btn-arrow:hover, fieldset[disabled] .background-dark .btn-arrow:focus, fieldset[disabled] .background-dark .btn-arrow:active, fieldset[disabled] .background-dark .btn-arrow.active {
     background-color: #b7d0db;
     border-color: #a5c2d2; }
-  .background-dark .btn .badge, .background-dark .navigation li a .badge, .navigation li .background-dark a .badge, .background-dark .btn-arrow .badge {
+  .background-dark .btn .badge, .background-dark .media-lg .navigation li a .badge, .media-lg .navigation li .background-dark a .badge, .background-dark .media-md .navigation li a .badge, .media-md .navigation li .background-dark a .badge, .background-dark .btn-arrow .badge {
     color: #b7d0db;
     background-color: #19657f; }
 
-.background-light .btn, .background-light .navigation li a, .navigation li .background-light a, .background-light .btn-arrow {
+.background-light .btn, .background-light .media-lg .navigation li a, .media-lg .navigation li .background-light a, .background-light .media-md .navigation li a, .media-md .navigation li .background-light a, .background-light .btn-arrow {
   color: #19657f;
   background-color: #d9e6ec;
   border-color: #c7d9e3; }
-  .background-light .btn:hover, .background-light .navigation li a:hover, .navigation li .background-light a:hover, .background-light .btn:focus, .background-light .navigation li a:focus, .navigation li .background-light a:focus, .background-light .btn:active, .background-light .navigation li a:active, .navigation li .background-light a:active, .background-light .btn.active, .background-light .navigation li a.active, .navigation li .background-light a.active, .background-light .btn-arrow:hover, .background-light .btn-arrow:focus, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
+  .background-light .btn:hover, .background-light .media-lg .navigation li a:hover, .media-lg .navigation li .background-light a:hover, .background-light .media-md .navigation li a:hover, .media-md .navigation li .background-light a:hover, .background-light .btn:focus, .background-light .media-lg .navigation li a:focus, .media-lg .navigation li .background-light a:focus, .background-light .media-md .navigation li a:focus, .media-md .navigation li .background-light a:focus, .background-light .btn:active, .background-light .media-lg .navigation li a:active, .media-lg .navigation li .background-light a:active, .background-light .media-md .navigation li a:active, .media-md .navigation li .background-light a:active, .background-light .btn.active, .background-light .media-lg .navigation li a.active, .media-lg .navigation li .background-light a.active, .background-light .media-md .navigation li a.active, .media-md .navigation li .background-light a.active, .background-light .btn-arrow:hover, .background-light .btn-arrow:focus, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
     color: #19657f;
     background-color: #bed4de;
     border-color: #9ebdcf; }
-  .open .background-light .btn.dropdown-toggle, .open .background-light .navigation li a.dropdown-toggle, .navigation li .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
+  .open .background-light .btn.dropdown-toggle, .open .background-light .media-lg .navigation li a.dropdown-toggle, .media-lg .navigation li .open .background-light a.dropdown-toggle, .open .background-light .media-md .navigation li a.dropdown-toggle, .media-md .navigation li .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
     color: #19657f;
     background-color: #bed4de;
     border-color: #9ebdcf; }
-  .background-light .btn:active, .background-light .navigation li a:active, .navigation li .background-light a:active, .background-light .btn.active, .background-light .navigation li a.active, .navigation li .background-light a.active, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
+  .background-light .btn:active, .background-light .media-lg .navigation li a:active, .media-lg .navigation li .background-light a:active, .background-light .media-md .navigation li a:active, .media-md .navigation li .background-light a:active, .background-light .btn.active, .background-light .media-lg .navigation li a.active, .media-lg .navigation li .background-light a.active, .background-light .media-md .navigation li a.active, .media-md .navigation li .background-light a.active, .background-light .btn-arrow:active, .background-light .btn-arrow.active {
     background-image: none; }
-  .open .background-light .btn.dropdown-toggle, .open .background-light .navigation li a.dropdown-toggle, .navigation li .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
+  .open .background-light .btn.dropdown-toggle, .open .background-light .media-lg .navigation li a.dropdown-toggle, .media-lg .navigation li .open .background-light a.dropdown-toggle, .open .background-light .media-md .navigation li a.dropdown-toggle, .media-md .navigation li .open .background-light a.dropdown-toggle, .open .background-light .btn-arrow.dropdown-toggle {
     background-image: none; }
-  .background-light .btn.disabled, .background-light .navigation li a.disabled, .navigation li .background-light a.disabled, .background-light .btn.disabled:hover, .background-light .navigation li a.disabled:hover, .navigation li .background-light a.disabled:hover, .background-light .btn.disabled:focus, .background-light .navigation li a.disabled:focus, .navigation li .background-light a.disabled:focus, .background-light .btn.disabled:active, .background-light .navigation li a.disabled:active, .navigation li .background-light a.disabled:active, .background-light .btn.disabled.active, .background-light .navigation li a.disabled.active, .navigation li .background-light a.disabled.active, .background-light .btn[disabled], .background-light .navigation li a[disabled], .navigation li .background-light a[disabled], .background-light .btn[disabled]:hover, .background-light .navigation li a[disabled]:hover, .navigation li .background-light a[disabled]:hover, .background-light .btn[disabled]:focus, .background-light .navigation li a[disabled]:focus, .navigation li .background-light a[disabled]:focus, .background-light .btn[disabled]:active, .background-light .navigation li a[disabled]:active, .navigation li .background-light a[disabled]:active, .background-light .btn[disabled].active, .background-light .navigation li a[disabled].active, .navigation li .background-light a[disabled].active, fieldset[disabled] .background-light .btn, fieldset[disabled] .background-light .navigation li a, .navigation li fieldset[disabled] .background-light a, fieldset[disabled] .background-light .btn:hover, fieldset[disabled] .background-light .navigation li a:hover, .navigation li fieldset[disabled] .background-light a:hover, fieldset[disabled] .background-light .btn:focus, fieldset[disabled] .background-light .navigation li a:focus, .navigation li fieldset[disabled] .background-light a:focus, fieldset[disabled] .background-light .btn:active, fieldset[disabled] .background-light .navigation li a:active, .navigation li fieldset[disabled] .background-light a:active, fieldset[disabled] .background-light .btn.active, fieldset[disabled] .background-light .navigation li a.active, .navigation li fieldset[disabled] .background-light a.active, .background-light .btn-arrow.disabled, .background-light .btn-arrow.disabled:hover, .background-light .btn-arrow.disabled:focus, .background-light .btn-arrow.disabled:active, .background-light .btn-arrow.disabled.active, .background-light .btn-arrow[disabled], .background-light .btn-arrow[disabled]:hover, .background-light .btn-arrow[disabled]:focus, .background-light .btn-arrow[disabled]:active, .background-light .btn-arrow[disabled].active, fieldset[disabled] .background-light .btn-arrow, fieldset[disabled] .background-light .btn-arrow:hover, fieldset[disabled] .background-light .btn-arrow:focus, fieldset[disabled] .background-light .btn-arrow:active, fieldset[disabled] .background-light .btn-arrow.active {
+  .background-light .btn.disabled, .background-light .media-lg .navigation li a.disabled, .media-lg .navigation li .background-light a.disabled, .background-light .media-md .navigation li a.disabled, .media-md .navigation li .background-light a.disabled, .background-light .btn.disabled:hover, .background-light .media-lg .navigation li a.disabled:hover, .media-lg .navigation li .background-light a.disabled:hover, .background-light .media-md .navigation li a.disabled:hover, .media-md .navigation li .background-light a.disabled:hover, .background-light .btn.disabled:focus, .background-light .media-lg .navigation li a.disabled:focus, .media-lg .navigation li .background-light a.disabled:focus, .background-light .media-md .navigation li a.disabled:focus, .media-md .navigation li .background-light a.disabled:focus, .background-light .btn.disabled:active, .background-light .media-lg .navigation li a.disabled:active, .media-lg .navigation li .background-light a.disabled:active, .background-light .media-md .navigation li a.disabled:active, .media-md .navigation li .background-light a.disabled:active, .background-light .btn.disabled.active, .background-light .media-lg .navigation li a.disabled.active, .media-lg .navigation li .background-light a.disabled.active, .background-light .media-md .navigation li a.disabled.active, .media-md .navigation li .background-light a.disabled.active, .background-light .btn[disabled], .background-light .media-lg .navigation li a[disabled], .media-lg .navigation li .background-light a[disabled], .background-light .media-md .navigation li a[disabled], .media-md .navigation li .background-light a[disabled], .background-light .btn[disabled]:hover, .background-light .media-lg .navigation li a[disabled]:hover, .media-lg .navigation li .background-light a[disabled]:hover, .background-light .media-md .navigation li a[disabled]:hover, .media-md .navigation li .background-light a[disabled]:hover, .background-light .btn[disabled]:focus, .background-light .media-lg .navigation li a[disabled]:focus, .media-lg .navigation li .background-light a[disabled]:focus, .background-light .media-md .navigation li a[disabled]:focus, .media-md .navigation li .background-light a[disabled]:focus, .background-light .btn[disabled]:active, .background-light .media-lg .navigation li a[disabled]:active, .media-lg .navigation li .background-light a[disabled]:active, .background-light .media-md .navigation li a[disabled]:active, .media-md .navigation li .background-light a[disabled]:active, .background-light .btn[disabled].active, .background-light .media-lg .navigation li a[disabled].active, .media-lg .navigation li .background-light a[disabled].active, .background-light .media-md .navigation li a[disabled].active, .media-md .navigation li .background-light a[disabled].active, fieldset[disabled] .background-light .btn, fieldset[disabled] .background-light .media-lg .navigation li a, .media-lg .navigation li fieldset[disabled] .background-light a, fieldset[disabled] .background-light .media-md .navigation li a, .media-md .navigation li fieldset[disabled] .background-light a, fieldset[disabled] .background-light .btn:hover, fieldset[disabled] .background-light .media-lg .navigation li a:hover, .media-lg .navigation li fieldset[disabled] .background-light a:hover, fieldset[disabled] .background-light .media-md .navigation li a:hover, .media-md .navigation li fieldset[disabled] .background-light a:hover, fieldset[disabled] .background-light .btn:focus, fieldset[disabled] .background-light .media-lg .navigation li a:focus, .media-lg .navigation li fieldset[disabled] .background-light a:focus, fieldset[disabled] .background-light .media-md .navigation li a:focus, .media-md .navigation li fieldset[disabled] .background-light a:focus, fieldset[disabled] .background-light .btn:active, fieldset[disabled] .background-light .media-lg .navigation li a:active, .media-lg .navigation li fieldset[disabled] .background-light a:active, fieldset[disabled] .background-light .media-md .navigation li a:active, .media-md .navigation li fieldset[disabled] .background-light a:active, fieldset[disabled] .background-light .btn.active, fieldset[disabled] .background-light .media-lg .navigation li a.active, .media-lg .navigation li fieldset[disabled] .background-light a.active, fieldset[disabled] .background-light .media-md .navigation li a.active, .media-md .navigation li fieldset[disabled] .background-light a.active, .background-light .btn-arrow.disabled, .background-light .btn-arrow.disabled:hover, .background-light .btn-arrow.disabled:focus, .background-light .btn-arrow.disabled:active, .background-light .btn-arrow.disabled.active, .background-light .btn-arrow[disabled], .background-light .btn-arrow[disabled]:hover, .background-light .btn-arrow[disabled]:focus, .background-light .btn-arrow[disabled]:active, .background-light .btn-arrow[disabled].active, fieldset[disabled] .background-light .btn-arrow, fieldset[disabled] .background-light .btn-arrow:hover, fieldset[disabled] .background-light .btn-arrow:focus, fieldset[disabled] .background-light .btn-arrow:active, fieldset[disabled] .background-light .btn-arrow.active {
     background-color: #d9e6ec;
     border-color: #c7d9e3; }
-  .background-light .btn .badge, .background-light .navigation li a .badge, .navigation li .background-light a .badge, .background-light .btn-arrow .badge {
+  .background-light .btn .badge, .background-light .media-lg .navigation li a .badge, .media-lg .navigation li .background-light a .badge, .background-light .media-md .navigation li a .badge, .media-md .navigation li .background-light a .badge, .background-light .btn-arrow .badge {
     color: #d9e6ec;
     background-color: #19657f; }
 
@@ -2776,69 +2777,156 @@ strong, th {
   .member-quote p {
     margin-bottom: 0px; }
 
-/* nog even goed naar kijken */
-.navigation {
-  float: right;
-  padding-top: 49px; }
-  .navigation .nav {
-    display: inline-block;
-    list-style-type: none;
-    padding: 0;
-    margin: 0; }
-  .navigation li {
-    float: left;
-    padding-right: 20px; }
-    .navigation li a {
-      color: #19657f;
-      background-color: #e8eff2;
-      border-color: #d3e1e7;
-      font-family: "NimbusSanNov-Reg", Helvetica, Arial, sans-serif;
-      padding-left: 15px;
-      padding-right: 15px;
-      padding-top: 6px;
-      padding-bottom: 2px;
-      text-transform: lowercase; }
-      .navigation li a:hover, .navigation li a:focus, .navigation li a:active, .navigation li a.active {
-        color: #19657f;
-        background-color: #cedde3;
-        border-color: #abc6d1; }
-      .open .navigation li a.dropdown-toggle {
-        color: #19657f;
-        background-color: #cedde3;
-        border-color: #abc6d1; }
-      .navigation li a:active, .navigation li a.active {
-        background-image: none; }
-      .open .navigation li a.dropdown-toggle {
-        background-image: none; }
-      .navigation li a.disabled, .navigation li a.disabled:hover, .navigation li a.disabled:focus, .navigation li a.disabled:active, .navigation li a.disabled.active, .navigation li a[disabled], .navigation li a[disabled]:hover, .navigation li a[disabled]:focus, .navigation li a[disabled]:active, .navigation li a[disabled].active, fieldset[disabled] .navigation li a, fieldset[disabled] .navigation li a:hover, fieldset[disabled] .navigation li a:focus, fieldset[disabled] .navigation li a:active, fieldset[disabled] .navigation li a.active {
-        background-color: #e8eff2;
-        border-color: #d3e1e7; }
-      .navigation li a .badge {
-        color: #e8eff2;
-        background-color: #19657f; }
-    .navigation li.current-menu-item a, .navigation li.current-page-ancestor a {
-      color: #114354;
-      background-color: #c7d8e0;
-      border-color: #b2cbd5; }
-      .navigation li.current-menu-item a:hover, .navigation li.current-menu-item a:focus, .navigation li.current-menu-item a:active, .navigation li.current-menu-item a.active, .navigation li.current-page-ancestor a:hover, .navigation li.current-page-ancestor a:focus, .navigation li.current-page-ancestor a:active, .navigation li.current-page-ancestor a.active {
-        color: #114354;
-        background-color: #adc6d1;
-        border-color: #8ab0bf; }
-      .open .navigation li.current-menu-item a.dropdown-toggle, .open .navigation li.current-page-ancestor a.dropdown-toggle {
-        color: #114354;
-        background-color: #adc6d1;
-        border-color: #8ab0bf; }
-      .navigation li.current-menu-item a:active, .navigation li.current-menu-item a.active, .navigation li.current-page-ancestor a:active, .navigation li.current-page-ancestor a.active {
-        background-image: none; }
-      .open .navigation li.current-menu-item a.dropdown-toggle, .open .navigation li.current-page-ancestor a.dropdown-toggle {
-        background-image: none; }
-      .navigation li.current-menu-item a.disabled, .navigation li.current-menu-item a.disabled:hover, .navigation li.current-menu-item a.disabled:focus, .navigation li.current-menu-item a.disabled:active, .navigation li.current-menu-item a.disabled.active, .navigation li.current-menu-item a[disabled], .navigation li.current-menu-item a[disabled]:hover, .navigation li.current-menu-item a[disabled]:focus, .navigation li.current-menu-item a[disabled]:active, .navigation li.current-menu-item a[disabled].active, fieldset[disabled] .navigation li.current-menu-item a, fieldset[disabled] .navigation li.current-menu-item a:hover, fieldset[disabled] .navigation li.current-menu-item a:focus, fieldset[disabled] .navigation li.current-menu-item a:active, fieldset[disabled] .navigation li.current-menu-item a.active, .navigation li.current-page-ancestor a.disabled, .navigation li.current-page-ancestor a.disabled:hover, .navigation li.current-page-ancestor a.disabled:focus, .navigation li.current-page-ancestor a.disabled:active, .navigation li.current-page-ancestor a.disabled.active, .navigation li.current-page-ancestor a[disabled], .navigation li.current-page-ancestor a[disabled]:hover, .navigation li.current-page-ancestor a[disabled]:focus, .navigation li.current-page-ancestor a[disabled]:active, .navigation li.current-page-ancestor a[disabled].active, fieldset[disabled] .navigation li.current-page-ancestor a, fieldset[disabled] .navigation li.current-page-ancestor a:hover, fieldset[disabled] .navigation li.current-page-ancestor a:focus, fieldset[disabled] .navigation li.current-page-ancestor a:active, fieldset[disabled] .navigation li.current-page-ancestor a.active {
-        background-color: #c7d8e0;
-        border-color: #b2cbd5; }
-      .navigation li.current-menu-item a .badge, .navigation li.current-page-ancestor a .badge {
-        color: #c7d8e0;
-        background-color: #114354; }
+.media-lg .navigation li a, .media-md .navigation li a {
+  color: #19657f;
+  background-color: #e8eff2;
+  border-color: #d3e1e7;
+  font-family: "NimbusSanNov-Reg", Helvetica, Arial, sans-serif;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  text-transform: lowercase; }
+  .media-lg .navigation li a:hover, .media-lg .navigation li a:focus, .media-lg .navigation li a:active, .media-lg .navigation li a.active, .media-md .navigation li a:hover, .media-md .navigation li a:focus, .media-md .navigation li a:active, .media-md .navigation li a.active {
+    color: #19657f;
+    background-color: #cedde3;
+    border-color: #abc6d1; }
+  .open .media-lg .navigation li a.dropdown-toggle, .open .media-md .navigation li a.dropdown-toggle {
+    color: #19657f;
+    background-color: #cedde3;
+    border-color: #abc6d1; }
+  .media-lg .navigation li a:active, .media-lg .navigation li a.active, .media-md .navigation li a:active, .media-md .navigation li a.active {
+    background-image: none; }
+  .open .media-lg .navigation li a.dropdown-toggle, .open .media-md .navigation li a.dropdown-toggle {
+    background-image: none; }
+  .media-lg .navigation li a.disabled, .media-lg .navigation li a.disabled:hover, .media-lg .navigation li a.disabled:focus, .media-lg .navigation li a.disabled:active, .media-lg .navigation li a.disabled.active, .media-lg .navigation li a[disabled], .media-lg .navigation li a[disabled]:hover, .media-lg .navigation li a[disabled]:focus, .media-lg .navigation li a[disabled]:active, .media-lg .navigation li a[disabled].active, fieldset[disabled] .media-lg .navigation li a, fieldset[disabled] .media-lg .navigation li a:hover, fieldset[disabled] .media-lg .navigation li a:focus, fieldset[disabled] .media-lg .navigation li a:active, fieldset[disabled] .media-lg .navigation li a.active, .media-md .navigation li a.disabled, .media-md .navigation li a.disabled:hover, .media-md .navigation li a.disabled:focus, .media-md .navigation li a.disabled:active, .media-md .navigation li a.disabled.active, .media-md .navigation li a[disabled], .media-md .navigation li a[disabled]:hover, .media-md .navigation li a[disabled]:focus, .media-md .navigation li a[disabled]:active, .media-md .navigation li a[disabled].active, fieldset[disabled] .media-md .navigation li a, fieldset[disabled] .media-md .navigation li a:hover, fieldset[disabled] .media-md .navigation li a:focus, fieldset[disabled] .media-md .navigation li a:active, fieldset[disabled] .media-md .navigation li a.active {
+    background-color: #e8eff2;
+    border-color: #d3e1e7; }
+  .media-lg .navigation li a .badge, .media-md .navigation li a .badge {
+    color: #e8eff2;
+    background-color: #19657f; }
+.media-lg .navigation li.current-menu-item a, .media-lg .navigation li.current-page-ancestor a, .media-md .navigation li.current-menu-item a, .media-md .navigation li.current-page-ancestor a {
+  color: #114354;
+  background-color: #c7d8e0;
+  border-color: #b2cbd5; }
+  .media-lg .navigation li.current-menu-item a:hover, .media-lg .navigation li.current-menu-item a:focus, .media-lg .navigation li.current-menu-item a:active, .media-lg .navigation li.current-menu-item a.active, .media-lg .navigation li.current-page-ancestor a:hover, .media-lg .navigation li.current-page-ancestor a:focus, .media-lg .navigation li.current-page-ancestor a:active, .media-lg .navigation li.current-page-ancestor a.active, .media-md .navigation li.current-menu-item a:hover, .media-md .navigation li.current-menu-item a:focus, .media-md .navigation li.current-menu-item a:active, .media-md .navigation li.current-menu-item a.active, .media-md .navigation li.current-page-ancestor a:hover, .media-md .navigation li.current-page-ancestor a:focus, .media-md .navigation li.current-page-ancestor a:active, .media-md .navigation li.current-page-ancestor a.active {
+    color: #114354;
+    background-color: #adc6d1;
+    border-color: #8ab0bf; }
+  .open .media-lg .navigation li.current-menu-item a.dropdown-toggle, .open .media-lg .navigation li.current-page-ancestor a.dropdown-toggle, .open .media-md .navigation li.current-menu-item a.dropdown-toggle, .open .media-md .navigation li.current-page-ancestor a.dropdown-toggle {
+    color: #114354;
+    background-color: #adc6d1;
+    border-color: #8ab0bf; }
+  .media-lg .navigation li.current-menu-item a:active, .media-lg .navigation li.current-menu-item a.active, .media-lg .navigation li.current-page-ancestor a:active, .media-lg .navigation li.current-page-ancestor a.active, .media-md .navigation li.current-menu-item a:active, .media-md .navigation li.current-menu-item a.active, .media-md .navigation li.current-page-ancestor a:active, .media-md .navigation li.current-page-ancestor a.active {
+    background-image: none; }
+  .open .media-lg .navigation li.current-menu-item a.dropdown-toggle, .open .media-lg .navigation li.current-page-ancestor a.dropdown-toggle, .open .media-md .navigation li.current-menu-item a.dropdown-toggle, .open .media-md .navigation li.current-page-ancestor a.dropdown-toggle {
+    background-image: none; }
+  .media-lg .navigation li.current-menu-item a.disabled, .media-lg .navigation li.current-menu-item a.disabled:hover, .media-lg .navigation li.current-menu-item a.disabled:focus, .media-lg .navigation li.current-menu-item a.disabled:active, .media-lg .navigation li.current-menu-item a.disabled.active, .media-lg .navigation li.current-menu-item a[disabled], .media-lg .navigation li.current-menu-item a[disabled]:hover, .media-lg .navigation li.current-menu-item a[disabled]:focus, .media-lg .navigation li.current-menu-item a[disabled]:active, .media-lg .navigation li.current-menu-item a[disabled].active, fieldset[disabled] .media-lg .navigation li.current-menu-item a, fieldset[disabled] .media-lg .navigation li.current-menu-item a:hover, fieldset[disabled] .media-lg .navigation li.current-menu-item a:focus, fieldset[disabled] .media-lg .navigation li.current-menu-item a:active, fieldset[disabled] .media-lg .navigation li.current-menu-item a.active, .media-lg .navigation li.current-page-ancestor a.disabled, .media-lg .navigation li.current-page-ancestor a.disabled:hover, .media-lg .navigation li.current-page-ancestor a.disabled:focus, .media-lg .navigation li.current-page-ancestor a.disabled:active, .media-lg .navigation li.current-page-ancestor a.disabled.active, .media-lg .navigation li.current-page-ancestor a[disabled], .media-lg .navigation li.current-page-ancestor a[disabled]:hover, .media-lg .navigation li.current-page-ancestor a[disabled]:focus, .media-lg .navigation li.current-page-ancestor a[disabled]:active, .media-lg .navigation li.current-page-ancestor a[disabled].active, fieldset[disabled] .media-lg .navigation li.current-page-ancestor a, fieldset[disabled] .media-lg .navigation li.current-page-ancestor a:hover, fieldset[disabled] .media-lg .navigation li.current-page-ancestor a:focus, fieldset[disabled] .media-lg .navigation li.current-page-ancestor a:active, fieldset[disabled] .media-lg .navigation li.current-page-ancestor a.active, .media-md .navigation li.current-menu-item a.disabled, .media-md .navigation li.current-menu-item a.disabled:hover, .media-md .navigation li.current-menu-item a.disabled:focus, .media-md .navigation li.current-menu-item a.disabled:active, .media-md .navigation li.current-menu-item a.disabled.active, .media-md .navigation li.current-menu-item a[disabled], .media-md .navigation li.current-menu-item a[disabled]:hover, .media-md .navigation li.current-menu-item a[disabled]:focus, .media-md .navigation li.current-menu-item a[disabled]:active, .media-md .navigation li.current-menu-item a[disabled].active, fieldset[disabled] .media-md .navigation li.current-menu-item a, fieldset[disabled] .media-md .navigation li.current-menu-item a:hover, fieldset[disabled] .media-md .navigation li.current-menu-item a:focus, fieldset[disabled] .media-md .navigation li.current-menu-item a:active, fieldset[disabled] .media-md .navigation li.current-menu-item a.active, .media-md .navigation li.current-page-ancestor a.disabled, .media-md .navigation li.current-page-ancestor a.disabled:hover, .media-md .navigation li.current-page-ancestor a.disabled:focus, .media-md .navigation li.current-page-ancestor a.disabled:active, .media-md .navigation li.current-page-ancestor a.disabled.active, .media-md .navigation li.current-page-ancestor a[disabled], .media-md .navigation li.current-page-ancestor a[disabled]:hover, .media-md .navigation li.current-page-ancestor a[disabled]:focus, .media-md .navigation li.current-page-ancestor a[disabled]:active, .media-md .navigation li.current-page-ancestor a[disabled].active, fieldset[disabled] .media-md .navigation li.current-page-ancestor a, fieldset[disabled] .media-md .navigation li.current-page-ancestor a:hover, fieldset[disabled] .media-md .navigation li.current-page-ancestor a:focus, fieldset[disabled] .media-md .navigation li.current-page-ancestor a:active, fieldset[disabled] .media-md .navigation li.current-page-ancestor a.active {
+    background-color: #c7d8e0;
+    border-color: #b2cbd5; }
+  .media-lg .navigation li.current-menu-item a .badge, .media-lg .navigation li.current-page-ancestor a .badge, .media-md .navigation li.current-menu-item a .badge, .media-md .navigation li.current-page-ancestor a .badge {
+    color: #c7d8e0;
+    background-color: #114354; }
 
+.media-md .navigation {
+  float: left; }
+
+/* nog even goed naar kijken */
+@media (min-width: 992px) {
+  .navigation {
+    padding-top: 49px;
+    float: right; }
+    .navigation .nav {
+      display: inline-block;
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+    .navigation li {
+      float: left;
+      padding-right: 20px; }
+      .navigation li a {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 6px;
+        padding-bottom: 2px;
+        text-transform: lowercase; } }
+@media (max-width: 992px) {
+  .section.header {
+    padding: 0px !important;
+    border-bottom: none !important; }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    width: 240px !important;
+    margin-bottom: 10px; }
+    .logo img {
+      width: 100%; }
+
+  .mobile-header {
+    height: 50px;
+    border-top: 1px solid #7ba4bc;
+    border-bottom: 1px solid #7ba4bc; }
+    .mobile-header .menu-button {
+      margin-top: 10px;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("../images/icons/icon_menu.svg");
+      /* The url is relative to the document, not to the css file! */
+      /* Prefer absolute urls to avoid confusion. */
+      -ms-behavior: url("http://www.jeroenbraspenning.nl/clients/edhv/labservices/wp-content/themes/bones-bootstrap-sass/library/polyfill/backgroundsize.min.htc"); }
+    .mobile-header .mobile-language {
+      border-left: 1px solid #7ba4bc;
+      height: 49px; }
+      .mobile-header .mobile-language .language_container {
+        text-align: center;
+        margin-top: 12px; }
+        .mobile-header .mobile-language .language_container .language_select {
+          position: relative; }
+
+  .col-xs-no-padding {
+    padding: 0px !important; }
+
+  .menu {
+    background-color: #a4c0d1; }
+    .menu .mobile-menu {
+      display: none;
+      padding: 0px; }
+    .menu .language_container {
+      margin: 0px; }
+
+  .nav {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none; }
+    .nav li {
+      border-bottom: 1px solid #89adc3;
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-bottom: 6px; }
+      .nav li:hover {
+        background-color: #93b4c8; }
+      .nav li a {
+        display: block;
+        font-family: "NimbusSanNov-Reg", Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        padding: 0px;
+        width: 100%;
+        text-align: left; }
+      .nav li.current-menu-item {
+        background-color: #93b4c8; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .logo {
+    margin-left: 40px; }
+
+  .menu-button {
+    margin-left: 45px; }
+
+  .nav li {
+    padding-left: 54px; } }
 .language_container {
   padding: 0;
   margin: 0;
@@ -2923,7 +3011,7 @@ strong, th {
     padding-top: 15px;
     padding-bottom: 30px;
     border-top: 1px solid #b1cedc; }
-  .jobs-listing .btn, .jobs-listing .navigation li a, .navigation li .jobs-listing a {
+  .jobs-listing .btn, .jobs-listing .media-lg .navigation li a, .media-lg .navigation li .jobs-listing a, .jobs-listing .media-md .navigation li a, .media-md .navigation li .jobs-listing a {
     margin-top: 10px; }
 
 /* REFERENCES */
@@ -2979,6 +3067,9 @@ strong, th {
   to {
     -webkit-transform: rotate(360deg); } }
 
+@media (max-width: 992px) {
+  .box {
+    margin-top: 40px; } }
 .box h3 {
   padding-top: 26px;
   padding-left: 23px;
@@ -3364,6 +3455,6 @@ div img {
 p > a:link, p > a:active, p > a:visited {
   text-decoration: underline; }
 
-div:hover > a {
+div:hover > a, li:hover > a {
   text-decoration: none;
   color: #005163; }

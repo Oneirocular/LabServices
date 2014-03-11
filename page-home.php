@@ -130,10 +130,10 @@ get_header();
 
 						<div id="social_carousel" class="social-feeds-carousel carousel slide" data-ride="social-feeds-carousel">
 							<div class="carousel-inner lab-feeds">				
-								<?php //echo get_labfacts(); ?>
+								<?php echo get_labfacts(); ?>
 							</div>			
 							<ol class="carousel-indicators">		
-								<?php //echo get_labfacts_indicators(); ?>		
+								<?php echo get_labfacts_indicators(); ?>		
 							
 							</ol>			
 							<a class="left carousel-control" href="#social_carousel" data-slide="prev"><div class="icon_arrow"></div></a>			

@@ -71,24 +71,27 @@
 
 		<div class="container">
 			<header class="row header section">
-					<div class="col-sm-4 ">
-					<a href="<?php echo get_site_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/></a>
+					<div class="col-xs-12 col-sm-4 col-md-4 ">
+						<a href="<?php echo get_site_url(); ?>" class="logo"><img  src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/></a>
 					</div>
-					<div class="col-sm-8">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8  menu">
 						<div class="row">
-							<div class="col-sm-11">
-							<nav class="navigation" role="navigation">
-								<?php bones_main_nav(); ?>
-								
-
-								
-
-								<!-- <div class="language">eng</div> -->
-							</nav>
+						
+								<div class="col-xs-9 col-sm-10 hidden-lg hidden-md mobile-header js-show-menu"><div class="menu-button "></div></div>
+								<div class="col-xs-3 col-sm-2 col-md-1 col-md-push-11  mobile-header ">
+									<div class="row">
+										<div class="col-xs-12 mobile-language">
+									<?php if (function_exists('ms_ml_language_switch')) { ms_ml_language_switch(); } ?>
+										</div>
+									</div>
+								</div>
+						
+							<div class="col-xs-12 col-sm-12 col-md-11 col-md-pull-1 mobile-menu">
+								<nav class="navigation" role="navigation">
+									<?php bones_main_nav(); ?>
+								</nav>
 							</div>
-							<div class="col-sm-1">
-								<?php if (function_exists('ms_ml_language_switch')) { ms_ml_language_switch(); } ?>
-							</div>
+						
 						</div>
 					</div>
 			</header>

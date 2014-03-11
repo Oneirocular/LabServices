@@ -51,7 +51,7 @@ $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID )
 		} else {
 			?>
 			<div class="row">
-				<div class="col-sm-2">
+				<div class="col-sm-4 col-md-2">
 					<?php
 
 					if (isset($product_image)) {

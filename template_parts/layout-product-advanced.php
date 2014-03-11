@@ -40,7 +40,7 @@
 
 		<!-- Body -->
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-xs-12 col-md-6 ">
 				<?php 
 				show_if_exists($product_description_title, '<h2>'.$product_description_title.'</h2>');
 				show_if_exists($product_body);
@@ -52,9 +52,9 @@
 			// Key features
 			if( get_field('product_features') ) {
 				?>
-				<div class="col-sm-6">
+				<div class="col-xs-12 col-md-6">
 					<div class="row">
-						<div class="col-sm-9 product_features col-centered">
+						<div class="col-xs-12 col-md-9 product_features col-centered">
 							<div class="box">
 								<h3>Key features</h3>
 								<ul class="">
@@ -99,7 +99,7 @@
 			<li class="ls-accordeon-row product-specification closed">
 
 				<div class="row ls-accordeon-header">
-					<div class="col-sm-12">
+					<div class="col-xs-12">
 						<div class="status-arrow"></div>
 						<h4><?php _e("Product specification","bonestheme"); ?></h4>
 					</div>
@@ -107,7 +107,7 @@
 				</div>
 
 				<div class="row ls-accordeon-container">
-					<div class="ls-accordeon-container-content col-sm-12">
+					<div class="ls-accordeon-container-content col-xs-12">
 						<div class="row">
 							
 							<div class="table-responsive">
@@ -153,14 +153,14 @@
 			<li class="ls-accordeon-row closed">
 
 				<div class="row ls-accordeon-header">
-					<div class="col-sm-12">
+					<div class="col-xs-12">
 						<div class="status-arrow"></div>
 						<h4>Related products</h4>
 					</div>
 				</div>
 
 				<div class="row ls-accordeon-container">
-					<div class="ls-accordeon-container-content col-sm-12">
+					<div class="ls-accordeon-container-content col-xs-12">
 						<div class="row">
 
 							<?php
