@@ -55,11 +55,11 @@ $page_form_id = $page_form_object->id;
 			?>
 
 			<div class="text-container-small col-sm-12 col-md-4 clearfix">
-
-				<div class="container-icon">
+				<div class="row">
+				<div class="container-icon col-xs-12 col-sm-1 col-md-2">
 					<div class="pointer pointer-services-<?php echo $counter; ?>"></div>
 				</div>
-				<div class="container-body">
+				<div class="container-body col-xs-12 col-sm-11 col-md-10">
 
 					<span class="container-category"><h5><? echo $field_label ?></h5></span>
 					<h3><? echo $field_title; ?></h3>
@@ -67,6 +67,7 @@ $page_form_id = $page_form_object->id;
 
 					<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>?subject=information&service_id=<?php echo $counter-1;?>" role="button"><? echo $field_button_text; ?></a>
 
+				</div>
 				</div>
 			</div>
 

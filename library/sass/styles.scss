@@ -160,22 +160,42 @@ h1 {
 // }
 
 
+
 strong, th {
 	font-family: $headings-font-family;
 	font-weight: 100;
 }
 
-.container {
+
+.super-container {
+
+	@media (min-width: $screen-sm-min) {
+		padding-left:50px;
+		padding-right:50px;
+	}
+
+	width:100%;
+}
+.container-fluid {
+
+	max-width: 1280px;
+	margin:0 auto;
+
+}
+.container, .container-fluid {
 
 	margin-top:20px;
-	
+
 	// Basic section
 	.section, .sub-section {
 
+	
 		@media (min-width: $screen-sm-min) {
 			padding-left:$side_padding;
 			padding-right:$side_padding;
 		}
+
+
 
 
 	}
@@ -312,14 +332,14 @@ strong, th {
 
 /* on bigger layouts the container-icon is positioned left of the text, smaller layouts it's on top. */
 .text-container-small {
-	overflow:hidden;
+	//overflow:hidden;
 
 	.container-icon{
 
 
 		@media (min-width: $screen-sm-min) {
-			float:left;
-			margin-right:10px;
+			//float:left;
+			//margin-right:10px;
 		}
 
 		.pointer {
@@ -336,7 +356,7 @@ strong, th {
 	.container-body {
 		@media (min-width: $screen-sm-min) {
 			margin-top:10px;
-			overflow: hidden;
+			//overflow: hidden;
 		}
 	}
 
@@ -454,6 +474,28 @@ strong, th {
 			}
 		}
 
+}
+
+
+.main-slider .carousel {
+
+
+	.carousel-inner {
+
+		// Maintain design aspect ratio
+		//height:10%; // sliderwidth/sliderheigh*100
+		overflow:hidden;
+		
+		img {
+			width:auto;
+			height:auto;
+		}
+
+	}
+}
+
+.carousel-single {
+	margin-bottom:30px;
 }
 
 /*
@@ -985,7 +1027,7 @@ $member-quote-padding:15;
 				background-color:darken($ls_bg_menu_color, 5%);
 
 				a {
-				
+
 
 				}
 			}
@@ -2014,6 +2056,7 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 
 	}
 }
+
 
 
 

@@ -59,7 +59,7 @@ $twitter_user = get_field('social_twitter_user',$contact_page_id);
 						?>
 					</ul>
 				</div>
-				<div class="col-sm-4 col-md-2 ">
+				<div class="col-sm-4 col-md-3 ">
 					<ul class="contact_general contact_block">
 						<?php
 
@@ -90,7 +90,7 @@ $twitter_user = get_field('social_twitter_user',$contact_page_id);
 
 </div>
 
-
+</div>
 
 <?php wp_footer(); ?>
 

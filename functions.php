@@ -285,7 +285,7 @@ function get_distribute_product_container($distribute_product) {
 }
 
 
-function show_ls_product_carousel($products_array, $nr_of_visible = 4) {
+function show_ls_product_carousel($products_array, $nr_of_visible = 4, $name = "ls_carousel") {
 
 	$counter = 0;
 	$last_run = false;
@@ -316,16 +316,16 @@ function show_ls_product_carousel($products_array, $nr_of_visible = 4) {
 	}
 
 
-	echo ls_carousel($slides);
+	echo ls_carousel($slides, $name);
 
 
 }
 
-function show_ls_carousel($slides) {
-	echo ls_carousel($slides);
+function show_ls_carousel($slides, $name = "ls_carousel") {
+	echo ls_carousel($slides, $name);
 }
 
-function ls_carousel($slides) {
+function ls_carousel($slides, $name) {
 
 	$nr_of_slides = count($slides);
 
@@ -333,7 +333,7 @@ function ls_carousel($slides) {
 
 			$html = '';
 
-		  	$html .= '		<div id="myCarousel" class="carousel slide" data-ride="carousel">';
+		  	$html .= '		<div id="'.$name.'" class="carousel slide" data-ride="carousel">';
 		  	$html .= '			<div class="carousel-inner">';
 
 		  	foreach ($slides as $slide) {
@@ -359,21 +359,23 @@ function ls_carousel($slides) {
 		    $html .= '			<ol class="carousel-indicators">';
 
 		    for ($i=0; $i < $nr_of_slides; $i++) {
-		    	$html .= '				<li data-target="#myCarousel" data-slide-to="'.$i.'"></li>';
+		    	$html .= '				<li data-target="#'.$name.'" data-slide-to="'.$i.'"></li>';
 		    }
 
 		    $html .= '			</ol>';
 
 		  	// Controls
-		  	$html .= '			<a class="left carousel-control" href="#myCarousel" data-slide="prev"><div class="icon_arrow"></div></a>';
-		    $html .= '			<a class="right carousel-control" href="#myCarousel" data-slide="next"><div class="icon_arrow"></div></a>';
+		  	$html .= '			<a class="left carousel-control" href="#'.$name.'" data-slide="prev"><div class="icon_arrow"></div></a>';
+		    $html .= '			<a class="right carousel-control" href="#'.$name.'" data-slide="next"><div class="icon_arrow"></div></a>';
 
 
 
 		  	$html .= '		</div>';
 	
 	} else {
-			$html = $slides[0];
+			$html = '		<div id="'.$name.'" class="carousel-single" >';
+			$html .= $slides[0];
+			$html .= '</div>';
 	}
 
   	return $html;

@@ -42,7 +42,7 @@ if (!window.getComputedStyle) {
 
 // about us animation 
 function scrollAnimatedTo(anchor) {
-	console.log(anchor);
+
 
 	var pos = jQuery('a[name='+anchor+']').offset();
 			  		//var pos = search_response_container.offset();
@@ -78,7 +78,6 @@ $('.active_language').click(function() {
 
 $('.js-show-menu').click(function() {
 
-	console.log('hha');
 
 	if (!$('.mobile-menu').hasClass('opened')) {
 		$('.mobile-menu').slideDown( "fast", function() {
@@ -358,7 +357,7 @@ function update_carousel() {
 			// Create slide
 			slides_html += '<div class="item '+state+'"><div class="row">';
 			// Create indicator
-			indicators_html += '<li data-target="#myCarousel" data-slide-to="'+(row_counter-1)+'" class="'+state+'">';
+			indicators_html += '<li data-target="#productCarousel" data-slide-to="'+(row_counter-1)+'" class="'+state+'">';
 		}
 
 		// Slide html

@@ -67,7 +67,7 @@ Template Name: Products
 
 
 
-<div class="row section main-slider background-dark products">
+<div class="row section product-slider background-dark products">
 	<div class="col-sm-12">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -81,7 +81,7 @@ Template Name: Products
 		<div class="row products">
 			<div class="col-md-12">
 
-				<?php  show_ls_product_carousel($products_array); ?>
+				<?php  show_ls_product_carousel($products_array, 4, "productCarousel"); ?>
 
 			</div>
 		</div>

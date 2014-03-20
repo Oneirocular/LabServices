@@ -88,6 +88,47 @@ $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID )
 				show_if_exists($product_body);
 				?>
 			</div>
+
+			<?php
+			
+			// Key features
+			if( get_field('product_features') ) {
+				?>
+				<div class="col-xs-12 col-md-6">
+					<div class="row">
+						<div class="col-xs-12 col-md-9 product_features col-centered">
+							<div class="box">
+								<h3>Key features</h3>
+								<ul class="">
+
+									<?php
+
+									while( has_sub_field('product_features') )
+									{ 
+
+										$feature = get_sub_field('feature');
+										?>
+										<li><?php echo $feature; ?></li>
+										<?php
+
+									}
+
+									?>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<?
+
+			}
+
+			?>
+
+
+
 		</div>
 
 

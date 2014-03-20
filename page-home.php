@@ -95,18 +95,19 @@ get_header();
 			?>
 
 			<div class="text-container-small col-xs-12 col-md-4 clearfix">
+				<div class="row">
+					<div class="container-icon col-xs-12 col-sm-1 col-md-2">
+						<div class="pointer <?php echo $pointer_icon; ?>"></div>
+					</div>
+					<div class="container-body col-xs-12 col-sm-11 col-md-10">
 
-				<div class="container-icon">
-					<div class="pointer <?php echo $pointer_icon; ?>"></div>
-				</div>
-				<div class="container-body">
+						<span class="container-category"><h5><? echo $field_label ?></h5></span>
+						<h3><? echo $field_title; ?></h3>
+						<? echo $field_text; ?>
 
-					<span class="container-category"><h5><? echo $field_label ?></h5></span>
-					<h3><? echo $field_title; ?></h3>
-					<? echo $field_text; ?>
+						<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>" role="button"><? echo $field_button_text; ?></a>
 
-					<a class="btn btn-arrow btn-sm" href="<?php echo $field_button_target; ?>" role="button"><? echo $field_button_text; ?></a>
-
+					</div>
 				</div>
 			</div>
 
@@ -121,7 +122,7 @@ get_header();
 	?>
 
 
-	<div class="text-container-small col-xs-12 col-md-4" >
+	<div class=" col-xs-12 col-md-4" >
 
 		<div class="row">
 			<div class="col-xs-12 col-md-11  social_feeds" >

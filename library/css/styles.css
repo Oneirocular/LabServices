@@ -2448,24 +2448,35 @@ strong, th {
   font-family: "NimbusSanNov-Bol";
   font-weight: 100; }
 
-.container {
+.super-container {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .super-container {
+      padding-left: 50px;
+      padding-right: 50px; } }
+
+.container-fluid {
+  max-width: 1280px;
+  margin: 0 auto; }
+
+.container, .container-fluid {
   margin-top: 20px; }
   @media (min-width: 768px) {
-    .container .section, .container .sub-section {
+    .container .section, .container .sub-section, .container-fluid .section, .container-fluid .sub-section {
       padding-left: 45px;
       padding-right: 45px; } }
-  .container .section {
+  .container .section, .container-fluid .section {
     padding-top: 50px;
     padding-bottom: 50px;
     /* bottom-padding exceptions */ }
-    .container .section h2 {
+    .container .section h2, .container-fluid .section h2 {
       margin-top: 10px; }
-    .container .section.header {
+    .container .section.header, .container-fluid .section.header {
       padding-bottom: 34px;
       border-bottom: 1px solid #b1cedc; }
-    .container .section.main-slider {
+    .container .section.main-slider, .container-fluid .section.main-slider {
       padding-bottom: 18px; }
-      .container .section.main-slider .text_frame {
+      .container .section.main-slider .text_frame, .container-fluid .section.main-slider .text_frame {
         padding-top: 25px;
         width: 35%;
         right: 50px;
@@ -2473,20 +2484,20 @@ strong, th {
         position: absolute;
         background-color: #dce041;
         color: #596611; }
-        .container .section.main-slider .text_frame h3 {
+        .container .section.main-slider .text_frame h3, .container-fluid .section.main-slider .text_frame h3 {
           padding-left: 20px;
           padding-right: 20px; }
-        .container .section.main-slider .text_frame p {
+        .container .section.main-slider .text_frame p, .container-fluid .section.main-slider .text_frame p {
           padding-left: 20px;
           padding-right: 20px; }
-        .container .section.main-slider .text_frame .slide_link {
+        .container .section.main-slider .text_frame .slide_link, .container-fluid .section.main-slider .text_frame .slide_link {
           position: relative;
           display: block;
           height: 40px;
           border-top: 1px solid #c8cd21; }
-        .container .section.main-slider .text_frame .slide_link:hover {
+        .container .section.main-slider .text_frame .slide_link:hover, .container-fluid .section.main-slider .text_frame .slide_link:hover {
           background-color: #d8dc2b; }
-        .container .section.main-slider .text_frame .slide_link:after {
+        .container .section.main-slider .text_frame .slide_link:after, .container-fluid .section.main-slider .text_frame .slide_link:after {
           position: absolute;
           content: '';
           width: 20px;
@@ -2498,47 +2509,40 @@ strong, th {
           background-image: url("../images/icons/icon_arrow-right-green.svg");
           margin-top: 0px; }
     @media (max-width: 480px) {
-      .container .section.map {
+      .container .section.map, .container-fluid .section.map {
         padding-top: 10px;
         padding-bottom: 10px; } }
-  .container .sub-section {
+  .container .sub-section, .container-fluid .sub-section {
     padding-top: 50px;
     padding-bottom: 20px; }
-  .container .background-dark {
+  .container .background-dark, .container-fluid .background-dark {
     background-color: #d4e4ec; }
-  .container .background-light {
+  .container .background-light, .container-fluid .background-light {
     background-color: #ebf3f5; }
-  .container .section.background-dark {
+  .container .section.background-dark, .container-fluid .section.background-dark {
     border-bottom: 1px solid #b1cedc; }
-  .container .section.background-light {
+  .container .section.background-light, .container-fluid .section.background-light {
     border-bottom: 1px solid #c9dfe4; }
-  .container .sub-section.background-dark {
+  .container .sub-section.background-dark, .container-fluid .sub-section.background-dark {
     border-bottom: 1px solid #b1cedc; }
-  .container .sub-section.background-light {
+  .container .sub-section.background-light, .container-fluid .sub-section.background-light {
     border-bottom: 1px solid #c9dfe4; }
 
 /* Layout */
 /* on bigger layouts the container-icon is positioned left of the text, smaller layouts it's on top. */
-.text-container-small {
-  overflow: hidden; }
-  @media (min-width: 768px) {
-    .text-container-small .container-icon {
-      float: left;
-      margin-right: 10px; } }
-  .text-container-small .container-icon .pointer {
-    margin: 0 auto; }
-  @media (max-width: 992px) {
-    .text-container-small .container-icon {
-      margin-bottom: 30px; } }
-  @media (min-width: 768px) {
-    .text-container-small .container-body {
-      margin-top: 10px;
-      overflow: hidden; } }
-  @media (max-width: 992px) {
-    .text-container-small {
-      margin-bottom: 42px;
-      padding-bottom: 35px;
-      border-bottom: 1px solid #c9dfe4; } }
+.text-container-small .container-icon .pointer {
+  margin: 0 auto; }
+@media (max-width: 992px) {
+  .text-container-small .container-icon {
+    margin-bottom: 30px; } }
+@media (min-width: 768px) {
+  .text-container-small .container-body {
+    margin-top: 10px; } }
+@media (max-width: 992px) {
+  .text-container-small {
+    margin-bottom: 42px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #c9dfe4; } }
 
 /* makes lab feeds full width on mobile */
 @media (max-width: 992px) {
@@ -2575,6 +2579,15 @@ strong, th {
   .carousel .inside .btn, .carousel .inside .media-lg .navigation li a, .media-lg .navigation li .carousel .inside a, .carousel .inside .media-md .navigation li a, .media-md .navigation li .carousel .inside a {
     position: absolute;
     bottom: 23px; }
+
+.main-slider .carousel .carousel-inner {
+  overflow: hidden; }
+  .main-slider .carousel .carousel-inner img {
+    width: auto;
+    height: auto; }
+
+.carousel-single {
+  margin-bottom: 30px; }
 
 /*
 	.product-container, .main-product-frame  {

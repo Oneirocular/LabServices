@@ -129,7 +129,7 @@ foreach ($child_pages as $child_page_id => $child_page_object) {
 	// generate html
 	?>
 		<!--  -->
-		<a name="<?php echo $child_page_label; ?>"></a>
+		<a name="<?php echo $child_page_slug; ?>"></a>
 		<div class="row section <? echo $background_class; ?>">
 
 			<div class="col-sm-12">
