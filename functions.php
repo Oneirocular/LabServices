@@ -366,8 +366,10 @@ function ls_carousel($slides, $name) {
 		            $state = '';
 		        }
 
-		    	$html .= '				<div class="item '.$state.'">';
+		    	$html .= '				<div class="item  '.$state.'">';
+		    	$html .= '					<div class="row">';
 		        $html .= '					'.$slide;
+		        $html .= '					</div>';
 		        $html .= '				</div>';
 		  	}
 

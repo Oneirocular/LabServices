@@ -710,13 +710,13 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1 {
+.col-xs-12, .media-xs .main-slider .item img, .media-sm .main-slider .item img, .media-xs .main-slider .item .text_frame, .media-sm .main-slider .item .text_frame, .col-sm-12, .col-md-12, .col-lg-12, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1 {
   position: relative;
   min-height: 1px;
   padding-left: 10px;
   padding-right: 10px; }
 
-.col-xs-12, .col-xs-11, .col-xs-10, .col-xs-9, .col-xs-8, .col-xs-7, .col-xs-6, .col-xs-5, .col-xs-4, .col-xs-3, .col-xs-2, .col-xs-1 {
+.col-xs-12, .media-xs .main-slider .item img, .media-sm .main-slider .item img, .media-xs .main-slider .item .text_frame, .media-sm .main-slider .item .text_frame, .col-xs-11, .col-xs-10, .col-xs-9, .col-xs-8, .col-xs-7, .col-xs-6, .col-xs-5, .col-xs-4, .col-xs-3, .col-xs-2, .col-xs-1 {
   float: left; }
 
 .col-xs-1 {
@@ -752,7 +752,7 @@ pre {
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12 {
+.col-xs-12, .media-xs .main-slider .item img, .media-sm .main-slider .item img, .media-xs .main-slider .item .text_frame, .media-sm .main-slider .item .text_frame {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -2474,40 +2474,6 @@ strong, th {
     .container .section.header, .container-fluid .section.header {
       padding-bottom: 34px;
       border-bottom: 1px solid #b1cedc; }
-    .container .section.main-slider, .container-fluid .section.main-slider {
-      padding-bottom: 18px; }
-      .container .section.main-slider .text_frame, .container-fluid .section.main-slider .text_frame {
-        padding-top: 25px;
-        width: 35%;
-        right: 50px;
-        bottom: 50px;
-        position: absolute;
-        background-color: #dce041;
-        color: #596611; }
-        .container .section.main-slider .text_frame h3, .container-fluid .section.main-slider .text_frame h3 {
-          padding-left: 20px;
-          padding-right: 20px; }
-        .container .section.main-slider .text_frame p, .container-fluid .section.main-slider .text_frame p {
-          padding-left: 20px;
-          padding-right: 20px; }
-        .container .section.main-slider .text_frame .slide_link, .container-fluid .section.main-slider .text_frame .slide_link {
-          position: relative;
-          display: block;
-          height: 40px;
-          border-top: 1px solid #c8cd21; }
-        .container .section.main-slider .text_frame .slide_link:hover, .container-fluid .section.main-slider .text_frame .slide_link:hover {
-          background-color: #d8dc2b; }
-        .container .section.main-slider .text_frame .slide_link:after, .container-fluid .section.main-slider .text_frame .slide_link:after {
-          position: absolute;
-          content: '';
-          width: 20px;
-          height: 20px;
-          top: 9px;
-          right: 10px;
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-image: url("../images/icons/icon_arrow-right-green.svg");
-          margin-top: 0px; }
     @media (max-width: 480px) {
       .container .section.map, .container-fluid .section.map {
         padding-top: 10px;
@@ -2595,23 +2561,6 @@ strong, th {
 .main-product-container {
   padding: 13px; }
 
-.carousel .product-container, .carousel .main-product-frame {
-  margin-bottom: 0px; }
-.carousel .inside {
-  height: 150px; }
-  .carousel .inside .btn, .carousel .inside .media-lg .navigation li a, .media-lg .navigation li .carousel .inside a, .carousel .inside .media-md .navigation li a, .media-md .navigation li .carousel .inside a {
-    position: absolute;
-    bottom: 23px; }
-
-.main-slider .carousel .carousel-inner {
-  overflow: hidden; }
-  .main-slider .carousel .carousel-inner img {
-    width: auto;
-    height: auto; }
-
-.carousel-single {
-  margin-bottom: 30px; }
-
 /*
 	.product-container, .main-product-frame  {
 
@@ -2650,6 +2599,58 @@ strong, th {
 		padding:13px;
 	}*/
 /* Carousels */
+.main-slider {
+  padding-bottom: 18px; }
+  .main-slider .text_frame {
+    padding-top: 25px;
+    width: 35%;
+    right: 50px;
+    bottom: 50px;
+    position: absolute;
+    background-color: #dce041;
+    color: #596611; }
+    .main-slider .text_frame h3 {
+      padding-left: 20px;
+      padding-right: 20px; }
+    .main-slider .text_frame p {
+      padding-left: 20px;
+      padding-right: 20px; }
+    .main-slider .text_frame .slide_link {
+      position: relative;
+      display: block;
+      height: 40px;
+      border-top: 1px solid #c8cd21; }
+    .main-slider .text_frame .slide_link:hover {
+      background-color: #d8dc2b; }
+    .main-slider .text_frame .slide_link:after {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      top: 9px;
+      right: 10px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("../images/icons/icon_arrow-right-green.svg");
+      margin-top: 0px; }
+
+.carousel .product-container, .carousel .main-product-frame {
+  margin-bottom: 0px; }
+.carousel .inside {
+  height: 150px; }
+  .carousel .inside .btn, .carousel .inside .media-lg .navigation li a, .media-lg .navigation li .carousel .inside a, .carousel .inside .media-md .navigation li a, .media-md .navigation li .carousel .inside a {
+    position: absolute;
+    bottom: 23px; }
+
+.main-slider .carousel .carousel-inner {
+  overflow: hidden; }
+  .main-slider .carousel .carousel-inner img {
+    width: 100%;
+    height: auto; }
+
+.carousel-single {
+  margin-bottom: 30px; }
+
 .carousel-indicators {
   position: absolute;
   bottom: 10px;
@@ -2675,6 +2676,51 @@ strong, th {
     width: 8px;
     height: 8px;
     background-color: #00667d; }
+
+.carousel-indicators {
+  bottom: -60px; }
+
+.carousel-inner {
+  margin-bottom: 60px; }
+
+.carousel-control {
+  position: absolute;
+  top: auto;
+  left: auto;
+  padding: 10px;
+  bottom: -54px;
+  width: auto;
+  opacity: 1;
+  filter: none;
+  background-color: none;
+  text-align: center;
+  text-shadow: none; }
+  .carousel-control .icon_arrow {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain; }
+  .carousel-control.left {
+    background-image: none; }
+    .carousel-control.left .icon_arrow {
+      background-image: url("../images/icons/icon_arrow-left.svg"); }
+  .carousel-control.right {
+    background-image: none; }
+    .carousel-control.right .icon_arrow {
+      background-image: url("../images/icons/icon_arrow-right.svg"); }
+
+.media-xs .main-slider, .media-sm .main-slider {
+  padding-bottom: 18px; }
+  .media-xs .main-slider .item .text_frame, .media-sm .main-slider .item .text_frame {
+    padding-top: 25px;
+    width: auto;
+    right: auto;
+    bottom: auto;
+    position: relative;
+    background-color: #dce041;
+    border-bottom: 1px solid #a5bd20;
+    border-top: 1px solid #a5bd20;
+    color: #596611; }
 
 /*
 .container {
@@ -3242,38 +3288,6 @@ strong, th {
 	/* The url is relative to the document, not to the css file! */
 /* Prefer absolute urls to avoid confusion. */
 /* Carousel */
-.carousel-indicators {
-  bottom: -60px; }
-
-.carousel-inner {
-  margin-bottom: 60px; }
-
-.carousel-control {
-  position: absolute;
-  top: auto;
-  left: auto;
-  padding: 10px;
-  bottom: -54px;
-  width: auto;
-  opacity: 1;
-  filter: none;
-  background-color: none;
-  text-align: center;
-  text-shadow: none; }
-  .carousel-control .icon_arrow {
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-size: contain; }
-  .carousel-control.left {
-    background-image: none; }
-    .carousel-control.left .icon_arrow {
-      background-image: url("../images/icons/icon_arrow-left.svg"); }
-  .carousel-control.right {
-    background-image: none; }
-    .carousel-control.right .icon_arrow {
-      background-image: url("../images/icons/icon_arrow-right.svg"); }
-
 /*
 Gravity forms styling
 */
