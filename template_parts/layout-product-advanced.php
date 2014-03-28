@@ -1,5 +1,11 @@
-<!-- Slider -->
-<div class="row section main-slider background-dark">
+<?
+
+$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'product-image-cropped' );
+
+?>
+
+<!-- Product -->
+<div class="row section background-dark">
 	<div class="col-sm-12">
 
 		<div class="row">
@@ -8,26 +14,59 @@
 			</div>
 		</div>
 
-		<div class="row main-slider">
-			<div class="col-sm-12">
-				<?php
-				if( get_field('main_slider') )
-				{
-					$slides = array();
-					while( has_sub_field('main_slider') )
-					{ 
+		<?php
 
-						$slide_image_object = get_sub_field('image');
-						$slide_image = $slide_image_object['sizes']['main-slider'];
-						$slides[] = '<img src="'.$slide_image.'"/>';
+		/* If there is a main-slider, show it */
+		if (have_rows('main_slider')) {
+			?>
+			<div class="row main-slider">
+				<div class="col-sm-12">
+					<?php
 
+
+
+					if( get_field('main_slider') )
+					{
+						$slides = array();
+						while( has_sub_field('main_slider') )
+						{ 
+
+							$slide_image_object = get_sub_field('image');
+							$slide_image = $slide_image_object['sizes']['main-slider'];
+							$slides[] = '<img src="'.$slide_image.'"/>';
+
+						}
+						show_ls_carousel($slides);
 					}
-					show_ls_carousel($slides);
-				}
 
-				?>
+					?>
+				</div>
 			</div>
-		</div>
+			<?php
+
+			/* If there is no main-slider show the featured image */
+		} else {
+			?>
+			<div class="row">
+				<div class="col-sm-4 col-md-2">
+					<?php
+
+					if (isset($product_image)) {
+						echo '<img src="'.$product_image[0].'" style="width:100%;" />';
+					}
+
+					?>
+				</div>
+			</div>
+			<?php
+		}
+
+		?>
+
+
+
+
+
 
 	</div>
 </div>

@@ -3,6 +3,7 @@
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
+<!--[if IE 9]><html <?php language_attributes(); ?> class="no-js ie-9"><![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 	<head>
@@ -70,6 +71,7 @@
 
 		<div class="super-container">
 		<div class="container-fluid">
+			
 			<header class="row header section">
 					<div class="col-xs-12 col-sm-4 col-md-4 ">
 						<a href="<?php echo get_site_url(); ?>" class="logo"><img  src="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.svg" data-svg-fallback="<?php echo get_template_directory_uri(); ?>/library/images/labservices_logo.png"/></a>

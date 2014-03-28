@@ -22,6 +22,7 @@ Template Name: Products
 		'numberposts' => -1,
 		'order' => 'ASC',
 		'post_status' => 'publish',
+		'orderby' => 'menu_order',
 		'post_type' => 'ls_products',
 		'tax_query' => array(
 			array(
@@ -34,7 +35,6 @@ Template Name: Products
 	);
 
 	$ls_products = get_posts( $args );
-
 
 
 	$products_array = array();
@@ -67,6 +67,7 @@ Template Name: Products
 
 
 
+	
 <div class="row section product-slider background-dark products">
 	<div class="col-sm-12">
 

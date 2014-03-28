@@ -2,9 +2,8 @@
 
 /* Basic file for product single layout. based on the category it loads different template files */
 get_header(); 
-
 $product_name = $post->post_title;
-$product_body = $post->post_content;
+$product_body = apply_filters('the_content', $post->post_content);
 $product_description_title = get_field('description_title');
 $product_brand = get_field('product_brand');
 

@@ -80,6 +80,20 @@ $polyfill_url: "http://www.jeroenbraspenning.nl/clients/edhv/labservices/wp-cont
 }
 
 
+// Turns an a element into a clickable area for the div
+@mixin create-clickable-div() {
+			position:absolute; 
+			width:100%; 
+			height:100%; 
+			top:0; 
+			left:0; 
+			text-decoration:none; /* Makes sure the link   doesn't get underlined */ 
+			z-index:10; //raises anchor tag above everything else in div 
+			background-color:white; /*workaround to make clickable in IE */ 
+			opacity: 0; /*workaround to make clickable in IE */ 
+			filter: alpha(opacity=1); /*workaround to make clickable in IE */ 
+}
+
 
  @include add-font("NimbusSanNov-Bol", "nimbus-sans-novus-bold");
  @include add-font("NimbusSanNov-Reg", "nimbus-sans-novus");
@@ -399,7 +413,10 @@ strong, th {
 
 		margin-bottom:20px;
 
-
+		// .product-thumbnail {
+		// 	background-color:#ffffff;
+		// 	padding:10px;
+		// }
 		// .product-thumbnail {
 
 		// 	background-color:#ffffff;
@@ -418,17 +435,24 @@ strong, th {
 		// }
 
 
-		// .thumbnail-container {
-		//    width: 100%;
-		//    padding-bottom: 100%;
-		//    background: #FFF;
-		//    position: relative;
+		.thumbnail-container {
+		   width: 100%;
+		   padding-bottom: 100%;
+		   background: #FFF;
+		   position: relative;
 
-		//    .product-thumbnail {
-		// 		position: absolute;
-		// 		padding:10px;
-		//    }
-		// }
+		   .product-thumbnail {
+				position: absolute;
+				padding:10px;
+		   }
+		}
+
+
+		.click-container {
+			@include create-clickable-div;
+
+
+		}
 
 
 		.inside {
@@ -449,6 +473,13 @@ strong, th {
 			}
 	
 		}
+
+		&:hover .btn {
+			@extend .btn:hover;
+		}
+
+
+
 
 	}
 
@@ -743,6 +774,22 @@ strong, th {
 
 	.team-member {
 		margin-bottom:60px;
+
+		@media (min-width: $screen-sm-min) {
+			height:450px;
+		}
+	
+
+		.member-name {
+			display:block;
+			font-family:$font-family-bold;
+		}
+
+		.member-occupation {
+		
+		}
+
+
 	}
 
 	.inside {
@@ -762,6 +809,9 @@ $member-quote-padding:15;
 	margin-top:$triangle_height+px;
 	background-color:$ls_bg_c_box;
 	padding:$member-quote-padding+px;
+
+
+	font-size:0.9em;
 
 
 	:before {
@@ -1768,38 +1818,41 @@ input:focus, textarea:focus, select:focus, a:focus { outline: none; }
 			}
 		}
 
-		.ginput_container:before {
-			display: block;
-			content: '';
-			right: 1px;
-			top: 1px;
-			width: 45px;
-			height: 39px;
-			background: #ffffff;
-			position: absolute;
-			pointer-events: none;
-			border-left: 1px solid lighten(#7FA9BE,20%);
-		}
-
-		.ginput_container:after {
-			content: "";
-			background-image: url($icon_url+"icon_arrow-down.svg");
-			position: absolute;
-			pointer-events: none;
-			right: 13px;
-			top: 12px;
-			width:18px;
-			height:18px;
-		}
 	}
 
 
+}
 
+// Styles not directed at ie9
+html:not(.ie-9) {
 
+	// Dropdown styling
+	.gfield_dropdown {
 
+			.ginput_container:before {
+				display: block;
+				content: '';
+				right: 1px;
+				top: 1px;
+				width: 45px;
+				height: 39px;
+				background: #ffffff;
+				position: absolute;
+				pointer-events: none;
+				border-left: 1px solid lighten(#7FA9BE,20%);
+			}
 
-
-
+			.ginput_container:after {
+				content: "";
+				background-image: url($icon_url+"icon_arrow-down.svg");
+				position: absolute;
+				pointer-events: none;
+				right: 13px;
+				top: 12px;
+				width:18px;
+				height:18px;
+			}
+	}
 }
 
 
@@ -2109,4 +2162,12 @@ p > a:link, p > a:active, p > a:visited {
 div:hover  > a, li:hover  > a{
 	text-decoration:none;
 	color:darken($link-color, 5%);
+}
+
+input {
+ outline:none;
+}
+
+a {
+	//display:block;
 }

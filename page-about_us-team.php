@@ -34,8 +34,8 @@ if( get_field('team_members', $child_page_object->ID) )
 						<img src="<? echo $member_image['sizes']['team-image-cropped']; ?>" />
 					</div>
 					<div class="inside">
-						<strong><?php echo $member_name; ?></strong>
-						<span><?php echo $member_function; ?></span>
+						<span class="member-name"><?php echo $member_name; ?></span>
+						<span class="member-occupation"><?php echo $member_function; ?></span>
 					</div>
 
 					<div class="member-quote">

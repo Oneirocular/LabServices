@@ -13,6 +13,7 @@
 			$args = array(
 				'numberposts' => -1,
 				'order' => 'ASC',
+				'orderby' => 'menu_order',
 				'post_status' => 'publish',
 				'post_type' => 'ls_products',
 				'tax_query' => array(
@@ -44,7 +45,7 @@
 
 	
 	<div class="row">
-		</div>
+		
 
 		<ul class="ls-accordeon">
 
@@ -55,7 +56,7 @@
 
 						?>
 
-						<li class="ls-accordeon-row">
+						<li class="ls-accordeon-row col-xs-12">
 
 							<div class="row ls-accordeon-header">
 								<div class="col-xs-12">
@@ -69,6 +70,8 @@
 
 								<div class="ls-accordeon-container-content col-xs-12">
 									<div class="row">
+
+						
 								<?
 
 								foreach ($product_group['product_group_products'] as $group_product) {
@@ -93,4 +96,4 @@
 		} ?>
 
 		</ul>
-
+</div>

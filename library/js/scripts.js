@@ -40,6 +40,31 @@ if (!window.getComputedStyle) {
 }
 
 
+
+
+
+
+function excerptContent(content, customOptions) {
+
+	var options = {
+		nrOfCharacters:5,
+		endTag:'...'
+	}
+
+	jQuery.extend(options, customOptions);
+
+	// Check if contant is longer than nrOfChar
+	if (content.length > options.nrOfCharacters && options.nrOfCharacters > -1) {
+		content = content.substr( 0, content.lastIndexOf( ' ', options.nrOfCharacters ) ) + options.endTag;
+
+	}
+
+	return content;
+
+}
+
+
+
 // about us animation 
 function scrollAnimatedTo(anchor) {
 
@@ -57,8 +82,21 @@ function scrollAnimatedTo(anchor) {
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
 
+// $('.gfield_dropdown').mousedown(function(e) {
+// 	console.log('aa');
+// 	e.stopPropagation();
 
+// // 	var myDropDown = $('#input_1_5');	
+// // 	var length = $('#input_1_5').length;
+// // //open dropdown
+// // myDropDown.attr('size',length);
+// // //close dropdown
+// // myDropDown.attr('size',0);
+// // 	e.preventDefault();
 
+// 	$("#input_1_5").click();
+
+// });
 
 /* Language selector */
 $('.active_language').click(function() {
@@ -343,10 +381,10 @@ function update_carousel() {
 	var state = false;
 
 	// Slides generator
-	for (var i = slides.length - 1; i >= 0; i--) {
+	for (var i = 0; i <= slides.length - 1; i++) {
 
 		// First iteration
-		if (i == slides.length-1) {
+		if (i == 0) {
 			state = 'active';
 		} else {
 			state = '';
@@ -367,7 +405,7 @@ function update_carousel() {
 
 
 		// End of row or last iteration
-		if (row_counter == items_per_slide || i == 0) {
+		if (row_counter == items_per_slide || i == slides.length - 1) {
 			slides_html += '</div></div>';			
 			row_counter = 1;
 		} else {
@@ -453,6 +491,7 @@ $('a[name=foo]')*/
     };
         
     var checkViewport = function () {
+
         if (mode !== getMediaState()) {
 
             mode = getMediaState();
@@ -462,6 +501,7 @@ $('a[name=foo]')*/
             $('body').addClass('media-'+mode);
             // Fire carousel update
             update_carousel();
+            update_excerpts();
 			//console.log(getMediaState());
         }
     };
@@ -476,9 +516,24 @@ $('a[name=foo]')*/
 
 	
 	// add all your scripts here
-	
+	function update_excerpts() {
+
+		jQuery(".product-slider .js-automatic-excerpt").each(function() {
+
+			excerpt_length = jQuery(this).data("excerpt-length");
+			full_string = jQuery(this).data("excerpt-full-string");
+
+			jQuery(this).html( excerptContent(full_string, {nrOfCharacters:excerpt_length[mode]}) );
+
+			//console.log( excerpt_length )
+
+		});
+
+	}
  
 }); /* end of as page load scripts */
+
+
 
 
 /*! A fix for the iOS orientationchange zoom bug.

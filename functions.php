@@ -233,23 +233,25 @@ function form_submit_button($button, $form){
 function get_ls_product_container($ls_product) {
 
 	$product_title = $ls_product->post_title;
-	$product_description_excerpt = wp_trim_words( $ls_product->post_content , $num_words = 5, $more = null ); 
+	$product_description_excerpt = get_field('description_short', $ls_product->ID);
+	//$product_description_excerpt = wp_trim_words( $ls_product->post_content , $num_words = 6, $more = null ); 
 	$product_permalink = get_permalink( $ls_product->ID );	
 
 	$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $ls_product->ID ), 'product-image-cropped' );
 
 
 
-	 $html = '<a href="'.$product_permalink.'">';
-	 $html .= '	<div class="main-product-container background-light">';
+	// $html = '<a href="'.$product_permalink.'">';
+	 $html = '	<div class="main-product-container js-product-container background-light">';
+	 $html .= '		<a href="'.$product_permalink.'" class="click-container"></a>';
 	 $html .= '		<div class="product-thumbnail"><img src="'.$product_image[0].'"/></div>';
 	 $html .= '		<div class="inside">';
 	 $html .= '			<div class="product-title"><strong>'.$product_title.'</strong></div>';
-	 $html .= '			<p>'.$product_description_excerpt.'</p>';
+	 $html .= '			<div class="product-description js-automatic-excerpt" data-excerpt-full-string="'.$product_description_excerpt.'" data-excerpt-length=\'{"xs":"-1","sm":"80","md":"60","lg":"50"}\' >'.$product_description_excerpt.'</div>';
 	 $html .= '			<a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'view product', 'bonestheme' ).'</a>';
 	 $html .= '		</div>';
 	 $html .= '	</div>';
-	 $html .= '</a>';
+//	 $html .= '</a>';
 
 	 return $html;
 		
@@ -265,21 +267,41 @@ function get_distribute_product_container($distribute_product) {
 
 	$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $distribute_product->ID ), 'product-image-cropped' );
 
-	$html = '<a href="'.$product_permalink.'">';
-	$html .= '<div class="product-container col-xs-12 col-sm-3 col-lg-2">';
-	$html .= '	<div class="row">';
-	$html .= '		<div class="col-xs-4 col-sm-12">';
-	$html .= '			<div class="thumbnail-container"><div class="product-thumbnail"><img src="'.$product_image[0].'"/></div></div>';
-	$html .= '		</div>';
-	//$html .= '	<div class="thumbnail-container col-sm-12"><div class="product-thumbnail"><img src="'.$product_image[0].'"/></div></div>';
 
-	//$html .= '	<div class="product-thumbnail"><img src="'.$product_image[0].'"/></div>';
-	$html .= '		<div class="col-xs-8 col-sm-12" >';
-	$html .= '			<div class="inside "><div class="product-title">'.$product_title.'</div><a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'view product', 'bonestheme' ).'</a></div>';
-	$html .= '		</div>';
+// $html .= '<div class="col-xs-4 product-container">';
+// $html .= '<a href="'.$product_permalink.'">';
+// $html .= '	<div class="row">';
+// $html .= '		<div class="col-xs-12">';
+// $html .= '			<div class="inside ">';
+// $html .= '				<div>a</div>';
+// $html .= '				<a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'meer info', 'bonestheme' ).'</a>';
+// $html .= '			</div>';
+// $html .= '		</div>';
+// $html .= '	</div>';
+// $html .= '</a>';
+// $html .= '</div>';
+
+	//$html = '<a href="'.$product_permalink.'">';
+	$html = '<div class="product-container col-xs-12 col-sm-3 col-lg-2">';
+$html .= '<a href="'.$product_permalink.'" class="click-container"></a>';
+	 $html .= '	<div class="row">';
+	 $html .= '		<div class="col-xs-4 col-sm-12">';
+	 $html .= '			<div class="thumbnail-container"><div class="product-thumbnail"><img src="'.$product_image[0].'"/></div></div>';
+	 $html .= '		</div>';
+
+	 $html .= '		<div class="col-xs-8 col-sm-12" >';
+	$html .= '			<div class="inside ">';
+	$html .= '				<div class="product-title">'.$product_title.'</div>';
+	$html .= '				<div class="product-link">';
+	
+	$html .= '					<a class="btn btn-arrow btn-sm" href="'.$product_permalink.'" role="button">'.__( 'meer info', 'bonestheme' ).'</a>';
+	 $html .= '				</div>';
+	$html .= '			</div>';
+	 $html .= '		</div>';
 	$html .= '	</div>';
+	
+
 	$html .= '</div>';
-	$html .= '</a>';
 
 	return $html;		
 }
