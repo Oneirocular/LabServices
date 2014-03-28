@@ -136,8 +136,8 @@ foreach ($child_pages as $child_page_id => $child_page_object) {
 				// Get the right page content
 				if ($child_page_label == "distribute") {
 					include(locate_template('template_parts/page-products-distribute.php')); // because get_template_part doesn;t send vars
-				} else if ($child_page_label == "accessoires") {
-					include(locate_template('template_parts/page-products-accessoires.php')); // because get_template_part doesn;t send vars
+				} else if ($child_page_label == "parts") {
+					include(locate_template('template_parts/page-products-parts.php')); // because get_template_part doesn;t send vars
 				} 
 				?>
 

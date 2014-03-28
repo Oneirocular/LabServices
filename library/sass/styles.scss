@@ -16,7 +16,7 @@ $ls_bg_c_blue_dark: #D4E4EC;
 $ls_bg_c_blue_dark_line: darken($ls_bg_c_blue_dark, 10%);
 
 $ls_bg_c_blue_light: #EBF3F5;
-$ls_bg_c_blue_light_line: darken($ls_bg_c_blue_light, 10%);
+$ls_bg_c_blue_light_line: darken($ls_bg_c_blue_light, 15%);
 
 $ls_bg_c_box:#3C89B0;
 $ls_bg_c_box_dark_line:#367899;
@@ -26,6 +26,8 @@ $ls_bg_c_box_green:#DCE041;
 
 $ls_border_color_input:#83A8C0;
 
+$ls_table_header_color:#7FA9BE;
+$ls_table_line_color:#BED3DE;
 
 $ls_bg_menu_color:#A4C0D1;
 
@@ -707,6 +709,36 @@ strong, th {
 
 
 /* Buttons */
+
+.btn-text {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	font-family:$headings-font-family;
+
+	cursor: pointer;
+	padding-right:10px;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:after // arrow
+	{	
+		position:absolute;
+		content:'';
+		width:18px;
+		height:18px;
+		margin-left:5px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url($icon_url+"icon_arrow-right.svg");
+		margin-top:0px;
+
+	}
+}
+
+
 .btn, .btn-arrow {
 	font-family:$headings-font-family;
 	font-size:15px;
@@ -715,7 +747,7 @@ strong, th {
 	
 }
 
-.btn-arrow {
+.btn-arrow, .text-btn-arrow {
 	padding-right:33px; // allow space for the arrow
 }
 
@@ -733,7 +765,7 @@ strong, th {
 
 
 
-.btn-arrow:after // arrow
+.btn-arrow:after, .text-btn-arrow // arrow
 {	
 	position:absolute;
 	content:'';
@@ -1349,7 +1381,7 @@ $member-quote-padding:15;
 }
 
 
-.accessoires {
+.parts {
 
 	.child-description {
 		margin-bottom:30px;
@@ -1921,6 +1953,11 @@ html:not(.ie-9) {
 /* Tables */
 .table, .table-responsive {
 
+	.btn-text {
+			visibility:hidden;
+
+	}
+
  	> thead,
   	> tbody,
   	> tfoot {
@@ -1929,7 +1966,7 @@ html:not(.ie-9) {
       		> td {
       			//border-bottom:none;
       			padding-top:17px;
-      			border-top: 1px solid lighter($table-border-color, 30%);
+      			//border-top: 1px solid lighter($table-border-color, 30%);
       		}
      	}
     }
@@ -1937,11 +1974,26 @@ html:not(.ie-9) {
 
 
 	> thead > tr > th, tbody > tr > td, tbody > tr > th {
-		border-top:none;
-		border-bottom:1px solid lighten($table-border-color, 8%);
+		//border-top:none;
+		//border-bottom:1px solid lighten($table-border-color, 8%);
 		      			//border-top:none;
 		//border-bottom: 1px solid $table-border-color;
 	}
+
+	  > tbody > tr {
+	    > td,
+	    > th {
+
+	      .btn-text {
+		
+			&:hover {
+					color:darken(#00667d,10%);
+			}
+			}
+	    }
+	  }
+	
+
 
 	tr:first-child td {
 	
@@ -1949,16 +2001,49 @@ html:not(.ie-9) {
 
 }
 
+.table-hover {
+	> tbody > tr:hover {
+	    > td,
+	    > th {
+	      background-color: darken($ls_bg_c_blue_dark, 3%);
+
+	      .btn-text {
+	      	visibility: visible;
+
+	      }
+	    }
+	  }
+}
+
+
+.table > thead > tr > th {
+	border-bottom: 1px solid $ls_table_header_color;
+
+}
+
+
+.product-specification {
+
+
+	// Remove top line from product specification header
+	tbody > tr:first-child > td, tbody > tr:first-child > th {
+		border:none;
+		border-bottom:1px solid lighten($ls_table_line_color, 8%);
+
+	}
+}
 
 .background-dark {
 	tbody > tr > td, tbody > tr > th {
-		border-bottom:1px solid $table-border-color;
+		border-bottom:1px solid $ls_table_line_color;
 	}
 }
 
 .background-light {
+
+
 	tbody > tr > td, tbody > tr > th {
-		border-bottom:1px solid lighten($table-border-color, 8%);
+		border-bottom:1px solid lighten($ls_table_line_color, 8%);
 
 	}
 }
@@ -2164,6 +2249,25 @@ div:hover  > a, li:hover  > a{
 	color:darken($link-color, 5%);
 }
 
+
+
+
+
+// Product parts css
+.parts input:focus {
+
+	border:0px;		
+
+	width:100%;
+	border-top:1px solid $ls_c_blue;
+
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline:none !important;
+	box-shadow:none;
+	background-color:lighten($ls_bg_c_blue_dark,15%);
+
+}
 input {
  outline:none;
 }

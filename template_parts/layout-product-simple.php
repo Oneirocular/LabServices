@@ -156,7 +156,7 @@ $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID )
 						<div class="row">
  
 							<div class="table-responsive">
-								<table class="table table-hover">
+								<table class="table ">
 									<tbody>
 										<?php 
 										while( has_sub_field('product_specifications') )

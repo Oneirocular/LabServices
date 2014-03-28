@@ -508,6 +508,17 @@ function current_type_nav_class($classes, $item) {
 
 		add_option( 'lab_services_services_page');
 		register_setting( 'ls-options', 'lab_services_services_page' ); 
+
+		add_option( 'lab_services_product_parts_placeholder');
+		register_setting( 'ls-options', 'lab_services_product_parts_placeholder' ); 
+
+
+		add_option( 'lab_services_product_no_parts_found');
+		register_setting( 'ls-options', 'lab_services_product_no_parts_found' ); 
+
+		add_option( 'lab_services_product_parts_found');
+		register_setting( 'ls-options', 'lab_services_product_parts_found' ); 
+
 	} 
 
 
@@ -522,6 +533,8 @@ function current_type_nav_class($classes, $item) {
 				<p>Here some Lab Services specific options are set.</p>
 				<!-- Form tables go here -->
 				<table class="form-table">
+
+
 											<tr valign="top">
 						<th scope="row"><label for="lab_services_services_page">Lab Services services page:</label></th>
 						<td>
@@ -593,6 +606,21 @@ function current_type_nav_class($classes, $item) {
 						?>
 					</td>
 					</tr>
+					
+					<tr valign="top">
+						<th scope="row"><label for="lab_services_product_parts_placeholder">Search parts placeholder:</label></th>
+						<td><input type="text" name="lab_services_product_parts_placeholder" id="lab_services_product_parts_placeholder" value="<?php echo get_option('lab_services_product_parts_placeholder'); ?>"></td>
+					</tr>
+
+					<tr valign="top">
+						<th scope="row"><label for="lab_services_product_parts_found">Parts found {nr_of_results}, {keyword}:</label></th>
+						<td><input type="text"  name="lab_services_product_parts_found" id="lab_services_product_parts_found" value="<?php echo get_option('lab_services_product_parts_found'); ?>"></td>
+					</tr>
+
+					<tr valign="top">
+						<th scope="row"><label for="lab_services_product_no_parts_found">No parts found {keyword}:</label></th>
+						<td><input type="text"  name="lab_services_product_no_parts_found" id="lab_services_product_no_parts_found" value="<?php echo get_option('lab_services_product_no_parts_found'); ?>"></td>
+					</tr>
 				</table>
 				<?php submit_button(); ?>
 			</form>
@@ -651,12 +679,26 @@ function current_type_nav_class($classes, $item) {
 		// If information is set
 		if (isset($_GET['subject'])=="information") {
 
-			/* Get service details */
-			$services_page_id = get_option('lab_services_services_page');
-			$service_options = get_field('text_blocks', $services_page_id);
+			if (isset($_GET['service_id'])) {
 
-			/* Message preset */
-			$message = __("Information about", "bonestheme").": (services) ".$service_options[$_GET['service_id']]['label']."\n\n";
+				/* Get service details */
+				$services_page_id = get_option('lab_services_services_page');
+				$service_options = get_field('text_blocks', $services_page_id);
+
+				/* Message preset */
+				$message = __("Information about", "bonestheme").": (services) ".$service_options[$_GET['service_id']]['label']."\n\n";
+
+			}
+
+			if (isset($_GET['part_id'])) {
+
+				/* Get service details */
+				$part_post = get_post($_GET['part_id']);
+
+				/* Message preset */
+				$message = __("Information about", "bonestheme").": (parts) \n".$part_post->post_title." ".$part_post->post_content."\n\n";
+
+			}
 			return $message;
 			
 		}
